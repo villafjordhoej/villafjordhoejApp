@@ -99,6 +99,7 @@
     <Compile Include="_View\Forside.xaml.cs">
       <DependentUpon>Forside.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_Model\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -134,6 +135,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
