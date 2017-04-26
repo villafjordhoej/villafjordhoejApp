@@ -12,8 +12,7 @@ namespace Villafjordhoej.Persistency
         
         private static HttpClientHandler Handler = new HttpClientHandler() { UseDefaultCredentials = true};
 
-        //twat
-
+        
 
 
         public DB_Persistency()
