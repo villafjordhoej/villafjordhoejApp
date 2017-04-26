@@ -95,17 +95,31 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Handler\RelayArgCommand.cs" />
+    <Compile Include="Handler\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_Model\M_Behandling.cs" />
     <Compile Include="_Model\M_Booking.cs" />
     <Compile Include="_Model\M_Gaest.cs" />
     <Compile Include="_Model\M_Medarbejder.cs" />
     <Compile Include="_Model\M_Room.cs" />
+    <Compile Include="_View\V_OpretBooking.xaml.cs">
+      <DependentUpon>V_OpretBooking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_RedigerBooking.xaml.cs">
+      <DependentUpon>V_RedigerBooking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_Model\Singelton.cs" />
     <Compile Include="_ViewModel\VM_Booking.cs" />
     <Compile Include="_ViewModel\VM_ROSBooking.cs" />
     <Compile Include="_View\Forside.xaml.cs">
       <DependentUpon>Forside.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_Booking.xaml.cs">
+      <DependentUpon>V_Booking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_SletBooking.xaml.cs">
+      <DependentUpon>V_SletBooking.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -131,11 +145,26 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Handler\" />
     <Folder Include="Persistency\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="_View\V_OpretBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_RedigerBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="_View\Forside.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_Booking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_SletBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
