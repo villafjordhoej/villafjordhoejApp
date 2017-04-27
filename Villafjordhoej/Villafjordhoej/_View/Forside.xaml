@@ -7,7 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="White">
+        <Grid Background="#FFB9CA95">
+            <Button x:Name="Booking" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="298,268,0,0" Height="200" Width="300" FontSize="50" FontFamily="Arial" Foreground="#FF282828">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Gui_Forside_KnapGrøn_Temp.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
