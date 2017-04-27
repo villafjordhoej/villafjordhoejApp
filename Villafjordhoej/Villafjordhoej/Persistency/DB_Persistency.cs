@@ -20,7 +20,5 @@ namespace Villafjordhoej.Persistency
             
         }
 
-
-
     }
 }
