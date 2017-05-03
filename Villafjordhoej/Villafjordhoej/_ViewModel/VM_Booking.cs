@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Villafjordhoej.Persistency;
+using Villafjordhoej._Model;
 
 namespace Villafjordhoej._ViewModel
 {
+	//Skal kun kører Booking view
 	class VM_Booking
 	{
-		//Skal kun kører Booking view
+		public Singelton BookingSingelton { get; set; }
+
 		public VM_Booking()
 		{
-			
+			BookingSingelton = Singelton.GetInstance;
 		}
 	}
 }
