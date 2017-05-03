@@ -122,9 +122,6 @@
     <Compile Include="_View\V_Booking.xaml.cs">
       <DependentUpon>V_Booking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_View\V_SletBooking.xaml.cs">
-      <DependentUpon>V_SletBooking.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -165,10 +162,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_View\V_Booking.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="_View\V_SletBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
