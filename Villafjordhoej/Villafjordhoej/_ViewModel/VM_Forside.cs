@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Villafjordhoej._ViewModel
 {
-	class VM_Booking
+	class VM_Forside
 	{
-		//Skal kun kører Booking view
-		public VM_Booking()
+		public VM_Forside()
 		{
 			
 		}

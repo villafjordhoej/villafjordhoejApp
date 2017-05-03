@@ -5,20 +5,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:_ViewModel="using:Villafjordhoej._ViewModel"
     x:Class="Villafjordhoej._View.Forside"
     mc:Ignorable="d">
 
-    <Grid Background="White">
-        <Grid Background="#FFB9CA95" Margin="-10,-10,10,10">
-            <Button x:Name="Booking" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="298,268,0,0" Height="200" Width="300" FontSize="50" FontFamily="Arial" Foreground="#FF282828" BorderBrush="{x:Null}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Background="#FFB9CA95">
+            <Grid.DataContext>
+                <_ViewModel:VM_Forside/>
+            </Grid.DataContext>
+            <Button x:Name="Booking" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,49,0,0" Height="200" Width="300" FontSize="50" FontFamily="Arial" Foreground="#FF282828" BorderBrush="{x:Null}">
+                <Interactivity:Interaction.Behaviors>
+                    <Core:EventTriggerBehavior EventName="Click">
+                        <Core:NavigateToPageAction TargetPage="_View.V_Booking.xaml"/>
+                    </Core:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Gui_Forside_KnapGrøn_Temp.png"/>
                 </Button.Background>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction/>
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
             </Button>
         </Grid>
     </Grid>

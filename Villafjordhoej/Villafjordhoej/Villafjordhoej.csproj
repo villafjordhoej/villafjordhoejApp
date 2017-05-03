@@ -104,6 +104,7 @@
     <Compile Include="_Model\M_Gaest.cs" />
     <Compile Include="_Model\M_Medarbejder.cs" />
     <Compile Include="_Model\M_Room.cs" />
+    <Compile Include="_ViewModel\VM_Forside.cs" />
     <Compile Include="_View\V_OpretBooking.xaml.cs">
       <DependentUpon>V_OpretBooking.xaml</DependentUpon>
     </Compile>
@@ -131,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Gui_Forside_KnapGrøn_Temp.png" />
+    <Content Include="Assets\Gui_Forside_KnapRød_Temp.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
