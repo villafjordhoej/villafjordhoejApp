@@ -159,20 +159,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="app_behandlinger.cs" />
-    <Compile Include="app_booking.cs" />
-    <Compile Include="app_gaest.cs" />
-    <Compile Include="app_medarbejder.cs" />
-    <Compile Include="app_m_behandling.cs" />
-    <Compile Include="app_m_vaerelser.cs" />
+    <Compile Include="Models\app_behandlinger.cs" />
+    <Compile Include="Models\app_booking.cs" />
+    <Compile Include="Models\app_gaest.cs" />
+    <Compile Include="Models\app_medarbejder.cs" />
+    <Compile Include="Models\app_m_behandling.cs" />
+    <Compile Include="Models\app_m_vaerelser.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="app_vaerelse.cs" />
+    <Compile Include="Models\app_vaerelse.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
