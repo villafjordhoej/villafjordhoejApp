@@ -27,13 +27,5 @@ namespace Villafjordhoej._View
 		{
 			this.InitializeComponent();
 		}
-
-		//Erstatning for "Navigate to page action" behavior
-		//Vi bruger Code behind fordi vi skal lave LoginCheck
-		//og i vores tilfælde/situation giver det her mere mening
-		private void NTBooking_Click(object sender, RoutedEventArgs e)
-		{
-			this.Frame.Navigate(typeof(V_Booking));
-		}
 	}
 }
