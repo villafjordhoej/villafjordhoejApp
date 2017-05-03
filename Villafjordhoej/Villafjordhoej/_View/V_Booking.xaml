@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:_ViewModel="using:Villafjordhoej._ViewModel"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="Villafjordhoej._View.V_Booking"
     mc:Ignorable="d">
 
@@ -14,6 +16,13 @@
                 <_ViewModel:VM_Booking/>
             </Grid.DataContext>
             <ListView x:Name="listView" HorizontalAlignment="Left" Height="454" Margin="186,134,0,0" VerticalAlignment="Top" Width="344" ItemsSource="{Binding BookingSingelton.Bookings}"/>
+            <Button x:Name="NTOpretBooking" Content="Opret Booking" HorizontalAlignment="Left" Margin="638,134,0,0" VerticalAlignment="Top" Height="48" Width="125">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage=""/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
         </Grid>
 
     </Grid>
