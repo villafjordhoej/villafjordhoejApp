@@ -110,6 +110,9 @@
     <Compile Include="_Model\Singleton.cs" />
     <Compile Include="_ViewModel\VM_Booking.cs" />
     <Compile Include="_ViewModel\VM_ROSBooking.cs" />
+    <Compile Include="_View\AdminForside.xaml.cs">
+      <DependentUpon>AdminForside.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_View\Forside.xaml.cs">
       <DependentUpon>Forside.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="_View\AdminForside.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="_View\Forside.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
