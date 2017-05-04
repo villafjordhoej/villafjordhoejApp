@@ -14,7 +14,7 @@
             <Grid.DataContext>
                 <_ViewModel:VM_Booking/>
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="454" Margin="186,134,0,0" VerticalAlignment="Top" Width="344" ItemsSource="{Binding BookingSingelton.Bookings}"/>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="454" Margin="186,134,0,0" VerticalAlignment="Top" Width="344" ItemsSource="{Binding BookingSingleton.Vaerelser}"/>
             <Button x:Name="NPOpretBooking" Content="Opret Booking" HorizontalAlignment="Left" Margin="638,134,0,0" VerticalAlignment="Top" Height="48" Width="125">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">

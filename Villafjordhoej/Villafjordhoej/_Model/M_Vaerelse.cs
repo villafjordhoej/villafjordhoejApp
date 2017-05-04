@@ -8,23 +8,25 @@ namespace Villafjordhoej._Model
 {
     class M_Vaerelse
     {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public int NrSpaces { get; set; }
-        public string Information { get; set; }
 
-        public M_Vaerelse(string name, double price, int nrSpaces, string information)
+        public int vaerelse_id { get; set; }
+        public string vaerelse_navn { get; set; }
+        public double vaerelse_pris { get; set; }
+        public int vaerelse_antalpladser { get; set; }
+
+
+        public M_Vaerelse(int vaerelseAntalpladser, int vaerelseId, string vaerelseNavn, double vaerelsePris)
         {
-            Name = name;
-            Price = price;
-            NrSpaces = nrSpaces;
-            Information = information;
+            vaerelse_id = vaerelseId;
+            vaerelse_navn = vaerelseNavn;
+            vaerelse_pris = vaerelsePris;
+            vaerelse_antalpladser = vaerelseAntalpladser;
         }
 
 
         public override string ToString()
         {
-            return $"{nameof(Name)}: {Name}, {nameof(Price)}: {Price}, {nameof(NrSpaces)}: {NrSpaces}";
+            return $"{nameof(vaerelse_id)}: {vaerelse_id}, {nameof(vaerelse_navn)}: {vaerelse_navn}, {nameof(vaerelse_pris)}: {vaerelse_pris}, {nameof(vaerelse_antalpladser)}: {vaerelse_antalpladser}";
         }
     }
 }
