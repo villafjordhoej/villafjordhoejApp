@@ -14,7 +14,6 @@
             <Grid.DataContext>
                 <_ViewModel:VM_Forside/>
             </Grid.DataContext>
-
             <Button x:Name="NPBooking" Content="Booking" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,49,0,0" Height="200" Width="300" FontSize="50" FontFamily="Arial" Foreground="#FF282828" BorderBrush="{x:Null}" Visibility="{Binding BookingKnapULoginVisibility}">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
