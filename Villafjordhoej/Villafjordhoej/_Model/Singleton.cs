@@ -69,7 +69,54 @@ namespace Villafjordhoej._Model
             Gaests = new ObservableCollection<M_Gaest>(await Persistency.DB_Persistency.LoadGaestsFromDB());
         }
 
-    
+
+
+
+        //Gemmer den mellemligende tabel app_m_behandling i DB og i Collectionen
+        public async void SaveMeBehandlings(Me_Behandling o)
+        {
+            
+        }
+
+        //Gemmer den mellemligende tabel app_m_vaerelser i DB og i Collectionen
+        public async void SaveMeVaerelsers(Me_Vaerelser o)
+        {
+            
+        }
+
+        //Gemmer medarbejdere i DB og i Collectionen
+        public async void SaveMedarbejders(M_Medarbejder o)
+        {
+            
+        }
+
+        //Gemmer Behandlinger i DB og i Collectionen
+        public async void SaveBehandlings(M_Behandling o)
+        {
+            
+        }
+
+        //Gemmer Bookings i DB og i Collectionen
+        public async void SaveBookings(M_Booking o)
+        {
+            
+        }
+
+        //Gememer Rooms i DB og i Collectionen
+        public async void SaveRooms(M_Room o)
+        {
+            
+        }
+
+        //Gemmer Gæster i DB og i Collectionen
+        public async void SaveGaests(M_Gaest o)
+        {
+            
+        }
+
+
+
+
 
 
         public static Singleton GetInstance
