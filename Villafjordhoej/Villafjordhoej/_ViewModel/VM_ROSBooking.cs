@@ -8,6 +8,7 @@ namespace Villafjordhoej._ViewModel
 {
 	class VM_ROSBooking
 	{
-		//skal tage sig af ROS Booking view
+		
+        //skal tage sig af ROS Booking view
 	}
 }
