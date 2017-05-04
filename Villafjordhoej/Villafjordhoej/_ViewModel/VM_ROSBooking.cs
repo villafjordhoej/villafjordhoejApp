@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Villafjordhoej.Handler;
 using Villafjordhoej.Persistency;
 using Villafjordhoej._Model;
 using Villafjordhoej._View;
@@ -23,6 +24,9 @@ namespace Villafjordhoej._ViewModel
         public List<M_Vaerelse> Rooms { get; set; }
         public DateTime Ankomst { get; set; }
         public DateTime Afrejse { get; set; }
+
+	    public RelayCommand RC_Opret { get; set; }
+
         //skal tage sig af ROS Booking view
 	    public VM_ROSBooking()
 	    {
