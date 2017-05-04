@@ -107,12 +107,6 @@
     <Compile Include="_Model\M_Medarbejder.cs" />
     <Compile Include="_Model\M_Room.cs" />
     <Compile Include="_ViewModel\VM_Forside.cs" />
-    <Compile Include="_View\V_OpretBooking.xaml.cs">
-      <DependentUpon>V_OpretBooking.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="_View\V_RedigerBooking.xaml.cs">
-      <DependentUpon>V_RedigerBooking.xaml</DependentUpon>
-    </Compile>
     <Compile Include="_Model\Singleton.cs" />
     <Compile Include="_ViewModel\VM_Booking.cs" />
     <Compile Include="_ViewModel\VM_ROSBooking.cs" />
@@ -121,6 +115,12 @@
     </Compile>
     <Compile Include="_View\V_Booking.xaml.cs">
       <DependentUpon>V_Booking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_OpretBooking.xaml.cs">
+      <DependentUpon>V_OpretBooking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_RedigerBooking.xaml.cs">
+      <DependentUpon>V_RedigerBooking.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -149,19 +149,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Page Include="_View\V_OpretBooking.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="_View\V_RedigerBooking.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="_View\Forside.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_View\V_Booking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_OpretBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_RedigerBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
