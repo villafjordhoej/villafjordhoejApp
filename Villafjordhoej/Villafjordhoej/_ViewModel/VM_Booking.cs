@@ -15,6 +15,7 @@ namespace Villafjordhoej._ViewModel
 		//indeholder et instance af singleton
 		public Singleton BookingSingleton { get; set; }
 
+
 		public VM_Booking()
 		{
 			//Opretter et instance af singleton
