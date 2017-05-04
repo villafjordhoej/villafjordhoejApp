@@ -13,12 +13,12 @@ namespace Villafjordhoej._ViewModel
 	class VM_Booking
 	{
 		//indeholder et instance af singleton
-		public Singelton BookingSingelton { get; set; }
+		public Singleton BookingSingleton { get; set; }
 
 		public VM_Booking()
 		{
 			//Opretter et instance af singleton
-			BookingSingelton = Singelton.GetInstance;
+			BookingSingleton = Singleton.GetInstance;
 		}
 	}
 }

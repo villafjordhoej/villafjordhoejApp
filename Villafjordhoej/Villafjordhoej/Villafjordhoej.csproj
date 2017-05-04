@@ -113,7 +113,7 @@
     <Compile Include="_View\V_RedigerBooking.xaml.cs">
       <DependentUpon>V_RedigerBooking.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_Model\Singelton.cs" />
+    <Compile Include="_Model\Singleton.cs" />
     <Compile Include="_ViewModel\VM_Booking.cs" />
     <Compile Include="_ViewModel\VM_ROSBooking.cs" />
     <Compile Include="_View\Forside.xaml.cs">

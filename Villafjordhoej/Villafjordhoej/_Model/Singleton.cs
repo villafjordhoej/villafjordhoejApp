@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Villafjordhoej._Model
 {
-    class Singelton
+    class Singleton
     {
-        private static Singelton _instance = new Singelton();
+        private static Singleton _instance = new Singleton();
 
         public ObservableCollection<M_Booking> Bookings { get; set; }
         public ObservableCollection<M_Room> Rooms { get; set; }
@@ -22,7 +22,7 @@ namespace Villafjordhoej._Model
 
 
 
-        public Singelton()
+        public Singleton()
         {
 
         }
@@ -72,11 +72,11 @@ namespace Villafjordhoej._Model
     
 
 
-        public static Singelton GetInstance
+        public static Singleton GetInstance
         {
             get
             {
-                return _instance ?? (_instance = new Singelton()); 
+                return _instance ?? (_instance = new Singleton()); 
             }
         }
 
