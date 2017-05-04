@@ -13,16 +13,17 @@
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="0,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser}"/>
-            <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="426,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Navn" DataContext="{Binding Name}" Width="320"/>
-            <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="426,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Email" DataContext="{Binding Email}" Width="320"/>
-            <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="426,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" DataContext="{Binding TelefonNr}" Width="320"/>
-            <TextBox x:Name="textBox_Allergener" HorizontalAlignment="Left" Margin="426,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Allergener" DataContext="{Binding Allergener}" Width="320"/>
-            <TextBox x:Name="textBox_Informationer" HorizontalAlignment="Left" Margin="426,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Information" DataContext="{Binding Information}" Width="320"/>
-            <TextBox x:Name="textBox_AntalPersoner" HorizontalAlignment="Left" Margin="426,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Antal Personer" DataContext="{Binding AntalPersoner}" Width="320"/>
-            <DatePicker x:Name="DatePicker_Ankomst" HorizontalAlignment="Left" Margin="426,368,0,0" VerticalAlignment="Top" DataContext="{Binding Ankomst}"/>
-            <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="426,430,0,0" VerticalAlignment="Top" DataContext="{Binding Afrejse}"/>
-            <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="426,490,0,0" VerticalAlignment="Top"/>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="446,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Navn" DataContext="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="446,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Email" DataContext="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="446,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" DataContext="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <TextBox x:Name="textBox_Allergener" HorizontalAlignment="Left" Margin="446,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Allergener" DataContext="{Binding Allergener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <TextBox x:Name="textBox_Informationer" HorizontalAlignment="Left" Margin="446,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Information" DataContext="{Binding Information, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <TextBox x:Name="textBox_AntalPersoner" HorizontalAlignment="Left" Margin="446,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Antal Personer" DataContext="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <DatePicker x:Name="DatePicker_Ankomst" HorizontalAlignment="Left" Margin="446,368,0,0" VerticalAlignment="Top" DataContext="{Binding Ankomst, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="446,430,0,0" VerticalAlignment="Top" DataContext="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="446,490,0,0" VerticalAlignment="Top"/>
+            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Bookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
 
     </Grid>
