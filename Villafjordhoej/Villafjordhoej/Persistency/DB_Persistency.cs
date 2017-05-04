@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Villafjordhoej._Model;
 
 namespace Villafjordhoej.Persistency
@@ -22,6 +23,7 @@ namespace Villafjordhoej.Persistency
         {
             
         }
+        
 
 
         public static async Task<IEnumerable<M_Gaest>> LoadGaestsFromDB()
@@ -53,9 +55,7 @@ namespace Villafjordhoej.Persistency
                 }
             }
         }
-
-
-
+        
         public static async Task<IEnumerable<M_Booking>> LoadBookingsFromDB()
         {
             using (var client = new HttpClient(Handler, false))
@@ -205,8 +205,7 @@ namespace Villafjordhoej.Persistency
                 }
             }
         }
-
-
+        
         public static async Task<IEnumerable<Me_Vaerelser>> LoadMellemVaerelserFromDB()
         {
             using (var client = new HttpClient(Handler, false))
@@ -236,6 +235,183 @@ namespace Villafjordhoej.Persistency
                 }
             }
         }
+
+
+        public static async Task<bool> SaveGaestToDB(M_Gaest o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_gaest", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> SaveBookingToDB(M_Booking o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_booking", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> SaveRoomToDB(M_Room o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_vaerelse", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> SaveBehandlingToDB(M_Behandling o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_behandling", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> SaveMedarbejderToDB(M_Medarbejder o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_medarbejder", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> SaveMellemBehandlingToDB(Me_Behandling o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_m_behandling", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> SaveMellemVaerelseToDB(Me_Vaerelser o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PostAsJsonAsync("api/app_m_vaerelse", o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
 
 
     }

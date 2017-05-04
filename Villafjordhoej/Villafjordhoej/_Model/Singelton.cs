@@ -24,6 +24,7 @@ namespace Villafjordhoej._Model
 
         public Singelton()
         {
+
         }
 
         //Henter den mellemligende tabel app_m_behandling
