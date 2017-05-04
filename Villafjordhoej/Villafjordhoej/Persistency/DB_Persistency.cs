@@ -86,7 +86,7 @@ namespace Villafjordhoej.Persistency
             }
         }
 
-        public static async Task<IEnumerable<M_Room>> LoadRoomsFromDB()
+        public static async Task<IEnumerable<M_Vaerelse>> LoadVaerelserFromDB()
         {
             using (var client = new HttpClient(Handler, false))
             {
@@ -100,7 +100,7 @@ namespace Villafjordhoej.Persistency
                     var response = client.GetAsync("api/app_vaerelse").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        IEnumerable<M_Room> events = response.Content.ReadAsAsync<IEnumerable<M_Room>>().Result;
+                        IEnumerable<M_Vaerelse> events = response.Content.ReadAsAsync<IEnumerable<M_Vaerelse>>().Result;
 
                         return events;
                     }
@@ -287,7 +287,7 @@ namespace Villafjordhoej.Persistency
             }
         }
 
-        public static async Task<bool> SaveRoomToDB(M_Room o)
+        public static async Task<bool> SaveVaerelseToDB(M_Vaerelse o)
         {
             string jsonDBString = JsonConvert.SerializeObject(o);
 

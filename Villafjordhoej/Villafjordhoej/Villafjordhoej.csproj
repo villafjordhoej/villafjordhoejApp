@@ -105,7 +105,7 @@
     <Compile Include="_Model\M_Booking.cs" />
     <Compile Include="_Model\M_Gaest.cs" />
     <Compile Include="_Model\M_Medarbejder.cs" />
-    <Compile Include="_Model\M_Room.cs" />
+    <Compile Include="_Model\M_Vaerelse.cs" />
     <Compile Include="_ViewModel\VM_Forside.cs" />
     <Compile Include="_Model\Singleton.cs" />
     <Compile Include="_ViewModel\VM_Booking.cs" />
