@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Villafjordhoej._Model
 {
-    class M_Room
+    class M_Vaerelse
     {
         public string Name { get; set; }
         public double Price { get; set; }
         public int NrSpaces { get; set; }
         public string Information { get; set; }
 
-        public M_Room(string name, double price, int nrSpaces, string information)
+        public M_Vaerelse(string name, double price, int nrSpaces, string information)
         {
             Name = name;
             Price = price;

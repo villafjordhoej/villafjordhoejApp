@@ -12,7 +12,7 @@ namespace Villafjordhoej._Model
         private static Singleton _instance = new Singleton();
 
         public ObservableCollection<M_Booking> Bookings { get; set; }
-        public ObservableCollection<M_Room> Rooms { get; set; }
+        public ObservableCollection<M_Vaerelse> Vaerelser { get; set; }
         public ObservableCollection<M_Behandling> Behandlings { get; set; }
         public ObservableCollection<M_Gaest> Gaests { get; set; }
         public ObservableCollection<M_Medarbejder> Medarbejders { get; set; }
@@ -20,7 +20,7 @@ namespace Villafjordhoej._Model
         public ObservableCollection<Me_Behandling> Mellem_Behandlings { get; set; }
         public ObservableCollection<Me_Vaerelser> Mellem_Vaerelsers { get; set; }
 
-
+        public bool Succes { get; set; }
 
         public Singleton()
         {
@@ -58,9 +58,9 @@ namespace Villafjordhoej._Model
         }
         
         //Henter Rooms fra DB
-        public async void LoadRooms()
+        public async void LoadVaerelser()
         {
-            Rooms = new ObservableCollection<M_Room>(await Persistency.DB_Persistency.LoadRoomsFromDB());
+            Vaerelser = new ObservableCollection<M_Vaerelse>(await Persistency.DB_Persistency.LoadVaerelserFromDB());
         }
 
         //Henter Gæster fra DB
@@ -75,43 +75,50 @@ namespace Villafjordhoej._Model
         //Gemmer den mellemligende tabel app_m_behandling i DB og i Collectionen
         public async void SaveMeBehandlings(Me_Behandling o)
         {
-            
+            Mellem_Behandlings.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveMellemBehandlingToDB(o);
         }
 
         //Gemmer den mellemligende tabel app_m_vaerelser i DB og i Collectionen
         public async void SaveMeVaerelsers(Me_Vaerelser o)
         {
-            
+            Mellem_Vaerelsers.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveMellemVaerelseToDB(o);
         }
 
         //Gemmer medarbejdere i DB og i Collectionen
         public async void SaveMedarbejders(M_Medarbejder o)
         {
-            
+            Medarbejders.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveMedarbejderToDB(o);
         }
 
         //Gemmer Behandlinger i DB og i Collectionen
         public async void SaveBehandlings(M_Behandling o)
         {
-            
+            Behandlings.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveBehandlingToDB(o);
         }
 
         //Gemmer Bookings i DB og i Collectionen
         public async void SaveBookings(M_Booking o)
         {
-            
+            Bookings.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveBookingToDB(o);
         }
 
         //Gememer Rooms i DB og i Collectionen
-        public async void SaveRooms(M_Room o)
+        public async void SaveVaerelsers(M_Vaerelse o)
         {
-            
+            Vaerelser.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveVaerelseToDB(o);
         }
 
         //Gemmer Gæster i DB og i Collectionen
         public async void SaveGaests(M_Gaest o)
         {
-            
+            Gaests.Add(o);
+            Succes = await Persistency.DB_Persistency.SaveGaestToDB(o);
         }
 
 
