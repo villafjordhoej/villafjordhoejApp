@@ -22,6 +22,13 @@
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
+            <Button x:Name="NPRedigerBooking" Content="Rediger Booking" HorizontalAlignment="Left" Margin="638,205,0,0" VerticalAlignment="Top" Height="48" Width="125">
+                <Interactivity:Interaction.Behaviors>
+                    <Core:EventTriggerBehavior EventName="Click">
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking"/>
+                    </Core:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
+            </Button>
         </Grid>
 
     </Grid>
