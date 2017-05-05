@@ -8,16 +8,22 @@ namespace Villafjordhoej._Model
 {
     class M_Medarbejder
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
+        public int medarbejder_id { get; set; }
+        
+        public string medarbejder_navn { get; set; }
+        
+        public string medarbejder_adresse { get; set; }
 
-
-        public M_Medarbejder(string name, string pass)
+        public M_Medarbejder(int medarbejderId, string medarbejderNavn, string medarbejderAdresse)
         {
-            Name = name;
-            Password = pass;    
-        }            
+            medarbejder_id = medarbejderId;
+            medarbejder_navn = medarbejderNavn;
+            medarbejder_adresse = medarbejderAdresse;
+        }
 
-
+        public override string ToString()
+        {
+            return $"{nameof(medarbejder_id)}: {medarbejder_id}, {nameof(medarbejder_navn)}: {medarbejder_navn}, {nameof(medarbejder_adresse)}: {medarbejder_adresse}";
+        }
     }
 }

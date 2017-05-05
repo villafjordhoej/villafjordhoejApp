@@ -101,9 +101,8 @@ namespace Villafjordhoej.Persistency
                     if (response.IsSuccessStatusCode)
                     {
                         IEnumerable<M_Vaerelse> events = response.Content.ReadAsAsync<IEnumerable<M_Vaerelse>>().Result;
-                        
+
                         return events;
-                        
                     }
                     else
                     {

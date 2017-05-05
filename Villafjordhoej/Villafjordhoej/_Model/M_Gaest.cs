@@ -8,24 +8,28 @@ namespace Villafjordhoej._Model
 {
     class M_Gaest
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public int Tlf { get; set; }
-        public string Email { get; set; }
+        public int gaest_id { get; set; }
+        
+        public string gaest_navn { get; set; }
+        
+        public string gaest_adresse { get; set; }
 
+        public int? gaest_tlf { get; set; }
+        
+        public string gaest_mail { get; set; }
 
-        public M_Gaest(string name, string address, int tlf, string email)
+        public M_Gaest(int gaestId, string gaestNavn, string gaestAdresse, int? gaestTlf, string gaestMail)
         {
-            Name = name;
-            Address = address;
-            Tlf = tlf;
-            Email = email;
+            gaest_id = gaestId;
+            gaest_navn = gaestNavn;
+            gaest_adresse = gaestAdresse;
+            gaest_tlf = gaestTlf;
+            gaest_mail = gaestMail;
         }
-
 
         public override string ToString()
         {
-            return $"{nameof(Name)}: {Name}, {nameof(Address)}: {Address}, {nameof(Tlf)}: {Tlf}, {nameof(Email)}: {Email}";
+            return $"{nameof(gaest_id)}: {gaest_id}, {nameof(gaest_navn)}: {gaest_navn}, {nameof(gaest_adresse)}: {gaest_adresse}, {nameof(gaest_tlf)}: {gaest_tlf}, {nameof(gaest_mail)}: {gaest_mail}";
         }
     }
 }

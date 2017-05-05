@@ -10,19 +10,20 @@ namespace Villafjordhoej._Model
     {
 
         public int vaerelse_id { get; set; }
+
         public string vaerelse_navn { get; set; }
-        public double vaerelse_pris { get; set; }
-        public int vaerelse_antalpladser { get; set; }
 
+        public decimal? vaerelse_pris { get; set; }
 
-        public M_Vaerelse(int vaerelseAntalpladser, int vaerelseId, string vaerelseNavn, double vaerelsePris)
+        public byte? vaerelse_antalpladser { get; set; }
+
+        public M_Vaerelse(int vaerelseId, string vaerelseNavn, decimal? vaerelsePris, byte? vaerelseAntalpladser)
         {
             vaerelse_id = vaerelseId;
             vaerelse_navn = vaerelseNavn;
             vaerelse_pris = vaerelsePris;
             vaerelse_antalpladser = vaerelseAntalpladser;
         }
-
 
         public override string ToString()
         {

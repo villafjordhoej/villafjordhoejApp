@@ -43,7 +43,7 @@ namespace Villafjordhoej._ViewModel
 
 	    private void Opret()
 	    {
-	        BookingSingleton.SaveBookings(new M_Booking(Name, Email, TelefonNr, Allergener, Information, AntalPersoner, Ankomst, Afrejse));   
+	        //BookingSingleton.SaveBookings(new M_Booking(Name, Email, TelefonNr, Allergener, Information, AntalPersoner, Ankomst, Afrejse));   
 	    }
 
 	    private void Rediger()

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Villafjordhoej.Persistency;
 
 namespace Villafjordhoej._Model
 {
@@ -60,7 +61,7 @@ namespace Villafjordhoej._Model
         //Henter Rooms fra DB
         public async void LoadVaerelser()
         {
-            Vaerelser = new ObservableCollection<M_Vaerelse>(await Persistency.DB_Persistency.LoadVaerelserFromDB());
+            Vaerelser = new ObservableCollection<M_Vaerelse>(await DB_Persistency.LoadVaerelserFromDB());
         }
 
         //Henter Gæster fra DB

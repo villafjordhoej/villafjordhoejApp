@@ -33,7 +33,7 @@ namespace Villafjordhoej._ViewModel
 		//Opretter en medarbejder
 		private void OpretMedarbejder()
 		{
-			MedarbejderSingleton.SaveMedarbejders(new M_Medarbejder(Name, Password));
+			//MedarbejderSingleton.SaveMedarbejders(new M_Medarbejder(Name, Password));
 		}
 	}
 }

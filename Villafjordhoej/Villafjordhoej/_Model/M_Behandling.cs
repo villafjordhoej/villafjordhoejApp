@@ -8,24 +8,29 @@ namespace Villafjordhoej._Model
 {
     class M_Behandling
     {
-        public string Name { get; set; }
-        public string Beskrivelse { get; set; }
-        public double Pris { get; set; }
-        public bool Boolhandler { get; set; }
+        
+        public int behandlinger_id { get; set; }
 
+        public string behandlinger_navn { get; set; }
 
-        public M_Behandling(string name, string beskrivelse, double pris, bool boolhandler)
+        public string behandlinger_beskrivelse { get; set; }
+
+        public decimal? behandlinger_pris { get; set; }
+
+        public byte? behandlinger_boolbehandler { get; set; }
+
+        public M_Behandling(int behandlingerId, string behandlingerNavn, string behandlingerBeskrivelse, decimal? behandlingerPris, byte? behandlingerBoolbehandler)
         {
-            Name = name;
-            Beskrivelse = beskrivelse;
-            Pris = pris;
-            Boolhandler = boolhandler;
+            behandlinger_id = behandlingerId;
+            behandlinger_navn = behandlingerNavn;
+            behandlinger_beskrivelse = behandlingerBeskrivelse;
+            behandlinger_pris = behandlingerPris;
+            behandlinger_boolbehandler = behandlingerBoolbehandler;
         }
-
 
         public override string ToString()
         {
-            return $"{nameof(Name)}: {Name}, {nameof(Beskrivelse)}: {Beskrivelse}, {nameof(Pris)}: {Pris}, {nameof(Boolhandler)}: {Boolhandler}";
+            return $"{nameof(behandlinger_id)}: {behandlinger_id}, {nameof(behandlinger_navn)}: {behandlinger_navn}, {nameof(behandlinger_beskrivelse)}: {behandlinger_beskrivelse}, {nameof(behandlinger_pris)}: {behandlinger_pris}, {nameof(behandlinger_boolbehandler)}: {behandlinger_boolbehandler}";
         }
     }
 }
