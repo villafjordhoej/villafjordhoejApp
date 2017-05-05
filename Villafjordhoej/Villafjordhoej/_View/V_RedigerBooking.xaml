@@ -24,7 +24,13 @@
             <TextBox x:Name="textBox_AntalPersoner" HorizontalAlignment="Left" Margin="446,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Antal Personer" DataContext="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
             <DatePicker x:Name="DatePicker_Ankomst" HorizontalAlignment="Left" Margin="446,363,0,0" VerticalAlignment="Top" DataContext="{Binding Ankomst, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="446,425,0,0" VerticalAlignment="Top" DataContext="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="446,485,0,0" VerticalAlignment="Top" DataContext="{Binding RC_Opret, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="Button_Opret" Content="Rediger" HorizontalAlignment="Left" Margin="446,485,0,0" VerticalAlignment="Top">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
             <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Bookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="NPBooking" Content="Tilbage til Booking" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="48" Width="160">
                 <interactivity:Interaction.Behaviors>
