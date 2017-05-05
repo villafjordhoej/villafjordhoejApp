@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:_ViewModel="using:Villafjordhoej._ViewModel"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="Villafjordhoej._View.V_OpretBooking"
     mc:Ignorable="d">
 
@@ -24,7 +26,15 @@
             <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="446,425,0,0" VerticalAlignment="Top" DataContext="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="446,485,0,0" VerticalAlignment="Top" DataContext="{Binding RC_Opret, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Bookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="NPBooking" Content="Tilbage til Booking" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="48" Width="160">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
         </Grid>
 
     </Grid>
 </Page>
+
