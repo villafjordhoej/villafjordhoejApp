@@ -8,14 +8,14 @@ namespace Villafjordhoej._Model
 {
     class M_Medarbejder
     {
-        public String Name { get; set; }
-        //public string Pass { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
 
 
-        public M_Medarbejder(string name)
+        public M_Medarbejder(string name, string pass)
         {
             Name = name;
-            //Pass = pass;    
+            Password = pass;    
         }            
 
 

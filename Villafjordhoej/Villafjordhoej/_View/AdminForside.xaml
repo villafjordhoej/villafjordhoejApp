@@ -8,7 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280"/>
-        
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280">
+            <Button x:Name="NPAdminMedarbejdere" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,67,0,0" Height="69" Width="123"/>
+            <Button x:Name="NPAdminBehandling" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="74" Width="123" Margin="82,168,0,0"/>
+            <Button x:Name="NPAdminArbejdsplan" Content="Button" HorizontalAlignment="Left" Margin="82,281,0,0" VerticalAlignment="Top" Height="74" Width="123"/>
+        </Grid>
+
     </Grid>
 </Page>
