@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280">
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF4D4D4D" Margin="0,0,-1280,-720" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <Button x:Name="NPAdminMedarbejdere" Content="Bruger" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,67,0,0" Height="69" Width="123">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
