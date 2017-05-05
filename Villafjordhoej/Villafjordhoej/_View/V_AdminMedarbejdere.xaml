@@ -15,13 +15,24 @@
             <Grid.DataContext>
                 <_ViewModel:VM_AdminMedarbejdere/>
             </Grid.DataContext>
-            <Button x:Name="Opret_Bruger" Content="Opret&#xD;&#xA;Bruger" HorizontalAlignment="Left" Margin="436,245,0,0" VerticalAlignment="Top" Height="59" Width="120" Background="#33FFFFFF"/>
-            <Button x:Name="Slet_Bruger" Content="Slet&#xD;&#xA;Bruger" HorizontalAlignment="Left" Margin="592,245,0,0" VerticalAlignment="Top" Background="#33FFFFFF" Height="59" Width="107"/>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="552" Margin="49,76,0,0" VerticalAlignment="Top" Width="329" Background="#33FFFFFF" ItemsSource="{Binding MedarbejderSingleton}"/>
+            <Button x:Name="Opret_Bruger" Content="Opret&#xD;&#xA;Bruger" HorizontalAlignment="Left" Margin="436,245,0,0" VerticalAlignment="Top" Height="59" Width="120" Background="#33FFFFFF">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding OpretMedarbejderRelayCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Slet_Bruger" Content="Slet&#xD;&#xA;Bruger" HorizontalAlignment="Left" Margin="592,245,0,0" VerticalAlignment="Top" Background="#33FFFFFF" Height="59" Width="107">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding SletMedarbejderRelayCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+                <ListView x:Name="listView" HorizontalAlignment="Left" Height="552" Margin="49,76,0,0" VerticalAlignment="Top" Width="329" Background="#33FFFFFF" ItemsSource="{Binding MedarbejderSingleton}"/>
             <TextBox x:Name="Navn" HorizontalAlignment="Left" Margin="436,76,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Height="38" Width="263" PlaceholderText="Navn"/>
             <TextBox x:Name="Password" HorizontalAlignment="Left" Margin="436,150,0,0" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay}" VerticalAlignment="Top" Height="38" Width="263" PlaceholderText="Kodeord"/>
         </Grid>
-
     </Grid>
 </Page>
 

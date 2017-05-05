@@ -17,7 +17,9 @@ namespace Villafjordhoej._ViewModel
 		public string Name { get; set; }
 		public string Password { get; set; }
 
+		//RelayCommands til knapper
 		public RelayCommand OpretMedarbejderRelayCommand { get; set; }
+		public RelayCommand SletMedarbejderRelayCommand { get; set; }
 
 		public VM_AdminMedarbejdere()
 		{
@@ -28,6 +30,13 @@ namespace Villafjordhoej._ViewModel
 
 			//opretter knap funktion
 			OpretMedarbejderRelayCommand = new RelayCommand(OpretMedarbejder);
+			SletMedarbejderRelayCommand = new RelayCommand(SletMedarbejder);
+		}
+
+		//Sletter en medarbejder
+		private void SletMedarbejder()
+		{
+			//Manger funktion i singleton
 		}
 
 		//Opretter en medarbejder
