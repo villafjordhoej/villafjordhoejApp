@@ -14,7 +14,7 @@ namespace Villafjordhoej._Model
 		public string Allergener { get; set; }
 		public string Information { get; set; }
 		public int AntalPersoner { get; set; }
-		public List<M_Room> Rooms { get; set; }
+		public List<M_Vaerelse> Rooms { get; set; }
 		public DateTime Ankomst { get; set; }
 		public DateTime Afrejse { get; set; }
 
