@@ -82,7 +82,7 @@
                     Content="Booking" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Top" 
-                    Margin="58,49,0,0" 
+                    Margin="46,85,0,0" 
                     Height="200" 
                     Width="300" 
                     FontSize="50" 
@@ -96,7 +96,7 @@
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
-                
+
             </Button>
             <Button x:Name="NPAdmin" 
                 Content="Admin" 
@@ -118,6 +118,7 @@
                 </Interactivity:Interaction.Behaviors>
 
             </Button>
+            <Image x:Name="Logo" HorizontalAlignment="Left" Height="47" Margin="10,20,0,0" VerticalAlignment="Top" Width="336" Source="ms-appx:///Assets/VFlogo.png" Stretch="Fill"/>
 
         </Grid>
     </Grid>
