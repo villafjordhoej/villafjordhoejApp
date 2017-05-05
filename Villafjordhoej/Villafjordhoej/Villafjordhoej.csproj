@@ -112,11 +112,17 @@
     <Compile Include="_Model\Singleton.cs" />
     <Compile Include="_ViewModel\VM_Booking.cs" />
     <Compile Include="_ViewModel\VM_ROSBooking.cs" />
-    <Compile Include="_View\AdminForside.xaml.cs">
-      <DependentUpon>AdminForside.xaml</DependentUpon>
-    </Compile>
     <Compile Include="_View\Forside.xaml.cs">
       <DependentUpon>Forside.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_AdminArbejdsplan.xaml.cs">
+      <DependentUpon>V_AdminArbejdsplan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_AdminBehandling.xaml.cs">
+      <DependentUpon>V_AdminBehandling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_AdminForside.xaml.cs">
+      <DependentUpon>V_AdminForside.xaml</DependentUpon>
     </Compile>
     <Compile Include="_View\V_AdminMedarbejdere.xaml.cs">
       <DependentUpon>V_AdminMedarbejdere.xaml</DependentUpon>
@@ -156,11 +162,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="_View\AdminForside.xaml">
+    <Page Include="_View\Forside.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="_View\Forside.xaml">
+    <Page Include="_View\V_AdminArbejdsplan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_AdminBehandling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_AdminForside.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
