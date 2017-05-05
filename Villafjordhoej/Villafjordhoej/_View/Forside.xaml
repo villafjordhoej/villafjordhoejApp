@@ -99,7 +99,7 @@
                 
             </Button>
             <Button x:Name="NPAdmin" 
-                Content="Administration" 
+                Content="Admin" 
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Top" 
                 Margin="938,478,0,0" 
