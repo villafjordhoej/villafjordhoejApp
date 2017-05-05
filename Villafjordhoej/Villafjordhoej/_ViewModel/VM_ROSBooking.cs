@@ -29,17 +29,31 @@ namespace Villafjordhoej._ViewModel
         public DateTime Afrejse { get; set; }
 
 	    public RelayCommand RC_Opret { get; set; }
+	    public RelayCommand RC_Rediger { get; set; }
+	    public RelayCommand RC_Slet { get; set; }
 
         //skal tage sig af ROS Booking view
 	    public VM_ROSBooking()
 	    {
 	        BookingSingleton = Singleton.GetInstance;
-            RC_Opret = new RelayCommand(Opret);   
+            RC_Opret = new RelayCommand(Opret);
+            RC_Rediger = new RelayCommand(Rediger);
+            RC_Slet = new RelayCommand(Slet);   
 	    }
 
 	    private void Opret()
 	    {
 	        BookingSingleton.SaveBookings(new M_Booking(Name, Email, TelefonNr, Allergener, Information, AntalPersoner, Ankomst, Afrejse));   
+	    }
+
+	    private void Rediger()
+	    {
+	        throw new NotImplementedException();
+	    }
+
+	    private void Slet()
+	    {
+	        throw new NotImplementedException();
 	    }
 
         #region PCS
