@@ -99,7 +99,7 @@
                 
             </Button>
             <Button x:Name="NPAdmin" 
-                Content="Admin" 
+                Content="Administration" 
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Top" 
                 Margin="938,478,0,0" 
@@ -110,7 +110,7 @@
                 Foreground="#FF282828" 
                 BorderBrush="{x:Null}" 
                 Visibility="{Binding BookingKnapULoginVisibility}" 
-                Style="{StaticResource ButtonGreen}">
+                Style="{StaticResource ButtonGreen}" Click="NPAdmin_Click">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
