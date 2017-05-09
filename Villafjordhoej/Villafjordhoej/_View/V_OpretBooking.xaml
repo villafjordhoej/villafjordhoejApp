@@ -9,13 +9,34 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="Villafjordhoej._View.V_OpretBooking"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="BookingRoomList">
+            <StackPanel x:Name="V1" Width="376" Height="70">
+                <StackPanel x:Name="H" Orientation="Horizontal">
+                    <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="{Binding vaerelse_navn}" Margin="0,0,-23,0"/>
+                </StackPanel>
+                <StackPanel x:Name="H2" Orientation="Horizontal" Height="35">
+                    <TextBlock x:Name="Pris" TextWrapping="Wrap" Text="{Binding vaerelse_pris}" Margin="0,10,0,0" HorizontalAlignment="Left" Width="50"/>
+                    <TextBlock x:Name="DK" TextWrapping="Wrap" Text="DKK" Width="30" Margin="0,10,0,2" d:LayoutOverrides="LeftPosition, RightPosition" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="antalpladser" TextWrapping="Wrap" Margin="120,10,0,0" HorizontalAlignment="Left">
+                        <Run Text="Antal pladser"/>
+                        <Run Text=":"/>
+                        <Run/>
+                    </TextBlock>
+                    <TextBlock x:Name="Tal_pladser" TextWrapping="Wrap" Text="{Binding vaerelse_antalpladser}" Margin="5,10,0,0" RenderTransformOrigin="0.375,0.435" HorizontalAlignment="Left"/>
+                    <Button x:Name="add" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40,0,0,0" Background="Lime" Height="20" d:LayoutOverrides="Height" Width="20" BorderThickness="3,0,0,0"/>
+                    <Button x:Name="remove" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40,0,0,0" Background="#FBFF0000" Height="20" Width="20" BorderThickness="3,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280">
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource BookingRoomList}"/>
             <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="446,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Navn" DataContext="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
             <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="446,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Email" DataContext="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
             <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="446,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" DataContext="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
@@ -31,7 +52,7 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Bookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding Rooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="NPBooking" Content="Tilbage til Booking" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="48" Width="160">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">

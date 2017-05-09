@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -32,8 +33,11 @@ namespace Villafjordhoej._ViewModel
         public string Information { get; set; }
 	    public decimal AftaltPris { get; set; }
 
+
+	    public ObservableCollection<M_Vaerelse> Rooms { get; set; }
+
         
-        public List<M_Vaerelse> Rooms { get; set; }
+
         
 
 
@@ -45,6 +49,10 @@ namespace Villafjordhoej._ViewModel
 	    public VM_ROSBooking()
 	    {
 	        BookingSingleton = Singleton.GetInstance;
+
+	        BookingSingleton.LoadVaerelser();
+
+
             RC_Opret = new RelayCommand(Opret);
             //RC_Rediger = new RelayCommand(Rediger);
             //RC_Slet = new RelayCommand(Slet);   
@@ -52,13 +60,21 @@ namespace Villafjordhoej._ViewModel
 
 	    private void Opret()
 	    {
-            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests.Count + 1, Name, Adresse, TelefonNr, Email));
+            //Gemmer en ny Gæt i databasen til brug i booking nedeunder
+            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests.Count + 1,
+                Name, Adresse, TelefonNr, Email));
+
+            //Gemmer en ny booking (i DB) som skal bruges nedeunder også
+            BookingSingleton.SaveBookings(new M_Booking(BookingSingleton.Bookings.Count + 1, 
+                BookingSingleton.Gaests.Count, Ankomst, Afrejse,
+                Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId)); 
 
 
-
+            //Gemmer alle værseler du har valgt i DB
 	        foreach (M_Vaerelse V in Rooms)
 	        {
-	            BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers.Count + 1, BookingSingleton.Bookings.Count, V.vaerelse_id, AftaltPris));
+	            BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers.Count + 1,
+                    BookingSingleton.Bookings.Count, V.vaerelse_id, AftaltPris));
 	        }
 	    }
 
