@@ -19,6 +19,7 @@ namespace Villafjordhoej._ViewModel
 
 		//RelayCommands til knapper
 		public RelayCommand OpretMedarbejderRelayCommand { get; set; }
+		public RelayCommand RedigerMedarbejderRelayCommand { get; set; }
 		public RelayCommand SletMedarbejderRelayCommand { get; set; }
 
 		public VM_AdminMedarbejdere()
@@ -30,6 +31,7 @@ namespace Villafjordhoej._ViewModel
 
 			//opretter knap funktion
 			OpretMedarbejderRelayCommand = new RelayCommand(OpretMedarbejder);
+			RedigerMedarbejderRelayCommand = new RelayCommand(RedigerMedarbejder);
 			SletMedarbejderRelayCommand = new RelayCommand(SletMedarbejder);
 		}
 
@@ -45,6 +47,12 @@ namespace Villafjordhoej._ViewModel
 		{
 			MedarbejderSingleton.SaveMedarbejders(
 				new M_Medarbejder(MedarbejderSingleton.Medarbejders.Count + 1, Name, Password));
+		}
+
+		private void RedigerMedarbejder()
+		{
+			SletMedarbejder();
+			OpretMedarbejder();
 		}
 	}
 }
