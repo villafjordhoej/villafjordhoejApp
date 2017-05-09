@@ -14,6 +14,8 @@ namespace VilaFjordhoejWS
 
         public int? booking_gaest_id { get; set; }
 
+        public int? booking_antalpersoner { get; set; }
+
         public DateTime? booking_ankomst { get; set; }
 
         public DateTime? booking_afrejse { get; set; }

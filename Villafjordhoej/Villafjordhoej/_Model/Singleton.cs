@@ -23,9 +23,12 @@ namespace Villafjordhoej._Model
 
         public bool Succes { get; set; }
 
+
+        public int LogInMedarbejderId { get; set; }
+
         public Singleton()
         {
-
+            LogInMedarbejderId = 1;
         }
 
         //Henter den mellemligende tabel app_m_behandling

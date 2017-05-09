@@ -14,7 +14,7 @@ namespace Villafjordhoej._Model
         
         public string gaest_adresse { get; set; }
 
-        public int? gaest_tlf { get; set; }
+        public int gaest_tlf { get; set; }
         
         public string gaest_mail { get; set; }
 

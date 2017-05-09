@@ -17,16 +17,25 @@ namespace Villafjordhoej._ViewModel
 	{
 		//indeholder et instance af singleton
 	    public Singleton BookingSingleton { get; set; }
+        
 	    public M_Booking MBooking { get; set; }
+        
         public string Name { get; set; }
+	    public string Adresse { get; set; }
         public string Email { get; set; }
-        public string TelefonNr { get; set; }
-        public string Allergener { get; set; }
-        public string Information { get; set; }
+        public int TelefonNr { get; set; }
+
         public int AntalPersoner { get; set; }
-        public List<M_Vaerelse> Rooms { get; set; }
         public DateTime Ankomst { get; set; }
         public DateTime Afrejse { get; set; }
+        public string Allergener { get; set; }
+        public string Information { get; set; }
+	    public decimal AftaltPris { get; set; }
+
+        
+        public List<M_Vaerelse> Rooms { get; set; }
+        
+
 
 	    public RelayCommand RC_Opret { get; set; }
 	    //public RelayCommand RC_Rediger { get; set; }
@@ -43,7 +52,14 @@ namespace Villafjordhoej._ViewModel
 
 	    private void Opret()
 	    {
-	        //BookingSingleton.SaveBookings(new M_Booking(Name, Email, TelefonNr, Allergener, Information, AntalPersoner, Ankomst, Afrejse));   
+            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests.Count + 1, Name, Adresse, TelefonNr, Email));
+
+
+
+	        foreach (M_Vaerelse V in Rooms)
+	        {
+	            BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers.Count + 1, BookingSingleton.Bookings.Count, V.vaerelse_id, AftaltPris));
+	        }
 	    }
 
 	    private void Rediger()
