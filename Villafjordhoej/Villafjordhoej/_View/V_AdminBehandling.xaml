@@ -1,5 +1,4 @@
 ﻿<Page
-    x:Class="Villafjordhoej._View.V_AdminBehandling"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Villafjordhoej._View"
@@ -7,16 +6,47 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:_ViewModel="using:Villafjordhoej._ViewModel"
+    x:Class="Villafjordhoej._View.V_AdminBehandling"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid/>
-        <Button x:Name="NPAdminForside" Content="Admin Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,618,0,0" Height="69" Width="123">
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
-        </Button>
+        <Grid Background="#FF444444">
+            <Grid.DataContext>
+                <_ViewModel:VM_AdminBehandling/>
+            </Grid.DataContext>
+            <Button x:Name="NPAdminForside" Content="Admin Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1116,612,0,0" Height="69" Width="123" Background="#33FFFFFF">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="620" Margin="42,38,0,0" VerticalAlignment="Top" Width="420" Background="#33FFFFFF" ItemsSource="{Binding ABehandlingSingleton.Behandlings}"/>
+            <Button x:Name="Opret" Content="Opret" HorizontalAlignment="Left" Margin="504,38,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding OpretBehandlingRelayCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Rediger" Content="Rediger" HorizontalAlignment="Left" Margin="504,176,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding RedigerBehandlingRelayCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Slet" Content="Slet" HorizontalAlignment="Left" Margin="504,316,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:InvokeCommandAction Command="{Binding SletBehandlingRelayCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <TextBox x:Name="Navn" HorizontalAlignment="Left" Margin="698,38,0,0" TextWrapping="Wrap" Text="{Binding Navn, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Navn"/>
+            <TextBox x:Name="Beskrivelse" HorizontalAlignment="Left" Margin="698,107,0,0" TextWrapping="Wrap" Text="{Binding Beskrivelse, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Beskrivelse"/>
+            <TextBox x:Name="Pris" HorizontalAlignment="Left" Margin="698,176,0,0" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay}" VerticalAlignment="Top" Height="26" Width="121" PlaceholderText="Pris"/>
+        </Grid>
     </Grid>
 </Page>
