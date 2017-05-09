@@ -23,8 +23,10 @@ namespace Villafjordhoej._Model
 
         public bool Succes { get; set; }
 
+		public int Index { get; set; }
 
-        public int LogInMedarbejderId { get; set; }
+
+		public int LogInMedarbejderId { get; set; }
 
         public Singleton()
         {

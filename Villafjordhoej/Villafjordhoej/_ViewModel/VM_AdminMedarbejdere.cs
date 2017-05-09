@@ -37,12 +37,14 @@ namespace Villafjordhoej._ViewModel
 		private void SletMedarbejder()
 		{
 			//Manger funktion i singleton
+			
 		}
 
-		//Opretter en medarbejder
+		//Opretter en medarbejder og sender den til singleton til at blive gemt
 		private void OpretMedarbejder()
 		{
-			//MedarbejderSingleton.SaveMedarbejders(new M_Medarbejder(Name, Password));
+			MedarbejderSingleton.SaveMedarbejders(
+				new M_Medarbejder(MedarbejderSingleton.Medarbejders.Count + 1, Name, Password));
 		}
 	}
 }
