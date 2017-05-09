@@ -29,6 +29,13 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
+            <Button x:Name="NPForside" Content="Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,45,0,0" Height="69" Width="123">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
                 <ListView x:Name="listView" HorizontalAlignment="Left" Height="552" Margin="49,76,0,0" VerticalAlignment="Top" Width="329" Background="#33FFFFFF" ItemsSource="{Binding MedarbejderSingleton}"/>
             <TextBox x:Name="Navn" HorizontalAlignment="Left" Margin="436,76,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Height="38" Width="263" PlaceholderText="Navn"/>
             <TextBox x:Name="Password" HorizontalAlignment="Left" Margin="436,150,0,0" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay}" VerticalAlignment="Top" Height="38" Width="263" PlaceholderText="Kodeord"/>

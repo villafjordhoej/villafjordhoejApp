@@ -32,6 +32,13 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
+            <Button x:Name="NPForside" Content="Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,618,0,0" Height="69" Width="123">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
         </Grid>
     </Grid>
 </Page>
