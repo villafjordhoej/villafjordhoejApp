@@ -10,12 +10,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="NPAdminForside" Content="Admin Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,618,0,0" Height="69" Width="123">
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
-        </Button>
+        <Grid Background="#FF3A3A3A">
+            <Button x:Name="NPAdminForside" Content="Admin Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,624,0,0" Height="69" Width="123" Background="#33FFFFFF">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
