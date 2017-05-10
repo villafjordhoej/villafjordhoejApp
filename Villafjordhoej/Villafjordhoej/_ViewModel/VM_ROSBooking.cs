@@ -50,7 +50,6 @@ namespace Villafjordhoej._ViewModel
 	        BookingSingleton = Singleton.GetInstance;
 
 	        BookingSingleton.LoadVaerelser();
-            BookingSingleton.LoadBookings();
             BookingSingleton.LoadGaests();
             BookingSingleton.LoadMeVaerelsers();
 

@@ -20,6 +20,7 @@ namespace Villafjordhoej._ViewModel
 		{
 			//Opretter et instance af singleton
 			BookingSingleton = Singleton.GetInstance;
-		}
+            BookingSingleton.LoadBookings();
+        }
 	}
 }
