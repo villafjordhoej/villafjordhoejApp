@@ -129,6 +129,9 @@
     <Compile Include="_View\V_AdminMedarbejdere.xaml.cs">
       <DependentUpon>V_AdminMedarbejdere.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_View\V_Behandling.xaml.cs">
+      <DependentUpon>V_Behandling.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_View\V_Booking.xaml.cs">
       <DependentUpon>V_Booking.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,9 @@
     </Compile>
     <Compile Include="_View\V_RedigerBooking.xaml.cs">
       <DependentUpon>V_RedigerBooking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\V_ROSBehandling.xaml.cs">
+      <DependentUpon>V_ROSBehandling.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +194,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="_View\V_Behandling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="_View\V_Booking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -197,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_View\V_RedigerBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\V_ROSBehandling.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
