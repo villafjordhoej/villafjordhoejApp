@@ -54,7 +54,7 @@
             <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="446,485,0,0" VerticalAlignment="Top">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:InvokeCommandAction Command="{Binding RC_Opret, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <core:InvokeCommandAction Command="{Binding RC_Opret}"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
