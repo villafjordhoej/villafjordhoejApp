@@ -401,7 +401,7 @@ namespace Villafjordhoej.Persistency
 
                 try
                 {
-                    var test = await client.PostAsJsonAsync("api/app_m_vaerelse", o);
+                    var test = await client.PostAsJsonAsync("api/app_m_vaerelser", o);
                     return test.IsSuccessStatusCode;
                 }
                 catch (Exception)

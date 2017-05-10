@@ -33,7 +33,7 @@ namespace Villafjordhoej._ViewModel
         public DateTimeOffset Afrejse { get; set; }
         public string Allergener { get; set; }
         public string Information { get; set; }
-	    public decimal AftaltPris { get; set; }
+	    public double AftaltPris { get; set; }
 
 
         public TimeSpan ZeroTime = TimeSpan.Zero;
@@ -50,6 +50,9 @@ namespace Villafjordhoej._ViewModel
 	        BookingSingleton = Singleton.GetInstance;
 
 	        BookingSingleton.LoadVaerelser();
+            BookingSingleton.LoadBookings();
+            BookingSingleton.LoadGaests();
+            BookingSingleton.LoadMeVaerelsers();
 
 
             RC_Opret = new RelayCommand(Opret);
@@ -60,26 +63,37 @@ namespace Villafjordhoej._ViewModel
 
 	    private void Opret()
 	    {
-            //Gemmer en ny Gæt i databasen til brug i booking nedeunder
-            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id + 1,
-                Name, Adresse, TelefonNr, Email));
+            //Tjækker først om Geaster er NUll derefter Gemmer en ny Gæt i databasen til brug i booking nedeunder
+	        int TempGaestID;
+	        if (BookingSingleton.Gaests.Count == 0) { TempGaestID = 1; } else {  TempGaestID = BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id + 1; }
+            
+            BookingSingleton.SaveGaests(new M_Gaest(TempGaestID,Name, Adresse, TelefonNr, Email));
 
-            //Gemmer en ny booking (i DB) som skal bruges nedeunder også
-            BookingSingleton.SaveBookings(new M_Booking(BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id + 1, 
+
+
+
+            //Tjækker først om Bookings er NUll derefter Gemmer en ny booking (i DB) som skal bruges nedeunder også
+	        int TempBookingID;
+            if (BookingSingleton.Bookings.Count == 0) { TempBookingID = 1; } else { TempBookingID = BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id + 1; }
+
+            BookingSingleton.SaveBookings(new M_Booking(TempBookingID, 
                 BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id,
                 DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Ankomst, ZeroTime),
                 DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Afrejse, ZeroTime),
-                Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId)); 
+                Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId, AntalPersoner));
 
 
             //Gemmer alle værseler du har valgt i DB
-	        foreach (M_Vaerelse V in BookingSingleton.Vaerelser)
-	        {
-	            if (V.CheckBoxIsChecked)
-	            {
-	                BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers[BookingSingleton.Mellem_Vaerelsers.Count - 1].m_vaerelser_id + 1,BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id, V.vaerelse_id, AftaltPris));
+            foreach (M_Vaerelse V in BookingSingleton.Vaerelser)
+            {
+                if (V.CheckBoxIsChecked)
+                {
+                    int TempRoomID;
+                    if(BookingSingleton.Mellem_Vaerelsers.Count == 0) { TempRoomID = 1; } else { TempRoomID = BookingSingleton.Mellem_Vaerelsers[BookingSingleton.Mellem_Vaerelsers.Count - 1].m_vaerelser_id + 1; }
+	                BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(TempRoomID, TempBookingID, V.vaerelse_id, Convert.ToDecimal(AftaltPris)));
 	            }
 	        }
+            
 	    }
 
 	    private void Rediger()

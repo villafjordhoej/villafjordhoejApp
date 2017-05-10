@@ -27,7 +27,7 @@ namespace Villafjordhoej._Model
 
         public int? booking_modtaget_id { get; set; }
 
-	    public M_Booking(int bookingId, int? bookingGaestId, DateTime? bookingAnkomst, DateTime? bookingAfrejse, string bookingAllergener, string bookingInformation, DateTime? bookingModtagetDato, int? bookingModtagetId)
+	    public M_Booking(int bookingId, int? bookingGaestId, DateTime? bookingAnkomst, DateTime? bookingAfrejse, string bookingAllergener, string bookingInformation, DateTime? bookingModtagetDato, int? bookingModtagetId, int antalpersoner)
 	    {
 	        booking_id = bookingId;
 	        booking_gaest_id = bookingGaestId;
@@ -37,6 +37,7 @@ namespace Villafjordhoej._Model
 	        booking_information = bookingInformation;
 	        booking_modtaget_dato = bookingModtagetDato;
 	        booking_modtaget_id = bookingModtagetId;
+	        booking_antalpersoner = antalpersoner;
 	    }
 
 	    public override string ToString()
