@@ -24,8 +24,14 @@
                         <Run/>
                     </TextBlock>
                     <TextBlock x:Name="Tal_pladser" TextWrapping="Wrap" Text="{Binding vaerelse_antalpladser}" Margin="5,10,0,0" RenderTransformOrigin="0.375,0.435" HorizontalAlignment="Left"/>
-                    <Button x:Name="add" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40,0,0,0" Background="Lime" Height="20" d:LayoutOverrides="Height" Width="20" BorderThickness="3,0,0,0"/>
-                    <Button x:Name="remove" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40,0,0,0" Background="#FBFF0000" Height="20" Width="20" BorderThickness="3,0,0,0"/>
+                    <Button x:Name="add" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40,0,0,0" Background="Lime" Height="20" d:LayoutOverrides="Height" Width="20" BorderThickness="3,0,0,0" Visibility="{Binding KnapAddVisibility}">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Click">
+                                <core:InvokeCommandAction/>
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Button>
+                    <Button x:Name="remove" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="40,0,0,0" Background="#FBFF0000" Height="20" Width="20" BorderThickness="3,0,0,0" Visibility="{Binding KnapRemoveVisibility}"/>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
@@ -36,7 +42,7 @@
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource BookingRoomList}"/>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource BookingRoomList}" SelectedIndex="{Binding BookingSingleton.Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="446,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Navn" DataContext="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
             <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="446,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Email" DataContext="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
             <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="446,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" DataContext="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
@@ -52,7 +58,7 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding Rooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding SelectedRooms}"/>
             <Button x:Name="NPBooking" Content="Tilbage til Booking" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="48" Width="160">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">

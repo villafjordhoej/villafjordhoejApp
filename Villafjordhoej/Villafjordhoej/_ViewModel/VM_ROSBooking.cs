@@ -34,7 +34,7 @@ namespace Villafjordhoej._ViewModel
 	    public decimal AftaltPris { get; set; }
 
 
-	    public ObservableCollection<M_Vaerelse> Rooms { get; set; }
+	    public ObservableCollection<M_Vaerelse> SelectedRooms { get; set; }
 
         
 
@@ -44,6 +44,8 @@ namespace Villafjordhoej._ViewModel
 	    public RelayCommand RC_Opret { get; set; }
 	    //public RelayCommand RC_Rediger { get; set; }
 	    //public RelayCommand RC_Slet { get; set; }
+
+	    public RelayCommand RC_MoveToList { get; set; }
 
         //skal tage sig af ROS Booking view
 	    public VM_ROSBooking()
@@ -55,25 +57,27 @@ namespace Villafjordhoej._ViewModel
 
             RC_Opret = new RelayCommand(Opret);
             //RC_Rediger = new RelayCommand(Rediger);
-            //RC_Slet = new RelayCommand(Slet);   
+            //RC_Slet = new RelayCommand(Slet);
+
+            RC_MoveToList = new RelayCommand(MoveRoomToList);
 	    }
 
 	    private void Opret()
 	    {
             //Gemmer en ny Gæt i databasen til brug i booking nedeunder
-            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests.Count + 1,
+            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id,
                 Name, Adresse, TelefonNr, Email));
 
             //Gemmer en ny booking (i DB) som skal bruges nedeunder også
-            BookingSingleton.SaveBookings(new M_Booking(BookingSingleton.Bookings.Count + 1, 
+            BookingSingleton.SaveBookings(new M_Booking(BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id, 
                 BookingSingleton.Gaests.Count, Ankomst, Afrejse,
                 Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId)); 
 
 
             //Gemmer alle værseler du har valgt i DB
-	        foreach (M_Vaerelse V in Rooms)
+	        foreach (M_Vaerelse V in SelectedRooms)
 	        {
-	            BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers.Count + 1,
+	            BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers[BookingSingleton.Mellem_Vaerelsers.Count - 1].m_vaerelser_id,
                     BookingSingleton.Bookings.Count, V.vaerelse_id, AftaltPris));
 	        }
 	    }
@@ -87,6 +91,13 @@ namespace Villafjordhoej._ViewModel
 	    {
 	        
 	    }
+
+	    private void MoveRoomToList()
+	    {
+	        SelectedRooms.Add(BookingSingleton.Vaerelser[BookingSingleton.Index]);
+	    }
+
+
 
         #region PCS
         public event PropertyChangedEventHandler PropertyChanged;
