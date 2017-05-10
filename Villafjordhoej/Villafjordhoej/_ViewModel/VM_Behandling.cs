@@ -15,7 +15,10 @@ namespace Villafjordhoej._ViewModel
 		//sætter tidspunktet for behandlingen
 		public DateTime Tidspunkt { get; set; }
 
-		
+		public VM_Behandling()
+		{
+			BehandlingSingleton = Singleton.GetInstance;
+		}
 
 
 
