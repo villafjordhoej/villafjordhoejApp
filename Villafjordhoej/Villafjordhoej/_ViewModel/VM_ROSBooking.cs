@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
+using EventMaker.Converter;
 using Villafjordhoej.Annotations;
 using Villafjordhoej.Handler;
 using Villafjordhoej.Persistency;
@@ -27,25 +29,20 @@ namespace Villafjordhoej._ViewModel
         public int TelefonNr { get; set; }
 
         public int AntalPersoner { get; set; }
-        public DateTime Ankomst { get; set; }
-        public DateTime Afrejse { get; set; }
+        public DateTimeOffset Ankomst { get; set; }
+        public DateTimeOffset Afrejse { get; set; }
         public string Allergener { get; set; }
         public string Information { get; set; }
 	    public decimal AftaltPris { get; set; }
 
 
-	    public ObservableCollection<M_Vaerelse> SelectedRooms { get; set; }
-
-        
-
-        
+        public TimeSpan ZeroTime = TimeSpan.Zero;
 
 
 	    public RelayCommand RC_Opret { get; set; }
 	    //public RelayCommand RC_Rediger { get; set; }
 	    //public RelayCommand RC_Slet { get; set; }
-
-	    public RelayCommand RC_MoveToList { get; set; }
+        
 
         //skal tage sig af ROS Booking view
 	    public VM_ROSBooking()
@@ -59,26 +56,29 @@ namespace Villafjordhoej._ViewModel
             //RC_Rediger = new RelayCommand(Rediger);
             //RC_Slet = new RelayCommand(Slet);
 
-            RC_MoveToList = new RelayCommand(MoveRoomToList);
 	    }
 
 	    private void Opret()
 	    {
             //Gemmer en ny Gæt i databasen til brug i booking nedeunder
-            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id,
+            BookingSingleton.SaveGaests(new M_Gaest(BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id + 1,
                 Name, Adresse, TelefonNr, Email));
 
             //Gemmer en ny booking (i DB) som skal bruges nedeunder også
-            BookingSingleton.SaveBookings(new M_Booking(BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id, 
-                BookingSingleton.Gaests.Count, Ankomst, Afrejse,
+            BookingSingleton.SaveBookings(new M_Booking(BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id + 1, 
+                BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id,
+                DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Ankomst, ZeroTime),
+                DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Afrejse, ZeroTime),
                 Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId)); 
 
 
             //Gemmer alle værseler du har valgt i DB
-	        foreach (M_Vaerelse V in SelectedRooms)
+	        foreach (M_Vaerelse V in BookingSingleton.Vaerelser)
 	        {
-	            BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers[BookingSingleton.Mellem_Vaerelsers.Count - 1].m_vaerelser_id,
-                    BookingSingleton.Bookings.Count, V.vaerelse_id, AftaltPris));
+	            if (V.CheckBoxIsChecked)
+	            {
+	                BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.Mellem_Vaerelsers[BookingSingleton.Mellem_Vaerelsers.Count - 1].m_vaerelser_id + 1,BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id, V.vaerelse_id, AftaltPris));
+	            }
 	        }
 	    }
 
@@ -92,10 +92,6 @@ namespace Villafjordhoej._ViewModel
 	        
 	    }
 
-	    private void MoveRoomToList()
-	    {
-	        SelectedRooms.Add(BookingSingleton.Vaerelser[BookingSingleton.Index]);
-	    }
 
 
 

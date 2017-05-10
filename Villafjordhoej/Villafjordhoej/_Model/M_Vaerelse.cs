@@ -17,8 +17,7 @@ namespace Villafjordhoej._Model
 
         public byte? vaerelse_antalpladser { get; set; }
 
-        public bool KnapAddVisibility { get; set; }
-        public bool KnapRemoveVisibility { get; set; }
+        public bool CheckBoxIsChecked { get; set; }
 
 
 
@@ -29,8 +28,7 @@ namespace Villafjordhoej._Model
             vaerelse_pris = vaerelsePris;
             vaerelse_antalpladser = vaerelseAntalpladser;
 
-            KnapAddVisibility = true;
-            KnapRemoveVisibility = false;
+            CheckBoxIsChecked = false;
         }
 
         public override string ToString()

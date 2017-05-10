@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Handler\RelayArgCommand.cs" />
     <Compile Include="Handler\RelayCommand.cs" />
     <Compile Include="Persistency\DB_Persistency.cs" />
