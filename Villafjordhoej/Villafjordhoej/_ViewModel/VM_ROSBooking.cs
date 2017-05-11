@@ -63,7 +63,7 @@ namespace Villafjordhoej._ViewModel
 
 	    private void Opret()
 	    {
-            //Tjækker først om Geaster er NUll derefter Gemmer en ny Gæt i databasen til brug i booking nedeunder
+            //Tjekker først om Geaster er NUll derefter Gemmer en ny Gæt i databasen til brug i booking nedeunder
 	        int TempGaestID;
 	        if (BookingSingleton.Gaests.Count == 0) { TempGaestID = 1; } else {  TempGaestID = BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id + 1; }
             
@@ -72,7 +72,7 @@ namespace Villafjordhoej._ViewModel
 
 
 
-            //Tjækker først om Bookings er NUll derefter Gemmer en ny booking (i DB) som skal bruges nedeunder også
+            //Tjekker først om Bookings er NUll derefter Gemmer en ny booking (i DB) som skal bruges nedeunder også
 	        int TempBookingID;
             if (BookingSingleton.Bookings.Count == 0) { TempBookingID = 1; } else { TempBookingID = BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id + 1; }
 
