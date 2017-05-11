@@ -21,9 +21,8 @@ namespace Villafjordhoej._Model
 
 
 
-        public M_Vaerelse(int vaerelseId, string vaerelseNavn, decimal? vaerelsePris, byte? vaerelseAntalpladser)
+        public M_Vaerelse(string vaerelseNavn, decimal? vaerelsePris, byte? vaerelseAntalpladser)
         {
-            vaerelse_id = vaerelseId;
             vaerelse_navn = vaerelseNavn;
             vaerelse_pris = vaerelsePris;
             vaerelse_antalpladser = vaerelseAntalpladser;

@@ -18,9 +18,8 @@ namespace Villafjordhoej._Model
         
         public string gaest_mail { get; set; }
 
-        public M_Gaest(int gaestId, string gaestNavn, string gaestAdresse, int gaestTlf, string gaestMail)
+        public M_Gaest(string gaestNavn, string gaestAdresse, int gaestTlf, string gaestMail)
         {
-            gaest_id = gaestId;
             gaest_navn = gaestNavn;
             gaest_adresse = gaestAdresse;
             gaest_tlf = gaestTlf;

@@ -9,7 +9,6 @@ namespace VilaFjordhoejWS
     public partial class app_m_behandling
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int m_behandling_id { get; set; }
 
         public int? m_behandling_behandling_id { get; set; }

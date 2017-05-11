@@ -9,7 +9,6 @@ namespace VilaFjordhoejWS
     public partial class app_medarbejder
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int medarbejder_id { get; set; }
 
         [StringLength(50)]

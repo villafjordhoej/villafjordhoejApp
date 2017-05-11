@@ -9,7 +9,6 @@ namespace VilaFjordhoejWS
     public partial class app_booking
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int booking_id { get; set; }
 
         public int? booking_gaest_id { get; set; }
@@ -29,5 +28,7 @@ namespace VilaFjordhoejWS
         public DateTime? booking_modtaget_dato { get; set; }
 
         public int? booking_modtaget_id { get; set; }
+
+        public decimal? booking_aftaltpris { get; set; }
     }
 }

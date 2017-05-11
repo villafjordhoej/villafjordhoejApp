@@ -9,7 +9,6 @@ namespace VilaFjordhoejWS
     public partial class app_behandlinger
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int behandlinger_id { get; set; }
 
         [StringLength(20)]

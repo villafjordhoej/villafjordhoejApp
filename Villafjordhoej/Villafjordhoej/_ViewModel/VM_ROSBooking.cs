@@ -62,24 +62,16 @@ namespace Villafjordhoej._ViewModel
 
 	    private void Opret()
 	    {
-            //Tjækker først om Geaster er NUll derefter Gemmer en ny Gæt i databasen til brug i booking nedeunder
-	        int TempGaestID;
-	        if (BookingSingleton.Gaests.Count == 0) { TempGaestID = 1; } else {  TempGaestID = BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id + 1; }
+            //Gemmer en ny Gæt i databasen til brug i booking nedeunder
+            BookingSingleton.SaveGaests(new M_Gaest(Name, Adresse, TelefonNr, Email));
+
             
-            BookingSingleton.SaveGaests(new M_Gaest(TempGaestID,Name, Adresse, TelefonNr, Email));
-
-
-
-
-            //Tjækker først om Bookings er NUll derefter Gemmer en ny booking (i DB) som skal bruges nedeunder også
-	        int TempBookingID;
-            if (BookingSingleton.Bookings.Count == 0) { TempBookingID = 1; } else { TempBookingID = BookingSingleton.Bookings[BookingSingleton.Bookings.Count - 1].booking_id + 1; }
-
-            BookingSingleton.SaveBookings(new M_Booking(TempBookingID, 
-                BookingSingleton.Gaests[BookingSingleton.Gaests.Count - 1].gaest_id,
+            //Gemmer en ny booking (i DB) som skal bruges nedeunder også
+            BookingSingleton.SaveBookings(new M_Booking( 
+                BookingSingleton.Gaests.Last().gaest_id,
                 DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Ankomst, ZeroTime),
                 DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Afrejse, ZeroTime),
-                Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId, AntalPersoner));
+                Allergener, Information, DateTime.Now, BookingSingleton.LogInMedarbejderId, AntalPersoner, Convert.ToDecimal(AftaltPris)));
 
 
             //Gemmer alle værseler du har valgt i DB
@@ -87,9 +79,7 @@ namespace Villafjordhoej._ViewModel
             {
                 if (V.CheckBoxIsChecked)
                 {
-                    int TempRoomID;
-                    if(BookingSingleton.Mellem_Vaerelsers.Count == 0) { TempRoomID = 1; } else { TempRoomID = BookingSingleton.Mellem_Vaerelsers[BookingSingleton.Mellem_Vaerelsers.Count - 1].m_vaerelser_id + 1; }
-	                BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(TempRoomID, TempBookingID, V.vaerelse_id, Convert.ToDecimal(AftaltPris)));
+	                BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.BookingsCurrentID, V.vaerelse_id));
 	            }
 	        }
             

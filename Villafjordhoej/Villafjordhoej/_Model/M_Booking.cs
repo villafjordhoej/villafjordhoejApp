@@ -27,9 +27,12 @@ namespace Villafjordhoej._Model
 
         public int? booking_modtaget_id { get; set; }
 
-	    public M_Booking(int bookingId, int? bookingGaestId, DateTime? bookingAnkomst, DateTime? bookingAfrejse, string bookingAllergener, string bookingInformation, DateTime? bookingModtagetDato, int? bookingModtagetId, int antalpersoner)
-	    {
-	        booking_id = bookingId;
+	    public decimal? booking_aftaltpris { get; set; }
+	
+
+        public M_Booking(int? bookingGaestId, DateTime? bookingAnkomst, DateTime? bookingAfrejse, string bookingAllergener, string bookingInformation, DateTime? bookingModtagetDato, int? bookingModtagetId, int antalpersoner, decimal? aftaltpris)
+        {
+            booking_aftaltpris = aftaltpris;
 	        booking_gaest_id = bookingGaestId;
 	        booking_ankomst = bookingAnkomst;
 	        booking_afrejse = bookingAfrejse;

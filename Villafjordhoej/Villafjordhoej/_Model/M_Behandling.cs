@@ -19,9 +19,8 @@ namespace Villafjordhoej._Model
 
         public byte? behandlinger_boolbehandler { get; set; }
 
-        public M_Behandling(int behandlingerId, string behandlingerNavn, string behandlingerBeskrivelse, decimal? behandlingerPris, byte? behandlingerBoolbehandler)
+        public M_Behandling(string behandlingerNavn, string behandlingerBeskrivelse, decimal? behandlingerPris, byte? behandlingerBoolbehandler)
         {
-            behandlinger_id = behandlingerId;
             behandlinger_navn = behandlingerNavn;
             behandlinger_beskrivelse = behandlingerBeskrivelse;
             behandlinger_pris = behandlingerPris;

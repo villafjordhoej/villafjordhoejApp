@@ -55,8 +55,8 @@ namespace VilaFjordhoejWS
                 .Property(e => e.gaest_mail)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<app_m_vaerelser>()
-                .Property(e => e.m_vaerelser_aftalt_pris)
+            modelBuilder.Entity<app_booking>()
+                .Property(e => e.booking_aftaltpris)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<app_medarbejder>()

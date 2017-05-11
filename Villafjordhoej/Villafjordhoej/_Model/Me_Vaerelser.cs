@@ -13,20 +13,17 @@ namespace Villafjordhoej._Model
         public int? m_vaerelser_booking_id { get; set; }
 
         public int? m_vaerelser_vaerelser_id { get; set; }
+        
 
-        public decimal? m_vaerelser_aftalt_pris { get; set; }
-
-        public Me_Vaerelser(int mVaerelserId, int? mVaerelserBookingId, int? mVaerelserVaerelserId, decimal? mVaerelserAftaltPris)
+        public Me_Vaerelser(int? mVaerelserBookingId, int? mVaerelserVaerelserId)
         {
-            m_vaerelser_id = mVaerelserId;
             m_vaerelser_booking_id = mVaerelserBookingId;
             m_vaerelser_vaerelser_id = mVaerelserVaerelserId;
-            m_vaerelser_aftalt_pris = mVaerelserAftaltPris;
         }
 
         public override string ToString()
         {
-            return $"{nameof(m_vaerelser_id)}: {m_vaerelser_id}, {nameof(m_vaerelser_booking_id)}: {m_vaerelser_booking_id}, {nameof(m_vaerelser_vaerelser_id)}: {m_vaerelser_vaerelser_id}, {nameof(m_vaerelser_aftalt_pris)}: {m_vaerelser_aftalt_pris}";
+            return $"{nameof(m_vaerelser_id)}: {m_vaerelser_id}, {nameof(m_vaerelser_booking_id)}: {m_vaerelser_booking_id}, {nameof(m_vaerelser_vaerelser_id)}: {m_vaerelser_vaerelser_id}";
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Villafjordhoej._ViewModel
 		private void OpretMedarbejder()
 		{
 			MedarbejderSingleton.SaveMedarbejders(
-				new M_Medarbejder(MedarbejderSingleton.Medarbejders.Count + 1, Name, Password));
+				new M_Medarbejder(Name, Password));
 		}
 
 		private void RedigerMedarbejder()

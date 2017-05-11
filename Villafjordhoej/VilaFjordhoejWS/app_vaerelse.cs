@@ -9,7 +9,6 @@ namespace VilaFjordhoejWS
     public partial class app_vaerelse
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int vaerelse_id { get; set; }
 
         [StringLength(50)]

@@ -14,9 +14,8 @@ namespace Villafjordhoej._Model
         
         public string medarbejder_adresse { get; set; }
 
-        public M_Medarbejder(int medarbejderId, string medarbejderNavn, string medarbejderAdresse)
+        public M_Medarbejder(string medarbejderNavn, string medarbejderAdresse)
         {
-            medarbejder_id = medarbejderId;
             medarbejder_navn = medarbejderNavn;
             medarbejder_adresse = medarbejderAdresse;
         }

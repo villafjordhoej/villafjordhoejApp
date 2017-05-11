@@ -18,9 +18,8 @@ namespace Villafjordhoej._Model
 
         public DateTime? m_behandling_datetime { get; set; }
 
-        public Me_Behandling(int mBehandlingId, int? mBehandlingBehandlingId, int? mBehandlingBookingId, DateTime? mBehandlingDatetime)
+        public Me_Behandling(int? mBehandlingBehandlingId, int? mBehandlingBookingId, DateTime? mBehandlingDatetime)
         {
-            m_behandling_id = mBehandlingId;
             m_behandling_behandling_id = mBehandlingBehandlingId;
             m_behandling_booking_id = mBehandlingBookingId;
             m_behandling_datetime = mBehandlingDatetime;

@@ -9,7 +9,6 @@ namespace VilaFjordhoejWS
     public partial class app_gaest
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int gaest_id { get; set; }
 
         [StringLength(50)]
