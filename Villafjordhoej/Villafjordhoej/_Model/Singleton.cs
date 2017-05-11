@@ -50,10 +50,13 @@ namespace Villafjordhoej._Model
             LogInMedarbejderId = 1;
         }
 
+
+        #region Load
+
         //Henter den mellemligende tabel app_m_behandling
         public async void LoadMeBehandlings()
         {
-            Mellem_Behandlings = new ObservableCollection<Me_Behandling>(await Persistency.DB_Persistency.LoadMellemBehandlingsFromDB());
+            Mellem_Behandlings = new ObservableCollection<Me_Behandling>(await DB_Persistency.LoadMellemBehandlingsFromDB());
             if (Mellem_Behandlings.Count != 0)
             {
                 Mellem_BeCurrentID = Mellem_Behandlings.Last().m_behandling_id;
@@ -67,7 +70,7 @@ namespace Villafjordhoej._Model
         //Henter den mellemligende tabel app_m_vaerelser
         public async void LoadMeVaerelsers()
         {
-            Mellem_Vaerelsers = new ObservableCollection<Me_Vaerelser>(await Persistency.DB_Persistency.LoadMellemVaerelserFromDB());
+            Mellem_Vaerelsers = new ObservableCollection<Me_Vaerelser>(await DB_Persistency.LoadMellemVaerelserFromDB());
             if (Mellem_Vaerelsers.Count != 0)
             {
                 Mellem_VaCurrentID = Mellem_Vaerelsers.Last().m_vaerelser_id;
@@ -81,7 +84,7 @@ namespace Villafjordhoej._Model
         //Henter medarbejdere fra DB
         public async void LoadMedarbejders()
         {
-            Medarbejders = new ObservableCollection<M_Medarbejder>(await Persistency.DB_Persistency.LoadMedarbejdersFromDB());
+            Medarbejders = new ObservableCollection<M_Medarbejder>(await DB_Persistency.LoadMedarbejdersFromDB());
             if (Medarbejders.Count != 0)
             {
                 MedarbejderCurrentID = Medarbejders.Last().medarbejder_id;
@@ -95,7 +98,7 @@ namespace Villafjordhoej._Model
         //Henter Behandlinger fra DB
         public async void LoadBehandlings()
         {
-            Behandlings = new ObservableCollection<M_Behandling>(await Persistency.DB_Persistency.LoadBehandlingsFromDB());
+            Behandlings = new ObservableCollection<M_Behandling>(await DB_Persistency.LoadBehandlingsFromDB());
             if (Behandlings.Count != 0)
             {
                 BehandlingCurrentID = Behandlings.Last().behandlinger_id;
@@ -109,7 +112,7 @@ namespace Villafjordhoej._Model
         //Henter Bookings fra DB
         public async void LoadBookings()
         {
-            Bookings = new ObservableCollection<M_Booking>(await Persistency.DB_Persistency.LoadBookingsFromDB());
+            Bookings = new ObservableCollection<M_Booking>(await DB_Persistency.LoadBookingsFromDB());
             if (Bookings.Count != 0)
             {
                 BookingsCurrentID = Bookings.Last().booking_id;
@@ -138,7 +141,7 @@ namespace Villafjordhoej._Model
         //Henter Gæster fra DB
         public async void LoadGaests()
         {
-            Gaests = new ObservableCollection<M_Gaest>(await Persistency.DB_Persistency.LoadGaestsFromDB());
+            Gaests = new ObservableCollection<M_Gaest>(await DB_Persistency.LoadGaestsFromDB());
             if (Gaests.Count != 0)
             {
                 GaestsCurrentID = Gaests.Last().gaest_id;
@@ -149,15 +152,17 @@ namespace Villafjordhoej._Model
             }
         }
 
+        #endregion
 
 
+        #region Save
 
         //Gemmer den mellemligende tabel app_m_behandling i DB og i Collectionen
         public async void SaveMeBehandlings(Me_Behandling o)
         {
             o.m_behandling_id = ++Mellem_BeCurrentID;
             Mellem_Behandlings.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveMellemBehandlingToDB(o);
+            Succes = await DB_Persistency.SaveMellemBehandlingToDB(o);
 
         }
 
@@ -166,7 +171,7 @@ namespace Villafjordhoej._Model
         {
             o.m_vaerelser_id = ++Mellem_VaCurrentID;
             Mellem_Vaerelsers.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveMellemVaerelseToDB(o);
+            Succes = await DB_Persistency.SaveMellemVaerelseToDB(o);
 
         }
 
@@ -175,7 +180,7 @@ namespace Villafjordhoej._Model
         {
             o.medarbejder_id = ++MedarbejderCurrentID;
             Medarbejders.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveMedarbejderToDB(o);
+            Succes = await DB_Persistency.SaveMedarbejderToDB(o);
 
         }
 
@@ -184,7 +189,7 @@ namespace Villafjordhoej._Model
         {
             o.behandlinger_id = ++BehandlingCurrentID;
             Behandlings.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveBehandlingToDB(o);
+            Succes = await DB_Persistency.SaveBehandlingToDB(o);
 
         }
 
@@ -193,7 +198,7 @@ namespace Villafjordhoej._Model
         {
             o.booking_id = ++BookingsCurrentID;
             Bookings.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveBookingToDB(o);
+            Succes = await DB_Persistency.SaveBookingToDB(o);
 
         }
 
@@ -202,7 +207,7 @@ namespace Villafjordhoej._Model
         {
             o.vaerelse_id = ++VaerelserCurrentID;
             Vaerelser.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveVaerelseToDB(o);
+            Succes = await DB_Persistency.SaveVaerelseToDB(o);
 
         }
 
@@ -211,9 +216,11 @@ namespace Villafjordhoej._Model
         {
             o.gaest_id = ++GaestsCurrentID;
             Gaests.Add(o);
-            Succes = await Persistency.DB_Persistency.SaveGaestToDB(o);
+            Succes = await DB_Persistency.SaveGaestToDB(o);
 
         }
+
+        #endregion
 
 
 

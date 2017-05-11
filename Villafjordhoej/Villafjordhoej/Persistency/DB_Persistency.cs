@@ -23,8 +23,9 @@ namespace Villafjordhoej.Persistency
         {
             
         }
-        
 
+
+        #region Load
 
         public static async Task<IEnumerable<M_Gaest>> LoadGaestsFromDB()
         {
@@ -55,7 +56,7 @@ namespace Villafjordhoej.Persistency
                 }
             }
         }
-        
+
         public static async Task<IEnumerable<M_Booking>> LoadBookingsFromDB()
         {
             using (var client = new HttpClient(Handler, false))
@@ -205,7 +206,7 @@ namespace Villafjordhoej.Persistency
                 }
             }
         }
-        
+
         public static async Task<IEnumerable<Me_Vaerelser>> LoadMellemVaerelserFromDB()
         {
             using (var client = new HttpClient(Handler, false))
@@ -236,6 +237,9 @@ namespace Villafjordhoej.Persistency
             }
         }
 
+        #endregion
+
+        #region Save
 
         public static async Task<bool> SaveGaestToDB(M_Gaest o)
         {
@@ -412,7 +416,365 @@ namespace Villafjordhoej.Persistency
             }
         }
 
+        #endregion
 
+        #region Edit
+
+        public static async Task<bool> EditGaestToDB(M_Gaest o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_gaest/" + o.gaest_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> EditBookingToDB(M_Booking o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_booking/" + o.booking_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> EditVaerelseToDB(M_Vaerelse o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_vaerelse/" + o.vaerelse_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> EditBehandlingToDB(M_Behandling o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_behandling/" + o.behandlinger_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> EditMedarbejderToDB(M_Medarbejder o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_medarbejder/" + o.medarbejder_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> EditMellemBehandlingToDB(Me_Behandling o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_m_behandling/" + o.m_behandling_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> EditmellemVaerelseToDB(Me_Vaerelser o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.PutAsJsonAsync("api/app_m_vaerelser/" + o.m_vaerelser_id, o);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Delete
+
+        public static async Task<bool> DeleteGaestFromDB(M_Gaest o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_gaest/" + o.gaest_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> DeleteBookingFromDB(M_Booking o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_booking/" + o.booking_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> DeleteVaerelseFromDB(M_Vaerelse o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_vaerelse/" + o.vaerelse_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> DeleteBehandlingFromDB(M_Behandling o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_behandlinger/" + o.behandlinger_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> DeleteMedarbejderFromDB(M_Medarbejder o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_medarbejder/" + o.medarbejder_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> DeleteMellemBehandlingFromDB(Me_Behandling o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_m_behandling/" + o.m_behandling_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<bool> DeleteMellemVaerelseFromDB(Me_Vaerelser o)
+        {
+            string jsonDBString = JsonConvert.SerializeObject(o);
+
+
+            using (var client = new HttpClient(Handler, false))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                try
+                {
+                    var test = await client.DeleteAsync("api/app_m_vaerelse/" + o.m_vaerelser_id);
+                    return test.IsSuccessStatusCode;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        } 
+
+        #endregion
 
     }
 }
