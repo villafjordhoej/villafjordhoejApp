@@ -96,6 +96,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Exceptions\AllergenerIsNullException.cs" />
+    <Compile Include="Exceptions\DatabaseException.cs" />
+    <Compile Include="Exceptions\MulipleIsNullException.cs" />
+    <Compile Include="Exceptions\NameIsNullException.cs" />
     <Compile Include="Handler\RelayArgCommand.cs" />
     <Compile Include="Handler\RelayCommand.cs" />
     <Compile Include="Persistency\DB_Persistency.cs" />

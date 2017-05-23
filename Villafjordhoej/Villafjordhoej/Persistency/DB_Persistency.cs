@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Villafjordhoej.Handler;
 using Villafjordhoej._Model;
 
 namespace Villafjordhoej.Persistency
@@ -82,7 +83,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -107,7 +108,7 @@ namespace Villafjordhoej.Persistency
                     }
                     else
                     {
-                        return null;
+                        throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                     }
                 }
                 catch (Exception)
@@ -137,7 +138,7 @@ namespace Villafjordhoej.Persistency
                     }
                     else
                     {
-                        return null;
+                        throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                     }
                 }
                 catch (Exception)
@@ -167,7 +168,7 @@ namespace Villafjordhoej.Persistency
                     }
                     else
                     {
-                        return null;
+                        throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                     }
                 }
                 catch (Exception)
@@ -202,7 +203,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -232,7 +233,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -260,8 +261,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -285,8 +285,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -310,8 +309,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -335,8 +333,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -360,8 +357,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -385,8 +381,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -410,8 +405,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -439,8 +433,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -464,8 +457,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -489,8 +481,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -514,8 +505,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -539,8 +529,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -564,8 +553,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -589,8 +577,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -618,8 +605,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -643,8 +629,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -668,8 +653,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -693,8 +677,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -718,8 +701,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -743,8 +725,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         }
@@ -768,8 +749,7 @@ namespace Villafjordhoej.Persistency
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new DatabaseException("Der opstod fejl på netværket \n \nTjæk at du har netværk.\nKontakt evt. Administrator.");
                 }
             }
         } 

@@ -35,8 +35,8 @@ namespace Villafjordhoej._ViewModel
 	    public void FindSyvDageBookings()
 	    {
 	        var LinqQuery1 = from Booking in BookingSingleton.Bookings
-	            where Booking.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.booking_ankomst >= DateTime.Now
-	            select Booking;
+	                         where Booking.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.booking_ankomst >= DateTime.Now
+	                         select Booking;
 
 	        foreach (M_Booking B in LinqQuery1)
 	        {
