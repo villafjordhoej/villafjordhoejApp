@@ -40,7 +40,7 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FFB9CA95">
+        <Grid Background="#FFB9CA95">
             <Grid.DataContext>
                 <_ViewModel:VM_Booking/>
             </Grid.DataContext>

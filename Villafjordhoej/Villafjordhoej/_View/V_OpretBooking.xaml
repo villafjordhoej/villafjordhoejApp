@@ -31,7 +31,7 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FFB9CA95">
+        <Grid HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920" Background="#FFB9CA95">
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
@@ -61,11 +61,11 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <TextBlock x:Name="ankomst" HorizontalAlignment="Left" Margin="446,0,0,249" TextWrapping="Wrap" VerticalAlignment="Bottom">
+            <TextBlock x:Name="ankomst" HorizontalAlignment="Left" Margin="446,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
                 <Run Text="Ankomst"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBlock x:Name="afrejse" HorizontalAlignment="Left" Margin="446,0,0,187" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="Afrejse:"/>
+            <TextBlock x:Name="afrejse" HorizontalAlignment="Left" Margin="446,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Afrejse:"/>
         </Grid>
 
     </Grid>
