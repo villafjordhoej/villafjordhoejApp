@@ -49,6 +49,9 @@ namespace Villafjordhoej._ViewModel
         //skal tage sig af ROS Booking view
         public VM_ROSBooking()
         {
+            Ankomst = DateTimeOffset.Now;
+            Afrejse = DateTimeOffset.Now;
+
             BookingSingleton = Singleton.GetInstance;
 
             BookingSingleton.LoadVaerelser();

@@ -14,19 +14,22 @@ namespace Villafjordhoej._ViewModel
 	{
 		//indeholder et instance af singleton
 		public Singleton BookingSingleton { get; set; }
-	    public List<M_Booking> SyvDagsBookings { get; set; }
+	    public List<Object> SyvDagsBookings { get; set; }
 
 
 
 
 		public VM_Booking()
 		{
-            SyvDagsBookings = new List<M_Booking>();
+            SyvDagsBookings = new List<Object>();
 
 
 			//Opretter et instance af singleton
 			BookingSingleton = Singleton.GetInstance;
+
+            //
             BookingSingleton.LoadBookings();
+            BookingSingleton.LoadGaests();
 
             FindSyvDageBookings();
         }
@@ -35,10 +38,11 @@ namespace Villafjordhoej._ViewModel
 	    public void FindSyvDageBookings()
 	    {
 	        var LinqQuery1 = from Booking in BookingSingleton.Bookings
-	                         where Booking.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.booking_ankomst >= DateTime.Now
-	                         select Booking;
+                             join Gaest in BookingSingleton.Gaests on Booking.booking_gaest_id equals Gaest.gaest_id
+                             where Booking.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.booking_ankomst >= DateTime.Now
+                             select new { booking = Booking, gaest = Gaest };
 
-	        foreach (M_Booking B in LinqQuery1)
+            foreach (var B in LinqQuery1)
 	        {
 	            SyvDagsBookings.Add(B);
 	        }
