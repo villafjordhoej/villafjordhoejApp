@@ -58,7 +58,7 @@
                     Height="70" 
                     Width="170"
                     VerticalAlignment="Stretch" 
-                    Background="#33FFFFFF" Click="NPOpretBehandling_Click">
+                    Background="#33FFFFFF">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_ROSBehandling"/>
