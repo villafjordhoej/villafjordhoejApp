@@ -49,6 +49,7 @@ namespace Villafjordhoej._ViewModel
         //skal tage sig af ROS Booking view
         public VM_ROSBooking()
         {
+            //Sætter Ankomst of Afrejse's tid til NU
             Ankomst = DateTimeOffset.Now;
             Afrejse = DateTimeOffset.Now;
 
