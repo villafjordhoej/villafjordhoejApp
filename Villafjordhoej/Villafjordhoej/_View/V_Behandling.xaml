@@ -13,24 +13,23 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <Grid x:Name="Baggrunds_Grid" 
-              Background="#FF303030">
+              Background="#FFB9CA95">
             <Grid.DataContext>
                 <_ViewModel:VM_Behandling/>
             </Grid.DataContext>
 
             <ListView x:Name="Bookings" 
                       HorizontalAlignment="Left" 
-                      Height="603" 
+                      Height="489" 
                       Margin="58,49,0,0" 
                       VerticalAlignment="Top" 
                       Width="368" 
-                      Background="#33FFFFFF" 
                       ItemsSource="{Binding BehandlingSingleton.Bookings}" 
-                      SelectedIndex="{Binding BehandlingSingleton.Index}"/>
+                      SelectedIndex="{Binding BehandlingSingleton.Index}" BorderBrush="DarkGreen" BorderThickness="2"/>
 
             <ListView x:Name="Behandlinger" 
                       HorizontalAlignment="Left" 
-                      Height="603"
+                      Height="489"
                       Margin="860,49,0,0" 
                       VerticalAlignment="Top" 
                       Width="365" 
@@ -40,10 +39,10 @@
             <Button x:Name="Forsiden" 
                     Content="Forside" 
                     HorizontalAlignment="Left" 
-                    Margin="470,568,0,0" 
+                    Margin="58,568,0,0" 
                     VerticalAlignment="Top" 
-                    Height="84" 
-                    Width="151" 
+                    Height="70" 
+                    Width="170" 
                     Background="#33FFFFFF">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
@@ -53,11 +52,13 @@
             </Button>
 
             <Button x:Name="NPOpretBehandling" 
-                    Content="Tilføj&#xD;&#xA;Behandling" 
+                    Content="Tilføj Behandling" 
                     HorizontalAlignment="Stretch" 
-                    Margin="666,568,467,68" 
+                    Margin="559,49,551,601"
+                    Height="70" 
+                    Width="170"
                     VerticalAlignment="Stretch" 
-                    Background="#33FFFFFF">
+                    Background="#33FFFFFF" Click="NPOpretBehandling_Click">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_ROSBehandling"/>

@@ -40,26 +40,26 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280">
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FFB9CA95">
             <Grid.DataContext>
                 <_ViewModel:VM_Booking/>
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="454" Margin="100,134,0,0" VerticalAlignment="Top" Width="460" ItemsSource="{Binding SyvDagsBookings}" ItemTemplate="{StaticResource BookingListe1}"/>
-            <Button x:Name="NPOpretBooking" Content="Opret Booking" HorizontalAlignment="Left" Margin="638,134,0,0" VerticalAlignment="Top" Height="48" Width="125">
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="540" Margin="50,50,0,0" VerticalAlignment="Top" Width="460" ItemsSource="{Binding SyvDagsBookings}" ItemTemplate="{StaticResource BookingListe1}" BorderBrush="#FF0A6400" BorderThickness="2"/>
+            <Button x:Name="NPOpretBooking" Content="Opret Booking" HorizontalAlignment="Left" Margin="570,50,0,0" VerticalAlignment="Top" Height="50" Width="160">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_OpretBooking"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="NPRedigerBooking" Content="Rediger Booking" HorizontalAlignment="Left" Margin="638,205,0,0" VerticalAlignment="Top" Height="48" Width="125">
+            <Button x:Name="NPRedigerBooking" Content="Rediger Booking" HorizontalAlignment="Left" Margin="570,130,0,0" VerticalAlignment="Top" Height="50" Width="160" Click="NPRedigerBooking_Click">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="NPForside" Content="Tilbage til forside" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="48" Width="125">
+            <Button x:Name="NPForside" Content="Tilbage" HorizontalAlignment="Left" Margin="50,630,0,0" VerticalAlignment="Top" Height="50" Width="160">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
                         <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside"/>

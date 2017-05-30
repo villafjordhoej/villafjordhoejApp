@@ -10,7 +10,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="#FF3A3A3A">
+        <Grid>
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
+            </Grid.Background>
             <Button x:Name="NPAdminForside" Content="Admin Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,624,0,0" Height="69" Width="123" Background="#33FFFFFF">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">

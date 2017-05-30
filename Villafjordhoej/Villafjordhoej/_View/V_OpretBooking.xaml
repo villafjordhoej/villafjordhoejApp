@@ -31,11 +31,11 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280">
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FFB9CA95">
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource BookingRoomList}" SelectedIndex="{Binding BookingSingleton.Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource BookingRoomList}" SelectedIndex="{Binding BookingSingleton.Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderBrush="DarkGreen" BorderThickness="2"/>
             <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="446,80,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Navn" Width="320"/>
             <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="446,117,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Email" Width="320"/>
             <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="446,154,0,0" TextWrapping="Wrap" Text="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" Width="320"/>

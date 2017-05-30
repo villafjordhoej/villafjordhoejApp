@@ -12,6 +12,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
+            </Grid.Background>
             <Grid.DataContext>
                 <viewModel:VM_ROSBooking/>
             </Grid.DataContext>

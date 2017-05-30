@@ -10,16 +10,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="Baggrunds_Grid" Background="#FF383838">
+        <Grid x:Name="Baggrunds_Grid">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
+            </Grid.Background>
             <Grid.DataContext>
                 <_ViewModel:VM_Behandling/>
             </Grid.DataContext>
-            <ListView x:Name="BookingBehandlinger" HorizontalAlignment="Left" Height="636" Margin="39,46,0,0" VerticalAlignment="Top" Width="320" Background="#33FFFFFF" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
+            <ListView x:Name="BookingBehandlinger" HorizontalAlignment="Left" Height="509" Margin="39,46,0,0" VerticalAlignment="Top" Width="320" Background="#33FFFFFF" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
 
             <Button x:Name="NPBooking" 
                 Content="Tilbage" 
                 HorizontalAlignment="Left" 
-                Margin="1092,598,0,0" 
+                Margin="39,595,0,0" 
                 VerticalAlignment="Top" 
                 Height="84" 
                 Width="151" 
