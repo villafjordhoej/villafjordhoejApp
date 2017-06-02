@@ -109,7 +109,7 @@ namespace Villafjordhoej._Model
             }
         }
 
-        //Henter Bookings fra DB
+        //Henter Bookings fra DBs
         public async void LoadBookings()
         {
             Bookings = new ObservableCollection<M_Booking>(await DB_Persistency.LoadBookingsFromDB());
