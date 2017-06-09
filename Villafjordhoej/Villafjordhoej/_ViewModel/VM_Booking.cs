@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Villafjordhoej.Persistency;
 using Villafjordhoej._Model;
+using WinRTXamlToolkit.Tools;
 
 namespace Villafjordhoej._ViewModel
 {
@@ -30,6 +31,10 @@ namespace Villafjordhoej._ViewModel
             //
             BookingSingleton.LoadBookings();
             BookingSingleton.LoadGaests();
+            BookingSingleton.LoadMeVaerelsers();
+            BookingSingleton.LoadVaerelser();
+		    
+
 
             FindSyvDageBookings();
         }
@@ -37,12 +42,27 @@ namespace Villafjordhoej._ViewModel
 
 	    public void FindSyvDageBookings()
 	    {
-	        var LinqQuery1 = from Booking in BookingSingleton.Bookings
-                             join Gaest in BookingSingleton.Gaests on Booking.booking_gaest_id equals Gaest.gaest_id
-                             where Booking.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.booking_ankomst >= DateTime.Now
+	        var LinqQuery1 = from Mellem in BookingSingleton.Mellem_Vaerelsers
+	            join Vaerelse in BookingSingleton.Vaerelser on Mellem.m_vaerelser_vaerelser_id equals Vaerelse.vaerelse_id
+	            select new {me = Mellem, v = Vaerelse};
+
+
+            var LinqQuery2 = from Booking in BookingSingleton.Bookings
+                               join mel in LinqQuery1 on Booking.booking_id equals mel.me.m_vaerelser_booking_id into x
+                               select new {bo = Booking, xx = x};
+
+
+
+
+            var LinqQuery3 = from Booking in LinqQuery2
+                             join Gaest in BookingSingleton.Gaests on Booking.bo.booking_gaest_id equals Gaest.gaest_id
+
+                             
+                             //join Vaerelse in BookingSingleton.Vaerelser on me.ToArray()[].m_vaerelser_vaerelser_id equals Vaerelse.vaerelse_id into v
+                             where Booking.bo.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.bo.booking_ankomst >= DateTime.Today.AddDays(-1)
                              select new { booking = Booking, gaest = Gaest };
 
-            foreach (var B in LinqQuery1)
+            foreach (var B in LinqQuery3)
 	        {
 	            SyvDagsBookings.Add(B);
 	        }

@@ -12,8 +12,12 @@
 
 
 
+
+
+
+
         <DataTemplate x:Key="BookingListe1">
-            <Grid Height="101" Width="433">
+            <Grid Height="110" Width="433">
                 <StackPanel d:LayoutOverrides="LeftPosition, RightPosition">
                     <StackPanel Orientation="Horizontal" Margin="10,0">
                         <TextBlock x:Name="Navn1" TextWrapping="Wrap" Text="Navn:"/>
@@ -25,12 +29,13 @@
                         <TextBlock x:Name="AP" TextWrapping="Wrap" Margin="10,0,0,0" d:LayoutOverrides="LeftPosition, RightPosition">
                             <Run Text="Antal personer:"/>
                         </TextBlock>
-                        <TextBlock x:Name="AntalPersoner" TextWrapping="Wrap" Text="{Binding booking.booking_antalpersoner}" Margin="2,0,0,0" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="AntalPersoner" TextWrapping="Wrap" Text="{Binding booking.bo.booking_antalpersoner}" Margin="2,0,0,0" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0">
                         <TextBlock x:Name="ANK" TextWrapping="Wrap" Text="Ankomst:" VerticalAlignment="Top" d:LayoutOverrides="Width, TopPosition, BottomPosition" Margin="0"/>
-                        <TextBlock x:Name="Ankomst" TextWrapping="Wrap" Text="{Binding booking.booking_ankomst}" Margin="11,0,0,0" Height="33" d:LayoutOverrides="Width"/>
+                        <TextBlock x:Name="Ankomst" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst}" Margin="11,0,0,0" Height="33" d:LayoutOverrides="Width"/>
                     </StackPanel>
+                    <StackPanel Height="2" Orientation="Horizontal" Background="#FF080000"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
