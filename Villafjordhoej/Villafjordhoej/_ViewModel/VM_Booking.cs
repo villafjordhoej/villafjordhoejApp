@@ -56,9 +56,6 @@ namespace Villafjordhoej._ViewModel
 
             var LinqQuery3 = from Booking in LinqQuery2
                              join Gaest in BookingSingleton.Gaests on Booking.bo.booking_gaest_id equals Gaest.gaest_id
-
-                             
-                             //join Vaerelse in BookingSingleton.Vaerelser on me.ToArray()[].m_vaerelser_vaerelser_id equals Vaerelse.vaerelse_id into v
                              where Booking.bo.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.bo.booking_ankomst >= DateTime.Today.AddDays(-1)
                              select new { booking = Booking, gaest = Gaest };
 
