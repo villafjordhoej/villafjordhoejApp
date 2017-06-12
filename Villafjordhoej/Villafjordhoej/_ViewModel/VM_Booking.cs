@@ -48,11 +48,10 @@ namespace Villafjordhoej._ViewModel
 
 
             var LinqQuery2 = from Booking in BookingSingleton.Bookings
-                               join mel in LinqQuery1 on Booking.booking_id equals mel.me.m_vaerelser_booking_id into x
-                               select new {bo = Booking, xx = x};
+                               join mel in LinqQuery1 on Booking.booking_id equals mel.me.m_vaerelser_booking_id into v
+                               select new {bo = Booking, Ve = v};
 
-
-
+            
 
             var LinqQuery3 = from Booking in LinqQuery2
                              join Gaest in BookingSingleton.Gaests on Booking.bo.booking_gaest_id equals Gaest.gaest_id
