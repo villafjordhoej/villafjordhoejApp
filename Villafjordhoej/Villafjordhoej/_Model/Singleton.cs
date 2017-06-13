@@ -13,7 +13,7 @@ namespace Villafjordhoej._Model
 {
     class Singleton
     {
-        private static Singleton _instance = new Singleton();
+        private static Singleton _instance;
 
         public ObservableCollection<M_Booking> Bookings { get; set; }
         public ObservableCollection<M_Vaerelse> Vaerelser { get; set; }
@@ -56,99 +56,124 @@ namespace Villafjordhoej._Model
         //Henter den mellemligende tabel app_m_behandling
         public async void LoadMeBehandlings()
         {
-            Mellem_Behandlings = new ObservableCollection<Me_Behandling>(await DB_Persistency.LoadMellemBehandlingsFromDB());
-            if (Mellem_Behandlings.Count != 0)
+            if (Mellem_Behandlings == null)
             {
-                Mellem_BeCurrentID = Mellem_Behandlings.Last().m_behandling_id;
-            }
-            else
-            {
-                Mellem_BeCurrentID = 0;
+                Mellem_Behandlings = new ObservableCollection<Me_Behandling>(await DB_Persistency.LoadMellemBehandlingsFromDB());
+                if (Mellem_Behandlings.Count != 0)
+                {
+                    Mellem_BeCurrentID = Mellem_Behandlings.Last().m_behandling_id;
+                }
+                else
+                {
+                    Mellem_BeCurrentID = 0;
+                }
             }
         }
 
         //Henter den mellemligende tabel app_m_vaerelser
         public async void LoadMeVaerelsers()
         {
-            Mellem_Vaerelsers = new ObservableCollection<Me_Vaerelser>(await DB_Persistency.LoadMellemVaerelserFromDB());
-            if (Mellem_Vaerelsers.Count != 0)
+            if (Mellem_Vaerelsers == null)
             {
-                Mellem_VaCurrentID = Mellem_Vaerelsers.Last().m_vaerelser_id;
-            }
-            else
-            {
-                Mellem_VaCurrentID = 0;
+                
+                Mellem_Vaerelsers = new ObservableCollection<Me_Vaerelser>(await DB_Persistency.LoadMellemVaerelserFromDB());
+                if (Mellem_Vaerelsers.Count != 0)
+                {
+                    Mellem_VaCurrentID = Mellem_Vaerelsers.Last().m_vaerelser_id;
+                }
+                else
+                {
+                    Mellem_VaCurrentID = 0;
+                }
             }
         }
         
         //Henter medarbejdere fra DB
         public async void LoadMedarbejders()
         {
-            Medarbejders = new ObservableCollection<M_Medarbejder>(await DB_Persistency.LoadMedarbejdersFromDB());
-            if (Medarbejders.Count != 0)
+            if (Medarbejders == null)
             {
-                MedarbejderCurrentID = Medarbejders.Last().medarbejder_id;
-            }
-            else
-            {
-                MedarbejderCurrentID = 0;
+                
+                Medarbejders = new ObservableCollection<M_Medarbejder>(await DB_Persistency.LoadMedarbejdersFromDB());
+                if (Medarbejders.Count != 0)
+                {
+                    MedarbejderCurrentID = Medarbejders.Last().medarbejder_id;
+                }
+                else
+                {
+                    MedarbejderCurrentID = 0;
+                }
             }
         }
         
         //Henter Behandlinger fra DB
         public async void LoadBehandlings()
         {
-            Behandlings = new ObservableCollection<M_Behandling>(await DB_Persistency.LoadBehandlingsFromDB());
-            if (Behandlings.Count != 0)
+            if (Behandlings == null)
             {
-                BehandlingCurrentID = Behandlings.Last().behandlinger_id;
-            }
-            else
-            {
-                BehandlingCurrentID = 0;
+
+                Behandlings = new ObservableCollection<M_Behandling>(await DB_Persistency.LoadBehandlingsFromDB());
+                if (Behandlings.Count != 0)
+                {
+                    BehandlingCurrentID = Behandlings.Last().behandlinger_id;
+                }
+                else
+                {
+                    BehandlingCurrentID = 0;
+                }
             }
         }
 
         //Henter Bookings fra DBs
         public async void LoadBookings()
         {
-            Bookings = new ObservableCollection<M_Booking>(await DB_Persistency.LoadBookingsFromDB());
-            if (Bookings.Count != 0)
+            if (Bookings == null)
             {
-                BookingsCurrentID = Bookings.Last().booking_id;
+                Bookings = new ObservableCollection<M_Booking>(await DB_Persistency.LoadBookingsFromDB());
+                if (Bookings.Count != 0)
+                {
+                    BookingsCurrentID = Bookings.Last().booking_id;
+                }
+                else
+                {
+                    BookingsCurrentID = 0;
+                }
             }
-            else
-            {
-                BookingsCurrentID = 0;
-            }
-            
+
         }
         
         //Henter Rooms fra DB
         public async void LoadVaerelser()
         {
-            Vaerelser = new ObservableCollection<M_Vaerelse>(await DB_Persistency.LoadVaerelserFromDB());
-            if (Vaerelser.Count != 0)
+            if (Vaerelser == null)
             {
-                VaerelserCurrentID = Vaerelser.Last().vaerelse_id;
-            }
-            else
-            {
-                VaerelserCurrentID = 0;
+
+                Vaerelser = new ObservableCollection<M_Vaerelse>(await DB_Persistency.LoadVaerelserFromDB());
+                if (Vaerelser.Count != 0)
+                {
+                    VaerelserCurrentID = Vaerelser.Last().vaerelse_id;
+                }
+                else
+                {
+                    VaerelserCurrentID = 0;
+                }
             }
         }
 
         //Henter Gæster fra DB
         public async void LoadGaests()
         {
-            Gaests = new ObservableCollection<M_Gaest>(await DB_Persistency.LoadGaestsFromDB());
-            if (Gaests.Count != 0)
+            if (Gaests == null)
             {
-                GaestsCurrentID = Gaests.Last().gaest_id;
-            }
-            else
-            {
-                GaestsCurrentID = 0;
+                Gaests = new ObservableCollection<M_Gaest>(await DB_Persistency.LoadGaestsFromDB());
+                if (Gaests.Count != 0)
+                {
+                    GaestsCurrentID = Gaests.Last().gaest_id;
+                }
+                else
+                {
+                    GaestsCurrentID = 0;
+                }
             }
         }
 
