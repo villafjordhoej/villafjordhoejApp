@@ -16,9 +16,26 @@
 
 
 
+
+
+
+
+
+
+
+        <DataTemplate x:Key="DataTemplate20">
+            <Grid Height="37" Width="399"/>
+        </DataTemplate>
+
+
+
+
+
+
+
         <DataTemplate x:Key="BookingListe1">
-            <Grid Height="110" Width="433">
-                <StackPanel d:LayoutOverrides="LeftPosition, RightPosition">
+            <Grid Height="160" Width="433">
+                <StackPanel d:LayoutOverrides="LeftPosition, RightPosition" Margin="0,0,0,10">
                     <StackPanel Orientation="Horizontal" Margin="10,0">
                         <TextBlock x:Name="Navn1" TextWrapping="Wrap" Text="Navn:"/>
                         <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="{Binding gaest.gaest_navn}" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0"/>
@@ -33,7 +50,15 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0">
                         <TextBlock x:Name="ANK" TextWrapping="Wrap" Text="Ankomst:" VerticalAlignment="Top" d:LayoutOverrides="Width, TopPosition, BottomPosition" Margin="0"/>
-                        <TextBlock x:Name="Ankomst" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst}" Margin="11,0,0,0" Height="33" d:LayoutOverrides="Width"/>
+                        <TextBlock x:Name="day" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst.Day}" Margin="11,0,0,0" Height="33" d:LayoutOverrides="Width"/>
+                        <TextBlock x:Name="slash" TextWrapping="Wrap" Text="/"/>
+                        <TextBlock x:Name="Month" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst.Month}"/>
+                        <TextBlock x:Name="slash2" TextWrapping="Wrap" Text="/"/>
+                        <TextBlock x:Name="year" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst.Year}"/>
+                    </StackPanel>
+                    <StackPanel Height="52" Margin="10,0" Orientation="Horizontal">
+                        <TextBlock x:Name="vearelser" TextWrapping="Wrap" Text="Værelser:"/>
+                        <TextBlock x:Name="rooms" TextWrapping="Wrap" Text="{Binding all, Mode=OneWay}" Margin="15,0,0,0"/>
                     </StackPanel>
                     <StackPanel Height="2" Orientation="Horizontal" Background="#FF080000"/>
                 </StackPanel>

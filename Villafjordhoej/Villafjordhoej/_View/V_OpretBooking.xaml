@@ -31,29 +31,48 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920" Background="#FFB9CA95">
+        <Grid HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920" Background="#FFB9CA95" Margin="0">
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
             <ListView x:Name="listView" HorizontalAlignment="Left" Height="560" Margin="20,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource BookingRoomList}" SelectedIndex="{Binding BookingSingleton.Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderBrush="DarkGreen" BorderThickness="2"/>
-            <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="446,80,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Navn" Width="320"/>
-            <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="446,117,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Email" Width="320"/>
-            <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="446,154,0,0" TextWrapping="Wrap" Text="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" Width="320"/>
-            <TextBox x:Name="Adresse" HorizontalAlignment="Left" Margin="446,191,0,0" TextWrapping="Wrap" Text="{Binding Adresse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Adresse" Width="320" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox_Allergener" HorizontalAlignment="Left" Margin="446,228,0,0" TextWrapping="Wrap" Text="{Binding Allergener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Allergener" Width="320"/>
-            <TextBox x:Name="textBox_Informationer" HorizontalAlignment="Left" Margin="446,265,0,0" TextWrapping="Wrap" Text="{Binding Information, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Information" Width="320"/>
-            <TextBox x:Name="textBox_AntalPersoner" HorizontalAlignment="Left" Margin="446,302,0,0" TextWrapping="Wrap" Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Antal Personer" Width="320"/>
-            <DatePicker x:Name="DatePicker_Ankomst" HorizontalAlignment="Left" Margin="446,471,0,0" VerticalAlignment="Top" Date="{Binding Ankomst, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="446,533,0,0" VerticalAlignment="Top" Date="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="AftaltPris" HorizontalAlignment="Left" Margin="446,0,0,318" TextWrapping="Wrap" Text="{Binding AftaltPris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Aftalt Pris" Width="320" VerticalAlignment="Bottom"/>
-            <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="446,593,0,0" VerticalAlignment="Top">
+            <TextBlock x:Name="navn" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="475,87,0,0" Foreground="Black">
+                <Run Text="Navn: "/>
+                <Run Foreground="Red" Text="*"/>
+            </TextBlock>
+            <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="590,82,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Navn" Width="320"/>
+            <TextBlock x:Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Margin="475,124,0,0" RenderTransformOrigin="0.462,0.55"/>
+            <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="590,119,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Email" Width="320"/>
+            <TextBlock x:Name="tlf" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Tlf:" VerticalAlignment="Top" Margin="475,160,0,0"/>
+            <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="590,156,0,0" TextWrapping="Wrap" Text="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" Width="320"/>
+            <TextBlock x:Name="addresse" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="475,198,0,0" Width="71">
+                <Run Text="Adresse: "/>
+            </TextBlock>
+            <TextBox x:Name="Adresse" HorizontalAlignment="Left" Margin="590,193,0,0" TextWrapping="Wrap" Text="{Binding Adresse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Adresse" Width="320" VerticalAlignment="Top"/>
+            <TextBlock x:Name="allergener" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="475,235,0,0">
+                <Run Text="Allergener: "/>
+                <Run Foreground="Red" Text="*"/>
+            </TextBlock>
+            <TextBox x:Name="textBox_Allergener" HorizontalAlignment="Left" Margin="590,230,0,0" TextWrapping="Wrap" Text="{Binding Allergener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Allergener" Width="320"/>
+            <TextBlock x:Name="info" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="475,272,0,0" Width="105">
+                <Run Text="Informationer: "/>
+            </TextBlock>
+            <TextBox x:Name="textBox_Informationer" HorizontalAlignment="Left" Margin="590,267,0,0" TextWrapping="Wrap" Text="{Binding Information, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Information" Width="320"/>
+            <TextBlock x:Name="antal" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="475,309,0,0">
+                <Run Text="Antal personer"/>
+            </TextBlock>
+            <TextBox x:Name="textBox_AntalPersoner" HorizontalAlignment="Left" Margin="590,304,0,0" TextWrapping="Wrap" Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Antal Personer" Width="320"/>
+            <DatePicker x:Name="DatePicker_Ankomst" HorizontalAlignment="Left" Margin="590,493,0,0" VerticalAlignment="Top" Date="{Binding Ankomst, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="590,535,0,0" VerticalAlignment="Top" Date="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="320"/>
+            <TextBlock x:Name="pris" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Aftalt Pris:" VerticalAlignment="Top" Margin="475,425,0,0" Height="25" Width="71"/>
+            <TextBox x:Name="AftaltPris" HorizontalAlignment="Left" Margin="590,420,0,0" TextWrapping="Wrap" Text="{Binding AftaltPris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Aftalt Pris" Width="320" VerticalAlignment="Top" Height="30"/>
+            <Button x:Name="Button_Opret" Content="Opret" HorizontalAlignment="Left" Margin="590,608,0,0" VerticalAlignment="Top" Width="320">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:InvokeCommandAction Command="{Binding RC_Opret}"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding SelectedRooms}"/>
             <Button x:Name="NPBooking" Content="Tilbage til Booking" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="48" Width="160">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
@@ -61,11 +80,11 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <TextBlock x:Name="ankomst" HorizontalAlignment="Left" Margin="446,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+            <TextBlock x:Name="ankomst" HorizontalAlignment="Left" Margin="475,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
                 <Run Text="Ankomst"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBlock x:Name="afrejse" HorizontalAlignment="Left" Margin="446,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Afrejse:"/>
+            <TextBlock x:Name="afrejse" HorizontalAlignment="Left" Margin="475,0,0,519" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="Afrejse:"/>
         </Grid>
 
     </Grid>

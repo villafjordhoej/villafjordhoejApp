@@ -19,8 +19,7 @@ namespace Villafjordhoej._ViewModel
 
 
 
-
-		public VM_Booking()
+        public VM_Booking()
 		{
             SyvDagsBookings = new List<Object>();
 
@@ -51,16 +50,14 @@ namespace Villafjordhoej._ViewModel
                                join mel in LinqQuery1 on Booking.booking_id equals mel.me.m_vaerelser_booking_id into v
                                select new {bo = Booking, Ve = v};
 
-            
-
             var LinqQuery3 = from Booking in LinqQuery2
                              join Gaest in BookingSingleton.Gaests on Booking.bo.booking_gaest_id equals Gaest.gaest_id
                              where Booking.bo.booking_ankomst <= DateTime.Now.AddDays(7.0) && Booking.bo.booking_ankomst >= DateTime.Today.AddDays(-1)
-                             select new { booking = Booking, gaest = Gaest };
+                             select new { booking = Booking, gaest = Gaest, all = string.Join(", ", from item in Booking.Ve select item.v.vaerelse_navn )};
 
             foreach (var B in LinqQuery3)
-	        {
-	            SyvDagsBookings.Add(B);
+            {
+                SyvDagsBookings.Add(B);
 	        }
 
 	    }
