@@ -32,5 +32,10 @@ namespace Villafjordhoej._View
         {
 
         }
+
+        private void NPBooking_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
