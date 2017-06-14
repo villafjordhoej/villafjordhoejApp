@@ -1,68 +1,69 @@
 ﻿<Page
+    x:Class="Villafjordhoej._View.Forside"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Villafjordhoej._View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" 
     xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:_ViewModel="using:Villafjordhoej._ViewModel"
-    x:Class="Villafjordhoej._View.Forside"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Villafjordhoej._View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
         <Style x:Key="ButtonGreen" TargetType="Button">
-            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
-            <Setter Property="Padding" Value="8,4,8,4"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
-            <Setter Property="UseSystemFocusVisuals" Value="True"/>
-            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
+            <Setter Property="Padding" Value="8,4,8,4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="UseSystemFocusVisuals" Value="True" />
+            <Setter Property="FocusVisualMargin" Value="-3" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                AutomationProperties.AccessibilityView="Raw"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                ContentTransitions="{TemplateBinding ContentTransitions}">
+                                <ContentPresenter.Background>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/forside_green.png" Stretch="Fill" />
+                                </ContentPresenter.Background>
+                            </ContentPresenter>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal">
                                         <Storyboard>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="PointerOver">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <ContentPresenter x:Name="ContentPresenter" 
-                                              AutomationProperties.AccessibilityView="Raw" 
-                                              BorderBrush="{TemplateBinding BorderBrush}" 
-                                              BorderThickness="{TemplateBinding BorderThickness}" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              ContentTransitions="{TemplateBinding ContentTransitions}" 
-                                              Content="{TemplateBinding Content}" 
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              Padding="{TemplateBinding Padding}" 
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
-                                <ContentPresenter.Background>
-                                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/forside_green.png"/>
-                                </ContentPresenter.Background>
-                            </ContentPresenter>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -70,58 +71,59 @@
         </Style>
 
         <Style x:Key="ButtonYellow" TargetType="Button">
-            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
-            <Setter Property="Padding" Value="8,4,8,4"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
-            <Setter Property="UseSystemFocusVisuals" Value="True"/>
-            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
+            <Setter Property="Padding" Value="8,4,8,4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="UseSystemFocusVisuals" Value="True" />
+            <Setter Property="FocusVisualMargin" Value="-3" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                AutomationProperties.AccessibilityView="Raw"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                ContentTransitions="{TemplateBinding ContentTransitions}">
+                                <ContentPresenter.Background>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                                </ContentPresenter.Background>
+                            </ContentPresenter>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal">
                                         <Storyboard>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="PointerOver">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <ContentPresenter x:Name="ContentPresenter" 
-                                              AutomationProperties.AccessibilityView="Raw" 
-                                              BorderBrush="{TemplateBinding BorderBrush}" 
-                                              BorderThickness="{TemplateBinding BorderThickness}" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              ContentTransitions="{TemplateBinding ContentTransitions}" 
-                                              Content="{TemplateBinding Content}" 
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              Padding="{TemplateBinding Padding}" 
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
-                                <ContentPresenter.Background>
-                                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/forside_yellow.png"/>
-                                </ContentPresenter.Background>
-                            </ContentPresenter>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -129,133 +131,154 @@
         </Style>
 
         <Style x:Key="ButtonRed" TargetType="Button">
-            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
-            <Setter Property="Padding" Value="8,4,8,4"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
-            <Setter Property="UseSystemFocusVisuals" Value="True"/>
-            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
+            <Setter Property="Padding" Value="8,4,8,4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="UseSystemFocusVisuals" Value="True" />
+            <Setter Property="FocusVisualMargin" Value="-3" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                AutomationProperties.AccessibilityView="Raw"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                ContentTransitions="{TemplateBinding ContentTransitions}">
+                                <ContentPresenter.Background>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/forside_Red.png" Stretch="Fill" />
+                                </ContentPresenter.Background>
+                            </ContentPresenter>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal">
                                         <Storyboard>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="PointerOver">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <ContentPresenter x:Name="ContentPresenter" 
-                                              AutomationProperties.AccessibilityView="Raw" 
-                                              BorderBrush="{TemplateBinding BorderBrush}" 
-                                              BorderThickness="{TemplateBinding BorderThickness}" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              ContentTransitions="{TemplateBinding ContentTransitions}" 
-                                              Content="{TemplateBinding Content}" 
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              Padding="{TemplateBinding Padding}" 
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
-                                <ContentPresenter.Background>
-                                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/forside_Red.png"/>
-                                </ContentPresenter.Background>
-                            </ContentPresenter>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Page.Resources>
-    
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="#FFB9CA95">
             <Grid.DataContext>
-                <_ViewModel:VM_Forside/>
+                <_ViewModel:VM_Forside />
             </Grid.DataContext>
 
-            <Button x:Name="NPBooking" 
-                    Content="Booking" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Top" 
-                    Margin="46,85,0,0" 
-                    Height="200" 
-                    Width="300" 
-                    FontSize="50" 
-                    FontFamily="Arial" 
-                    Foreground="#FF282828" 
-                    BorderBrush="{x:Null}" 
-                    Visibility="{Binding BookingKnapULoginVisibility}" 
-                    Style="{StaticResource ButtonGreen}" BorderThickness="0">
+            <Image
+                x:Name="Logo"
+                Width="336"
+                Height="47"
+                Margin="10,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Source="ms-appx:///Assets/VFlogo.png"
+                Stretch="Fill" />
+
+            <Button
+                x:Name="NPBooking"
+                Width="225"
+                Height="150"
+                Margin="76,85,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                Content="Booking"
+                FontFamily="Arial"
+                FontSize="36"
+                Foreground="#FF282828"
+                Style="{StaticResource ButtonGreen}"
+                Visibility="{Binding BookingKnapULoginVisibility}">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking" />
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
 
             </Button>
-            <Button x:Name="NPBehandling" 
-                Content="Behandling" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="398,85,0,0" 
-                Height="200" 
-                Width="300" 
-                FontSize="50" 
-                FontFamily="Arial" 
-                Foreground="#FF282828" 
-                BorderBrush="{x:Null}" 
-                Visibility="{Binding BookingKnapULoginVisibility}" 
-                Style="{StaticResource ButtonYellow}" BorderThickness="0">
+            <Button
+                x:Name="NPBehandling"
+                Width="225"
+                Height="150"
+                Margin="377,85,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                Click="NPBehandling_Click"
+                Content="Behandling"
+                FontFamily="Arial"
+                FontSize="36"
+                Foreground="#FF282828"
+                Style="{StaticResource ButtonYellow}"
+                Visibility="{Binding BookingKnapULoginVisibility}">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
 
             </Button>
-            <Button x:Name="NPAdmin" 
-                Content="Admin" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="938,478,0,0" 
-                Height="200" 
-                Width="300" 
-                FontSize="50" 
-                FontFamily="Arial" 
-                Foreground="#FF282828" 
-                BorderBrush="{x:Null}" 
-                Visibility="{Binding BookingKnapULoginVisibility}" 
-                Style="{StaticResource ButtonRed}" BorderThickness="0">
+            <Button
+                x:Name="NPAdmin"
+                Width="225"
+                Height="150"
+                Margin="979,485,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                Content="Admin"
+                FontFamily="Arial"
+                FontSize="36"
+                Foreground="#FF282828"
+                Style="{StaticResource ButtonRed}"
+                Visibility="{Binding BookingKnapULoginVisibility}">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
 
             </Button>
-            <Image x:Name="Logo" HorizontalAlignment="Left" Height="47" Margin="10,20,0,0" VerticalAlignment="Top" Width="336" Source="ms-appx:///Assets/VFlogo.png" Stretch="Fill"/>
+
 
         </Grid>
     </Grid>

@@ -27,5 +27,10 @@ namespace Villafjordhoej._View
 		{
 			this.InitializeComponent();
 		}
-	}
+
+        private void NPBehandling_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }
