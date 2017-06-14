@@ -1,66 +1,116 @@
 ﻿<Page
+    x:Class="Villafjordhoej._View.V_Booking"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Villafjordhoej._View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:_ViewModel="using:Villafjordhoej._ViewModel"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
-    x:Class="Villafjordhoej._View.V_Booking"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Villafjordhoej._View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         <DataTemplate x:Key="DataTemplate20">
-            <Grid Height="37" Width="399"/>
+            <Grid Width="399" Height="37" />
         </DataTemplate>
 
 
-
-
-
-
-
         <DataTemplate x:Key="BookingListe1">
-            <Grid Height="160" Width="433">
-                <StackPanel d:LayoutOverrides="LeftPosition, RightPosition" Margin="0,0,0,10">
-                    <StackPanel Orientation="Horizontal" Margin="10,0">
-                        <TextBlock x:Name="ANK" TextWrapping="Wrap" Text="Ankomst:" VerticalAlignment="Top" d:LayoutOverrides="Width, TopPosition, BottomPosition" Margin="0"/>
-                        <TextBlock x:Name="day" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst.Day}" Margin="11,0,0,0" Height="33" d:LayoutOverrides="Width"/>
-                        <TextBlock x:Name="slash" TextWrapping="Wrap" Text="/"/>
-                        <TextBlock x:Name="Month" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst.Month}"/>
-                        <TextBlock x:Name="slash2" TextWrapping="Wrap" Text="/"/>
-                        <TextBlock x:Name="year" TextWrapping="Wrap" Text="{Binding booking.bo.booking_ankomst.Year}"/>
+            <Grid Width="433" Height="160">
+                <StackPanel Margin="0,0,0,10" d:LayoutOverrides="LeftPosition, RightPosition">
+                    <StackPanel Margin="10,0" Orientation="Horizontal">
+                        <TextBlock
+                            x:Name="ANK"
+                            Margin="0"
+                            VerticalAlignment="Top"
+                            Text="Ankomst:"
+                            TextWrapping="Wrap"
+                            d:LayoutOverrides="Width, TopPosition, BottomPosition" />
+                        <TextBlock
+                            x:Name="day"
+                            Height="33"
+                            Margin="11,0,0,0"
+                            Text="{Binding booking.bo.booking_ankomst.Day}"
+                            TextWrapping="Wrap"
+                            d:LayoutOverrides="Width" />
+                        <TextBlock
+                            x:Name="slash"
+                            Text="/"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="Month"
+                            Text="{Binding booking.bo.booking_ankomst.Month}"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="slash2"
+                            Text="/"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="year"
+                            Text="{Binding booking.bo.booking_ankomst.Year}"
+                            TextWrapping="Wrap" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,20,0">
-                        <TextBlock x:Name="Navn1" TextWrapping="Wrap" Text="Navn:"/>
-                        <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="{Binding gaest.gaest_navn}" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0"/>
-                        <TextBlock x:Name="Tlf1" TextWrapping="Wrap" Text="Tlf:" Margin="20,0,0,0" HorizontalAlignment="Left" Height="33"/>
-                        <TextBlock x:Name="Tlf" TextWrapping="Wrap" Text="{Binding gaest.gaest_tlf}" Margin="2,0,33,0" Height="33" d:LayoutOverrides="Width"/>
+                    <StackPanel Margin="10,0,20,0" Orientation="Horizontal">
+                        <TextBlock
+                            x:Name="Navn1"
+                            Text="Navn:"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="Navn"
+                            Height="33"
+                            Margin="5,0,0,0"
+                            HorizontalAlignment="Left"
+                            Text="{Binding gaest.gaest_navn}"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="Tlf1"
+                            Height="33"
+                            Margin="20,0,0,0"
+                            HorizontalAlignment="Left"
+                            Text="Tlf:"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="Tlf"
+                            Height="33"
+                            Margin="2,0,33,0"
+                            Text="{Binding gaest.gaest_tlf}"
+                            TextWrapping="Wrap"
+                            d:LayoutOverrides="Width" />
                     </StackPanel>
                     <StackPanel Height="30" Orientation="Horizontal">
-                        <TextBlock x:Name="AP" TextWrapping="Wrap" Margin="10,0,0,0" d:LayoutOverrides="LeftPosition, RightPosition">
-                            <Run Text="Antal personer:"/>
+                        <TextBlock
+                            x:Name="AP"
+                            Margin="10,0,0,0"
+                            TextWrapping="Wrap"
+                            d:LayoutOverrides="LeftPosition, RightPosition">
+                            <Run Text="Antal personer:" />
                         </TextBlock>
-                        <TextBlock x:Name="AntalPersoner" TextWrapping="Wrap" Text="{Binding booking.bo.booking_antalpersoner}" Margin="2,0,0,0" HorizontalAlignment="Left"/>
+                        <TextBlock
+                            x:Name="AntalPersoner"
+                            Margin="2,0,0,0"
+                            HorizontalAlignment="Left"
+                            Text="{Binding booking.bo.booking_antalpersoner}"
+                            TextWrapping="Wrap" />
                     </StackPanel>
-                    <StackPanel Height="52" Margin="10,0" Orientation="Horizontal">
-                        <TextBlock x:Name="vearelser" TextWrapping="Wrap" Text="Værelser:"/>
-                        <TextBlock x:Name="rooms" TextWrapping="Wrap" Text="{Binding all, Mode=OneWay}" Margin="15,0,0,0"/>
+                    <StackPanel
+                        Height="52"
+                        Margin="10,0"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            x:Name="vearelser"
+                            Text="Værelser:"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="rooms"
+                            Margin="15,0,0,0"
+                            Text="{Binding all, Mode=OneWay}"
+                            TextWrapping="Wrap" />
                     </StackPanel>
-                    <StackPanel Height="2" Orientation="Horizontal" Background="#FF080000"/>
+                    <StackPanel
+                        Height="2"
+                        Background="#FF080000"
+                        Orientation="Horizontal" />
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -72,33 +122,128 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="#FFB9CA95">
             <Grid.DataContext>
-                <_ViewModel:VM_Booking/>
+                <_ViewModel:VM_Booking />
             </Grid.DataContext>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="540" Margin="50,50,0,0" VerticalAlignment="Top" Width="460" ItemsSource="{Binding SyvDagsBookings}" ItemTemplate="{StaticResource BookingListe1}" BorderBrush="#FF0A6400" BorderThickness="2"/>
-            <Button x:Name="NPOpretBooking" Content="Opret Booking" HorizontalAlignment="Left" Margin="570,50,0,0" VerticalAlignment="Top" Height="50" Width="160">
+
+            <!--  Border  -->
+            <Border
+                Height="85"
+                Margin="0"
+                VerticalAlignment="Top"
+                BorderBrush="#FF0A6400"
+                BorderThickness="0,0,0,3" />
+
+            <!--  TextBoks HvorErVi  -->
+            <TextBlock
+                x:Name="TextHeader"
+                Width="202"
+                Height="50"
+                Margin="76,24,539,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Arial Black"
+                FontSize="36"
+                FontWeight="Bold"
+                Text="Bookinger"
+                TextWrapping="Wrap" />
+
+            <!--  Logo  -->
+            <Image
+                x:Name="Logo"
+                Width="472"
+                Height="80"
+                Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Source="ms-appx:///Assets/VFlogo.png"
+                Stretch="Fill" />
+
+            <!--  LogInd Knap  -->
+            <Button
+                x:Name="LogInd"
+                Width="104"
+                Height="69"
+                Margin="0,7,76,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Content="Log Ind"
+                FontFamily="Arial"
+                FontSize="22"
+                IsEnabled="False"
+                Style="{StaticResource ButtonRed}">
+                <Button.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+
+            <ListView
+                x:Name="listView"
+                Width="460"
+                Height="540"
+                Margin="50,116,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderBrush="#FF0A6400"
+                BorderThickness="2"
+                ItemTemplate="{StaticResource BookingListe1}"
+                ItemsSource="{Binding SyvDagsBookings}" />
+
+
+            <Button
+                x:Name="NPOpretBooking"
+                Width="160"
+                Height="50"
+                Margin="570,116,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Opret Booking">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_OpretBooking"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_OpretBooking" />
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="NPRedigerBooking" Content="Rediger Booking" HorizontalAlignment="Left" Margin="570,130,0,0" VerticalAlignment="Top" Height="50" Width="160">
+
+
+            <Button
+                x:Name="NPRedigerBooking"
+                Width="160"
+                Height="50"
+                Margin="570,196,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Rediger Booking">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking" />
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="NPForside" Content="Tilbage" HorizontalAlignment="Left" Margin="50,630,0,0" VerticalAlignment="Top" Height="50" Width="160">
+
+
+            <Button
+                x:Name="NPForside"
+                Width="160"
+                Height="50"
+                Margin="50,663,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Tilbage">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside" />
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="50,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
-                <Run Text="Bookinger de næste 7 dage"/>
-                <Run Text=":"/>
+
+            <TextBlock
+                x:Name="textBlock"
+                Margin="50,91,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                TextWrapping="Wrap">
+                <Run Text="Bookinger de næste 7 dage" />
+                <Run Text=":" />
             </TextBlock>
         </Grid>
 

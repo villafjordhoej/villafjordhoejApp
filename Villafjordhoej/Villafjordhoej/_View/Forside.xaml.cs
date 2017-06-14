@@ -37,5 +37,15 @@ namespace Villafjordhoej._View
         {
 
         }
+
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextHeader_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

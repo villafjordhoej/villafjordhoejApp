@@ -31,7 +31,7 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920" Background="#FFB9CA95" Margin="0">
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FFB9CA95" Margin="0">
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking/>
             </Grid.DataContext>
