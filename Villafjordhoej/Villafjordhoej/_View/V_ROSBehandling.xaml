@@ -31,7 +31,7 @@
                     FontFamily="Arial Black"
                     FontSize="32"
                     FontWeight="Bold"
-                    Text="Tilføj/Fjern Behandlinger" SelectionChanged="tekst_header_SelectionChanged"/>
+                    Text="Tilføj/Fjern&#x0a;Behandlinger"/>
 
                 <!-- img_logo -->
                 <Image
