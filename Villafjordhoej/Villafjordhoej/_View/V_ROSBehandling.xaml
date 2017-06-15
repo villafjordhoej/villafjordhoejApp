@@ -21,33 +21,17 @@
 
             <!--  Top Border  -->
             <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
-                <Grid.Background>
-                    <SolidColorBrush Color="#FFF3D410" Opacity="0.5"/>
-                </Grid.Background>
 
                 <!-- tekst_header - Hvor er vi teksten -->
                 <TextBlock
                     x:Name="tekst_header"
                     Margin="40,0,0,0"
                     HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
                     FontFamily="Arial Black"
-                    FontSize="28"
+                    FontSize="32"
                     FontWeight="Bold"
-                    Text="Administrere Behandlinger" 
-                    d:LayoutOverrides="Height, TopPosition, BottomPosition" 
-                    VerticalAlignment="Bottom"/>
-
-                <!-- tekst_admin - vi er nu på admin siden -->
-                <TextBlock
-                    x:Name="tekst_admin"
-                    Margin="40,18,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    FontFamily="Arial Black"
-                    FontSize="18.667"
-                    Text="Admin side" 
-                    FontWeight="Bold" 
-                    Foreground="Black" />
+                    Text="Ændre Behandlinger"/>
 
                 <!-- img_logo -->
                 <Image
@@ -92,7 +76,7 @@
                 Background="#33FFFFFF">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
