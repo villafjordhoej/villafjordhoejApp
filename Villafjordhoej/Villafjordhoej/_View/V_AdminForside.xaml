@@ -145,7 +145,6 @@
                 FontFamily="Arial"
                 FontSize="30"
                 Foreground="#FF282828"
-                IsEnabled="False"
                 Style="{StaticResource ButtonRed}"
                 Visibility="{Binding BookingKnapULoginVisibility}">
                 <Button.Background>
