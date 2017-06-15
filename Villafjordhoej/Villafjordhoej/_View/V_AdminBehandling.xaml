@@ -15,41 +15,116 @@
             <Grid.Background>
                 <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
             </Grid.Background>
+
             <Grid.DataContext>
                 <_ViewModel:VM_AdminBehandling/>
             </Grid.DataContext>
-            <Button x:Name="NPAdminForside" Content="Admin Forside" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1116,612,0,0" Height="69" Width="123" Background="#33FFFFFF">
+
+            <!--  Top Border  -->
+            <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FFF3D410" Opacity="0.5"/>
+                </Grid.Background>
+
+                <!-- tekst_header - Hvor er vi teksten -->
+                <TextBlock
+                    x:Name="tekst_header"
+                    Margin="40,0,0,0"
+                    HorizontalAlignment="Left"
+                    FontFamily="Arial Black"
+                    FontSize="32"
+                    FontWeight="Bold"
+                    Text="Behandlinger" 
+                    d:LayoutOverrides="Height, TopPosition, BottomPosition" 
+                    VerticalAlignment="Bottom"/>
+
+                <!-- tekst_admin - vi er nu på admin siden -->
+                <TextBlock
+                    x:Name="tekst_admin"
+                    Margin="40,18,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="Arial Black"
+                    FontSize="18.667"
+                    Text="Admin side" 
+                    FontWeight="Bold" 
+                    Foreground="Black"/>
+
+                <!-- img_logo -->
+                <Image
+                    x:Name="img_logo"
+                    Width="472"
+                    Height="80"
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Source="ms-appx:///Assets/VFlogo.png"
+                    Stretch="Fill" />
+
+                <!-- button_logind -->
+                <Button 
+                x:Name="button_logind" 
+                Width="104" 
+                Height="69" 
+                Margin="0,0,40,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Content="Log Ind"
+                FontFamily="Arial"
+                FontSize="22"
+                IsEnabled="False"
+                Style="{StaticResource ButtonRed}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+
+            <Button
+                x:Name="NPAdminForside"
+                Width="210"
+                Height="50"
+                Margin="40,0,0,40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Content="Tilbage til Admin Forsiden">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside"/>
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="620" Margin="42,38,0,0" VerticalAlignment="Top" Width="420" Background="#33FFFFFF" ItemsSource="{Binding ABehandlingSingleton.Behandlings}"/>
-            <Button x:Name="Opret" Content="Opret" HorizontalAlignment="Left" Margin="504,38,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
+
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="482" Margin="40,112,0,0" VerticalAlignment="Top" Width="420" Background="#33FFFFFF" ItemsSource="{Binding ABehandlingSingleton.Behandlings}"/>
+
+            <Button x:Name="Opret" Content="Opret" HorizontalAlignment="Left" Margin="504,140,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:InvokeCommandAction Command="{Binding OpretBehandlingRelayCommand}"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="Rediger" Content="Rediger" HorizontalAlignment="Left" Margin="504,176,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
+
+            <Button x:Name="Rediger" Content="Rediger" HorizontalAlignment="Left" Margin="504,278,0,352" VerticalAlignment="Stretch" Background="#33FFFFFF" BorderBrush="{x:Null}" Width="135" d:LayoutOverrides="TopPosition, BottomPosition">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:InvokeCommandAction Command="{Binding RedigerBehandlingRelayCommand}"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="Slet" Content="Slet" HorizontalAlignment="Left" Margin="504,316,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
+
+            <Button x:Name="Slet" Content="Slet" HorizontalAlignment="Left" Margin="504,418,0,0" VerticalAlignment="Top" Background="#33FFFFFF" BorderBrush="{x:Null}" Height="90" Width="135">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:InvokeCommandAction Command="{Binding SletBehandlingRelayCommand}"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <TextBox x:Name="Navn" HorizontalAlignment="Left" Margin="698,38,0,0" TextWrapping="Wrap" Text="{Binding Navn, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Navn"/>
-            <TextBox x:Name="Beskrivelse" HorizontalAlignment="Left" Margin="698,107,0,0" TextWrapping="Wrap" Text="{Binding Beskrivelse, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Beskrivelse"/>
-            <TextBox x:Name="Pris" HorizontalAlignment="Left" Margin="698,176,0,0" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay}" VerticalAlignment="Top" Height="26" Width="121" PlaceholderText="Pris"/>
+
+            <TextBox x:Name="Navn" HorizontalAlignment="Left" Margin="698,140,0,0" TextWrapping="Wrap" Text="{Binding Navn, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Navn"/>
+            <TextBox x:Name="Beskrivelse" HorizontalAlignment="Left" Margin="698,209,0,0" TextWrapping="Wrap" Text="{Binding Beskrivelse, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Beskrivelse"/>
+            <TextBox x:Name="Pris" HorizontalAlignment="Left" Margin="698,278,0,0" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay}" VerticalAlignment="Top" Height="26" Width="121" PlaceholderText="Pris"/>
         </Grid>
     </Grid>
 </Page>

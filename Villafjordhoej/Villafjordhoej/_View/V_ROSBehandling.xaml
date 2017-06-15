@@ -14,10 +14,73 @@
             <Grid.Background>
                 <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
             </Grid.Background>
+
             <Grid.DataContext>
                 <_ViewModel:VM_Behandling/>
             </Grid.DataContext>
-            <ListView x:Name="BookingBehandlinger" HorizontalAlignment="Left" Height="509" Margin="39,46,0,0" VerticalAlignment="Top" Width="320" Background="#33FFFFFF" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
+
+            <!--  Top Border  -->
+            <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FFF3D410" Opacity="0.5"/>
+                </Grid.Background>
+
+                <!-- tekst_header - Hvor er vi teksten -->
+                <TextBlock
+                    x:Name="tekst_header"
+                    Margin="40,0,0,0"
+                    HorizontalAlignment="Left"
+                    FontFamily="Arial Black"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Text="Administrere Behandlinger" 
+                    d:LayoutOverrides="Height, TopPosition, BottomPosition" 
+                    VerticalAlignment="Bottom"/>
+
+                <!-- tekst_admin - vi er nu på admin siden -->
+                <TextBlock
+                    x:Name="tekst_admin"
+                    Margin="40,18,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="Arial Black"
+                    FontSize="18.667"
+                    Text="Admin side" 
+                    FontWeight="Bold" 
+                    Foreground="Black" />
+
+                <!-- img_logo -->
+                <Image
+                    x:Name="img_logo"
+                    Width="472"
+                    Height="80"
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Source="ms-appx:///Assets/VFlogo.png"
+                    Stretch="Fill" />
+
+                <!-- button_logind -->
+                <Button 
+                x:Name="button_logind" 
+                Width="104" 
+                Height="69" 
+                Margin="0,0,40,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Content="Log Ind"
+                FontFamily="Arial"
+                FontSize="22"
+                IsEnabled="False"
+                Style="{StaticResource ButtonRed}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+
+            <ListView x:Name="BookingBehandlinger" HorizontalAlignment="Left" Height="467" Margin="39,112,0,0" VerticalAlignment="Top" Width="320" Background="#33FFFFFF" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
 
             <Button x:Name="NPBooking" 
                 Content="Tilbage" 
@@ -33,8 +96,8 @@
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <ListView x:Name="Behandlinger" HorizontalAlignment="Left" Height="509" Margin="948,46,0,0" VerticalAlignment="Top" Width="295" Background="#33FFFFFF" ItemsSource="{Binding BehandlingSingleton.Behandlings}" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
-            <ListView x:Name="Kunde_info" HorizontalAlignment="Left" Height="188" Margin="440,46,0,0" VerticalAlignment="Top" Width="433" Background="#33FFFFFF"/>
+            <ListView x:Name="Behandlinger" HorizontalAlignment="Left" Height="467" Margin="948,112,0,0" VerticalAlignment="Top" Width="295" Background="#33FFFFFF" ItemsSource="{Binding BehandlingSingleton.Behandlings}" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
+            <ListView x:Name="Kunde_info" HorizontalAlignment="Left" Height="172" Margin="440,112,0,0" VerticalAlignment="Top" Width="433" Background="#33FFFFFF"/>
 
         </Grid>
 
