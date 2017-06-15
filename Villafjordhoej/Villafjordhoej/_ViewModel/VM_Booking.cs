@@ -17,8 +17,21 @@ namespace Villafjordhoej._ViewModel
 	//Skal kun kører Booking view
 	class VM_Booking : INotifyPropertyChanged
 	{
-		//indeholder et instance af singleton
-		public Singleton BookingSingleton { get; set; }
+        #region Property Changed
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
+
+
+
+
+        //indeholder et instance af singleton
+        public Singleton BookingSingleton { get; set; }
 	    public List<M_CollectedBooking> SyvDagsBookings { get; set; }
 	    public int SelectedSyvDagsID { get; set; }
 
@@ -86,18 +99,11 @@ namespace Villafjordhoej._ViewModel
 	            BookingSingleton.DeleteMeVearelser(mellemVaerelser.MeVaerelser);
 	        }
 
-            SyvDagsBookings.RemoveAt(SelectedSyvDagsID); OnPropertyChanged();
+            SyvDagsBookings.RemoveAt(SelectedSyvDagsID);
+
 	    }
 
 
-        #region Property Changed
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        } 
-        #endregion
+        
     }
 }

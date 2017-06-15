@@ -180,7 +180,7 @@
                 BorderBrush="#FF0A6400"
                 BorderThickness="2"
                 ItemTemplate="{StaticResource BookingListe1}"
-                ItemsSource="{Binding SyvDagsBookings}" />
+                ItemsSource="{Binding SyvDagsBookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedSyvDagsID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
 
             <Button
@@ -224,7 +224,7 @@
                 Content="Slet Valgt Booking">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking" />
+                        <Core:InvokeCommandAction Command="{Binding RC_Slet}"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
