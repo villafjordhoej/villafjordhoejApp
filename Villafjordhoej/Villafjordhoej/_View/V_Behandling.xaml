@@ -103,9 +103,9 @@
                 x:Name="NPOpretBehandling"
                 Width="170"
                 Height="70"
-                Margin="559,113,551,537"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
+                Margin="559,113,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Background="#33FFFFFF"
                 Content="Tilføj Behandling">
                 <Interactivity:Interaction.Behaviors>
@@ -114,6 +114,8 @@
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
+            <TextBlock x:Name="Bookinger" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bookinger" VerticalAlignment="Top" Margin="40,90,0,0"/>
+            <TextBlock x:Name="Behandlinger1" HorizontalAlignment="Left" Margin="860,90,0,0" TextWrapping="Wrap" Text="Behandlinger" VerticalAlignment="Top"/>
 
         </Grid>
 

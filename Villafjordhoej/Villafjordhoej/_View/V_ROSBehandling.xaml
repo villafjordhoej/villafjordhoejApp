@@ -21,33 +21,17 @@
 
             <!--  Top Border  -->
             <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
-                <Grid.Background>
-                    <SolidColorBrush Color="#FFF3D410" Opacity="0.5"/>
-                </Grid.Background>
 
                 <!-- tekst_header - Hvor er vi teksten -->
                 <TextBlock
                     x:Name="tekst_header"
                     Margin="40,0,0,0"
                     HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
                     FontFamily="Arial Black"
-                    FontSize="28"
+                    FontSize="32"
                     FontWeight="Bold"
-                    Text="Administrere Behandlinger" 
-                    d:LayoutOverrides="Height, TopPosition, BottomPosition" 
-                    VerticalAlignment="Bottom"/>
-
-                <!-- tekst_admin - vi er nu på admin siden -->
-                <TextBlock
-                    x:Name="tekst_admin"
-                    Margin="40,18,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    FontFamily="Arial Black"
-                    FontSize="18.667"
-                    Text="Admin side" 
-                    FontWeight="Bold" 
-                    Foreground="Black" />
+                    Text="Tilføj/Fjern&#x0a;Behandlinger"/>
 
                 <!-- img_logo -->
                 <Image
@@ -84,7 +68,7 @@
 
             <Button x:Name="NPBooking" 
                 Content="Tilbage" 
-                HorizontalAlignment="Left" 
+                HorizontalAlignment="Left"  
                 Margin="39,595,0,0" 
                 VerticalAlignment="Top" 
                 Height="84" 
@@ -92,12 +76,15 @@
                 Background="#33FFFFFF">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking"/>
+                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling"/>
                     </Core:EventTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
             <ListView x:Name="Behandlinger" HorizontalAlignment="Left" Height="467" Margin="948,112,0,0" VerticalAlignment="Top" Width="295" Background="#33FFFFFF" ItemsSource="{Binding BehandlingSingleton.Behandlings}" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
             <ListView x:Name="Kunde_info" HorizontalAlignment="Left" Height="172" Margin="440,112,0,0" VerticalAlignment="Top" Width="433" Background="#33FFFFFF"/>
+            <TextBlock x:Name="Mulige_Behandlinger" HorizontalAlignment="Left" Margin="39,87,0,0" TextWrapping="Wrap" Text="Tilgængelige Behandlinger" VerticalAlignment="Top"/>
+            <TextBlock x:Name="KundeInfo" HorizontalAlignment="Left" Margin="440,87,0,0" TextWrapping="Wrap" Text="Kunde Info" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Bookingens_behandlinger" HorizontalAlignment="Left" Margin="948,87,0,0" TextWrapping="Wrap" Text="Tilvalgte Behandlinger" VerticalAlignment="Top"/>
 
         </Grid>
 
