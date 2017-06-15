@@ -31,7 +31,7 @@
                     FontFamily="Arial Black"
                     FontSize="32"
                     FontWeight="Bold"
-                    Text="Ændre Behandlinger"/>
+                    Text="Tilføj/Fjern Behandlinger" SelectionChanged="tekst_header_SelectionChanged"/>
 
                 <!-- img_logo -->
                 <Image
@@ -82,6 +82,9 @@
             </Button>
             <ListView x:Name="Behandlinger" HorizontalAlignment="Left" Height="467" Margin="948,112,0,0" VerticalAlignment="Top" Width="295" Background="#33FFFFFF" ItemsSource="{Binding BehandlingSingleton.Behandlings}" SelectedIndex="{Binding BehandlingSingleton.Index}"/>
             <ListView x:Name="Kunde_info" HorizontalAlignment="Left" Height="172" Margin="440,112,0,0" VerticalAlignment="Top" Width="433" Background="#33FFFFFF"/>
+            <TextBlock x:Name="Mulige_Behandlinger" HorizontalAlignment="Left" Margin="39,87,0,0" TextWrapping="Wrap" Text="Tilgængelige Behandlinger" VerticalAlignment="Top"/>
+            <TextBlock x:Name="KundeInfo" HorizontalAlignment="Left" Margin="440,87,0,0" TextWrapping="Wrap" Text="Kunde Info" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Bookingens_behandlinger" HorizontalAlignment="Left" Margin="948,87,0,0" TextWrapping="Wrap" Text="Tilvalgte Behandlinger" VerticalAlignment="Top"/>
 
         </Grid>
 
