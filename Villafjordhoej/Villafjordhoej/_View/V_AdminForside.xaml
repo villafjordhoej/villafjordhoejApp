@@ -76,31 +76,87 @@
 
             </Grid>
 
-
-            <Button x:Name="NPAdminMedarbejdere" Content="Medarbejdere" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,127,0,0" Height="69" Width="123">
+            <!--  button_adminmedarbejdere knap  -->
+            <Button
+                x:Name="button_adminmedarbejdere"
+                Width="225"
+                Height="150"
+                Margin="76,100,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                Content="Medarbejdere"
+                FontFamily="Arial"
+                FontSize="30"
+                Foreground="#FF282828"
+                Style="{StaticResource ButtonRed}"
+                Visibility="{Binding BookingKnapULoginVisibility}">
+                <Button.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                </Button.Background>
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminMedarbejdere"/>
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminMedarbejdere" />
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
+
             </Button>
 
 
-            <Button x:Name="NPAdminBehandling" Content="Behandlinger" HorizontalAlignment="Left" VerticalAlignment="Top" Height="74" Width="123" Margin="40,201,0,0">
+            <!--  button_adminbehandling Knap  -->
+            <Button
+                x:Name="button_adminbehandling"
+                Width="225"
+                Height="150"
+                Margin="377,100,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                Content="Behandlinger"
+                FontFamily="Arial"
+                FontSize="30"
+                Foreground="#FF282828"
+                Style="{StaticResource ButtonRed}"
+                Visibility="{Binding BookingKnapULoginVisibility}">
+                <Button.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                </Button.Background>
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminBehandling"/>
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminBehandling" />
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
+
             </Button>
 
-
-            <Button x:Name="NPAdminArbejdsplan" Content="Arbejdsplan" HorizontalAlignment="Left" Margin="40,280,0,0" VerticalAlignment="Top" Height="74" Width="123">
+            <!--  button_arbejdsplan Knap  -->
+            <Button
+                x:Name="button_arbejdsplan"
+                Width="225"
+                Height="150"
+                Margin="678,100,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                Content="Arbejdsplan"
+                FontFamily="Arial"
+                FontSize="30"
+                Foreground="#FF282828"
+                IsEnabled="False"
+                Style="{StaticResource ButtonRed}"
+                Visibility="{Binding BookingKnapULoginVisibility}">
+                <Button.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                </Button.Background>
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminArbejdsplan"/>
+                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminArbejdsplan" />
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
+
             </Button>
 
 

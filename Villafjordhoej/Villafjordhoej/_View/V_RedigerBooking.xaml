@@ -10,6 +10,64 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <!-- DataTemplate Listen med værelser -->
+        <DataTemplate x:Key="BookingRoomList">
+            <StackPanel 
+                x:Name="V1" 
+                Width="376" 
+                Height="70">
+                <StackPanel 
+                    x:Name="H" 
+                    Orientation="Horizontal">
+                    <TextBlock 
+                        x:Name="vaerelse_navn" 
+                        TextWrapping="Wrap" 
+                        Text="{Binding vaerelse_navn}" 
+                        Margin="0,0,-23,0"/>
+                </StackPanel>
+                <StackPanel 
+                    x:Name="H2" 
+                    Orientation="Horizontal" 
+                    Height="35">
+                    <TextBlock 
+                        x:Name="Pris" 
+                        TextWrapping="Wrap" 
+                        Text="{Binding vaerelse_pris}" 
+                        Margin="0,10,0,0" 
+                        HorizontalAlignment="Left" 
+                        Width="50"/>
+                    <TextBlock 
+                        x:Name="DK" 
+                        TextWrapping="Wrap" 
+                        Text="DKK" Width="30" 
+                        Margin="0,10,0,2" 
+                        d:LayoutOverrides="LeftPosition, RightPosition" 
+                        HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="antalpladser" TextWrapping="Wrap" Margin="120,10,0,0" HorizontalAlignment="Left">
+                        <Run Text="Antal pladser"/>
+                        <Run Text=":"/>
+                        <Run/>
+                    </TextBlock>
+                    <TextBlock 
+                        x:Name="Tal_pladser" 
+                        TextWrapping="Wrap" 
+                        Text="{Binding vaerelse_antalpladser}" 
+                        Margin="5,10,0,0" 
+                        RenderTransformOrigin="0.375,0.435" 
+                        HorizontalAlignment="Left"/>
+                    <CheckBox 
+                        x:Name="checkBox"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Width="89" Margin="30,5,0,0" 
+                        IsChecked="{Binding CheckBoxIsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="#FFB9CA95" Margin="0">
             <Grid.DataContext>
@@ -61,23 +119,304 @@
 
             </Grid>
 
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="473" Margin="20,97,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="textBox_Navn" HorizontalAlignment="Left" Margin="446,97,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Navn" Width="320"/>
-            <TextBox x:Name="textBox_Email" HorizontalAlignment="Left" Margin="446,134,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Email" Width="320"/>
-            <TextBox x:Name="textBox_TlfNr" HorizontalAlignment="Left" Margin="446,171,0,0" TextWrapping="Wrap" Text="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Telefon Nummer" Width="320"/>
-            <TextBox x:Name="textBox_Allergener" HorizontalAlignment="Left" Margin="446,208,0,0" TextWrapping="Wrap" Text="{Binding Allergener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Allergener" Width="320"/>
-            <TextBox x:Name="textBox_Informationer" HorizontalAlignment="Left" Margin="446,245,0,0" TextWrapping="Wrap" Text="{Binding Information, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Information" Width="320"/>
-            <TextBox x:Name="textBox_AntalPersoner" HorizontalAlignment="Left" Margin="446,282,0,0" TextWrapping="Wrap" Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Antal Personer" Width="320"/>
-            <DatePicker x:Name="DatePicker_Ankomst" HorizontalAlignment="Left" Margin="446,363,0,0" VerticalAlignment="Top" DataContext="{Binding Ankomst, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <DatePicker x:Name="DatePicker_Afrejse" HorizontalAlignment="Left" Margin="446,425,0,0" VerticalAlignment="Top" DataContext="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button x:Name="Button_Opret" Content="Rediger" HorizontalAlignment="Left" Margin="446,485,0,0" VerticalAlignment="Top">
+            <!-- Liste med værelser -->
+            <ListView 
+                x:Name="listView" 
+                Height="490" 
+                Margin="40,100,0,0" 
+                VerticalAlignment="Top" 
+                ItemsSource="{Binding BookingSingleton.Vaerelser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                ItemTemplate="{StaticResource BookingRoomList}" 
+                SelectedIndex="{Binding BookingSingleton.Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                BorderBrush="DarkGreen" 
+                BorderThickness="2" HorizontalAlignment="Left" Width="598"/>
+
+
+            <!--            Tekstfelter         -->
+            <!-- tekst_navn -->
+            <Border 
+                Height="32" 
+                Margin="801,100,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_navn" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="15">
+                        <Run Text="Navn:"/>
+                        <Run Foreground="Red" Text="*"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_email -->
+            <Border
+                Height="32" 
+                Margin="801,137,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_email" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Email:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_tlf -->
+            <Border 
+                Height="32" 
+                Margin="801,174,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_tlf" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Tlf:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_adresse -->
+            <Border  
+                Height="32" 
+                Margin="801,211,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_adresse" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Adresse:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_allegener -->
+            <Border  
+                Height="32" 
+                Margin="801,248,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_allegener" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Allegener:"/>
+                        <Run Foreground="Red" Text="*"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_antalpersoner -->
+            <Border  
+                Height="32" 
+                Margin="801,285,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_antalpersoner" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Antal Personer:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_info -->
+            <Border  
+                Height="32" 
+                Margin="801,322,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_info" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Yderlige info:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_aftaltpris -->
+            <Border  
+                Height="32" 
+                Margin="801,423,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_aftaltpris" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Aftalt Pris:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_ankomst -->
+            <Border  
+                Height="32" 
+                Margin="801,460,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_ankomst" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Ankomst:"/>
+                </TextBlock>
+            </Border>
+            <!-- tekst_afrejse -->
+            <Border  
+                Height="32" 
+                Margin="801,502,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left" Width="435">
+                <TextBlock 
+                    x:Name="tekst_afrejse" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Center"
+                    Foreground="Black" 
+                    HorizontalAlignment="Left" 
+                    TextAlignment="Left" 
+                    FontSize="16">
+                        <Run Text="Afrejse:"/>
+                </TextBlock>
+            </Border>
+
+
+
+            <!--            Tekstbokse          -->
+            <!-- textbox_navn -->
+            <TextBox 
+                x:Name="textbox_navn" 
+                HorizontalAlignment="Left" 
+                Margin="920,100,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                VerticalAlignment="Top" 
+                PlaceholderText="Navn" 
+                Width="320" Height="32" MinHeight="32" BorderBrush="DarkGreen"/>
+            <!-- textbox_email -->
+            <TextBox 
+                x:Name="textbox_email" 
+                HorizontalAlignment="Left" 
+                Margin="920,137,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                VerticalAlignment="Top" 
+                PlaceholderText="Email" 
+                Width="320" Height="32" MinHeight="32" BorderBrush="DarkGreen"/>
+            <!-- textBox_tlf -->
+            <TextBox 
+                x:Name="textbox_tlf" 
+                HorizontalAlignment="Left" 
+                Margin="920,174,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                VerticalAlignment="Top" 
+                PlaceholderText="Telefon Nummer" 
+                Width="320" Height="32" MinHeight="32" BorderBrush="DarkGreen"/>
+            <!-- textBox_adresse -->
+            <TextBox 
+                x:Name="textBox_adresse" 
+                HorizontalAlignment="Left" 
+                Margin="920,211,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding Adresse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                PlaceholderText="Adresse" 
+                Width="320" 
+                VerticalAlignment="Top" BorderBrush="DarkGreen"/>
+            <!-- textBox_allergener -->
+            <TextBox 
+                x:Name="textBox_allergener" 
+                HorizontalAlignment="Left" 
+                Margin="920,248,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding Allergener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                VerticalAlignment="Top" 
+                PlaceholderText="Allergener" 
+                Width="320" BorderBrush="DarkGreen"/>
+            <!-- textBox_antalpersoner -->
+            <TextBox 
+                x:Name="textBox_antalpersoner" 
+                HorizontalAlignment="Left" 
+                Margin="919,285,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                VerticalAlignment="Top" 
+                PlaceholderText="Antal Personer" 
+                Width="320" BorderBrush="DarkGreen"/>
+            <!-- textBox_informationer -->
+            <TextBox 
+                x:Name="textBox_informationer" 
+                HorizontalAlignment="Left" 
+                Margin="919,322,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding Information, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                VerticalAlignment="Top" 
+                PlaceholderText="F.Eks. Extra opredninger, Særlige hensyn etc..." 
+                Width="320" 
+                Height="96" 
+                BorderBrush="DarkGreen"/>
+            <!-- textbox_aftaltpris -->
+            <TextBox 
+                x:Name="textbox_aftaltpris" 
+                HorizontalAlignment="Left" 
+                Margin="919,423,0,0" 
+                TextWrapping="Wrap" 
+                Text="{Binding AftaltPris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                PlaceholderText="Aftalt Pris" 
+                Width="320" 
+                VerticalAlignment="Top" 
+                Height="30" 
+                BorderBrush="DarkGreen"/>
+
+
+            <!-- Datepickers -->
+            <!-- datepicker_ankomst -->
+            <DatePicker 
+                x:Name="datepicker_ankomst" 
+                HorizontalAlignment="Left" 
+                Margin="919,460,0,0" 
+                VerticalAlignment="Top" 
+                Date="{Binding Ankomst, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                Width="320" 
+                Foreground="Black"/>
+            <!-- datepicker_afrejse -->
+            <DatePicker 
+                x:Name="datepicker_afrejse" 
+                HorizontalAlignment="Left"
+                Margin="919,502,0,0" 
+                VerticalAlignment="Top" 
+                Date="{Binding Afrejse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                Width="320"/>
+
+            <Button 
+                x:Name="Button_Opret" 
+                Content="Opdater Booking" 
+                HorizontalAlignment="Left" 
+                Margin="919,0,0,40" 
+                VerticalAlignment="Bottom" 
+                Width="320" Height="50">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:InvokeCommandAction/>
+                        <core:InvokeCommandAction Command="{Binding RC_Opret}"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <ListView x:Name="listView1" HorizontalAlignment="Left" Height="560" Margin="800,80,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding BookingSingleton.Bookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Button 
                 x:Name="NPBooking" 

@@ -164,11 +164,6 @@
     <Content Include="Assets\forside_marked_yellow.png" />
     <Content Include="Assets\forside_red.png" />
     <Content Include="Assets\forside_yellow.png" />
-    <Content Include="Assets\Gui_Forside_KnapGrøn_Temp.png" />
-    <Content Include="Assets\Gui_Forside_KnapRød_Temp.png" />
-    <Content Include="Assets\pressed_green_temp.png" />
-    <Content Include="Assets\pressed_red_temp.png" />
-    <Content Include="Assets\pressed_yellow_temp.png" />
     <Content Include="Assets\VFlogo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
