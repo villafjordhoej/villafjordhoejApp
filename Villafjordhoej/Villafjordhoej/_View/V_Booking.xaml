@@ -31,7 +31,7 @@
                             x:Name="day"
                             Height="33"
                             Margin="11,0,0,0"
-                            Text="{Binding booking.bo.booking_ankomst.Day}"
+                            Text="{Binding CVaerelse.Booking.booking_ankomst.Day, Mode=OneWay}"
                             TextWrapping="Wrap"
                             d:LayoutOverrides="Width" />
                         <TextBlock
@@ -40,7 +40,7 @@
                             TextWrapping="Wrap" />
                         <TextBlock
                             x:Name="Month"
-                            Text="{Binding booking.bo.booking_ankomst.Month}"
+                            Text="{Binding CVaerelse.Booking.booking_ankomst.Month, Mode=OneWay}"
                             TextWrapping="Wrap" />
                         <TextBlock
                             x:Name="slash2"
@@ -48,7 +48,7 @@
                             TextWrapping="Wrap" />
                         <TextBlock
                             x:Name="year"
-                            Text="{Binding booking.bo.booking_ankomst.Year}"
+                            Text="{Binding CVaerelse.Booking.booking_ankomst.Year, Mode=OneWay}"
                             TextWrapping="Wrap" />
                     </StackPanel>
                     <StackPanel Margin="10,0,20,0" Orientation="Horizontal">
@@ -61,7 +61,7 @@
                             Height="33"
                             Margin="5,0,0,0"
                             HorizontalAlignment="Left"
-                            Text="{Binding gaest.gaest_navn}"
+                            Text="{Binding Gaest.gaest_navn}"
                             TextWrapping="Wrap" />
                         <TextBlock
                             x:Name="Tlf1"
@@ -74,7 +74,7 @@
                             x:Name="Tlf"
                             Height="33"
                             Margin="2,0,33,0"
-                            Text="{Binding gaest.gaest_tlf}"
+                            Text="{Binding Gaest.gaest_tlf}"
                             TextWrapping="Wrap"
                             d:LayoutOverrides="Width" />
                     </StackPanel>
@@ -90,7 +90,7 @@
                             x:Name="AntalPersoner"
                             Margin="2,0,0,0"
                             HorizontalAlignment="Left"
-                            Text="{Binding booking.bo.booking_antalpersoner}"
+                            Text="{Binding CVaerelse.Booking.booking_antalpersoner}"
                             TextWrapping="Wrap" />
                     </StackPanel>
                     <StackPanel
@@ -104,7 +104,7 @@
                         <TextBlock
                             x:Name="rooms"
                             Margin="15,0,0,0"
-                            Text="{Binding all, Mode=OneWay}"
+                            Text="{Binding all}"
                             TextWrapping="Wrap" />
                     </StackPanel>
                     <StackPanel

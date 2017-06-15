@@ -247,7 +247,18 @@ namespace Villafjordhoej._Model
 
         #endregion
 
+        public void DeleteBooking(M_Booking B)
+        {
+            Bookings.Remove(B);
+            DB_Persistency.DeleteBookingFromDB(B);
 
+        }
+
+        public void DeleteMeVearelser(Me_Vaerelser V)
+        {
+            Mellem_Vaerelsers.Remove(V);
+            DB_Persistency.DeleteMellemVaerelseFromDB(V);
+        }
 
 
 
