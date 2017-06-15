@@ -68,7 +68,7 @@
 
             <Button x:Name="NPBooking" 
                 Content="Tilbage" 
-                HorizontalAlignment="Left" 
+                HorizontalAlignment="Left"  
                 Margin="39,595,0,0" 
                 VerticalAlignment="Top" 
                 Height="84" 
