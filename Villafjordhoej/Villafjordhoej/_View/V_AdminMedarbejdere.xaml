@@ -122,9 +122,12 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            
-            
-            
+            <TextBlock x:Name="Medarbejdere" HorizontalAlignment="Left" Margin="49,101,0,0" TextWrapping="Wrap" Text="Medarbejdere" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Navn1" HorizontalAlignment="Left" Margin="436,101,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Password1" HorizontalAlignment="Left" Margin="436,160,0,0" TextWrapping="Wrap" Text="Kodeord" VerticalAlignment="Top"/>
+
+
+
         </Grid>
     </Grid>
 </Page>

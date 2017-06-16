@@ -140,8 +140,12 @@
             </Button>
 
             <TextBox x:Name="Navn" HorizontalAlignment="Left" Margin="698,140,0,0" TextWrapping="Wrap" Text="{Binding Navn, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Navn"/>
-            <TextBox x:Name="Beskrivelse" HorizontalAlignment="Left" Margin="698,209,0,0" TextWrapping="Wrap" Text="{Binding Beskrivelse, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Beskrivelse"/>
-            <TextBox x:Name="Pris" HorizontalAlignment="Left" Margin="698,278,0,0" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay}" VerticalAlignment="Top" Height="26" Width="121" PlaceholderText="Pris"/>
+            <TextBox x:Name="Beskrivelse" HorizontalAlignment="Left" Margin="698,221,0,0" TextWrapping="Wrap" Text="{Binding Beskrivelse, Mode=TwoWay}" VerticalAlignment="Top" Height="52" Width="397" PlaceholderText="Beskrivelse"/>
+            <TextBox x:Name="Pris" HorizontalAlignment="Left" Margin="698,302,0,0" TextWrapping="Wrap" Text="{Binding Pris, Mode=TwoWay}" VerticalAlignment="Top" Height="26" Width="121" PlaceholderText="Pris"/>
+            <TextBlock x:Name="Behandlinger" HorizontalAlignment="Left" Margin="40,92,0,0" TextWrapping="Wrap" Text="Behandlinger" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Navn1" HorizontalAlignment="Left" Margin="698,120,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Beskrivelse1" HorizontalAlignment="Left" Margin="698,201,0,0" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Pris1" HorizontalAlignment="Left" Margin="698,282,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 </Page>
