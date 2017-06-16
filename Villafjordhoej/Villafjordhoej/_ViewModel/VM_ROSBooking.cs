@@ -113,6 +113,7 @@ namespace Villafjordhoej._ViewModel
                         BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.BookingsCurrentID, V.vaerelse_id));
                     }
                 }
+                new MessageDialog("Booking blev oprettet").ShowAsync();
             }
 
         }
