@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
+using Windows.UI.Xaml.Controls;
 using Villafjordhoej.Annotations;
 using Villafjordhoej.Handler;
 using Villafjordhoej.Persistency;
@@ -93,15 +95,28 @@ namespace Villafjordhoej._ViewModel
 
 	    public void SletBookingFromDBAndList()
 	    {
-            BookingSingleton.DeleteBooking(SyvDagsBookings[SelectedSyvDagsID].CVaerelse.Booking);
-	        foreach (var mellemVaerelser in SyvDagsBookings[SelectedSyvDagsID].CVaerelse.MellemV)
+
+            if (SelectedSyvDagsID != -1)
 	        {
-	            BookingSingleton.DeleteMeVearelser(mellemVaerelser.MeVaerelser);
-	        }
+                BookingSingleton.DeleteBooking(SyvDagsBookings[SelectedSyvDagsID].CVaerelse.Booking);
+	            foreach (var mellemVaerelser in SyvDagsBookings[SelectedSyvDagsID].CVaerelse.MellemV)
+	            {
+	                BookingSingleton.DeleteMeVearelser(mellemVaerelser.MeVaerelser);
+	            }
 
-            SyvDagsBookings.RemoveAt(SelectedSyvDagsID);
+                SyvDagsBookings.RemoveAt(SelectedSyvDagsID);
 
-	    }
+                new MessageDialog("Bookingen blev slettet").ShowAsync();
+
+
+            }
+	        else
+	        {
+                new MessageDialog("Du har ikke valgt en booking!").ShowAsync();
+            }
+
+
+        }
 
 
         
