@@ -68,7 +68,7 @@ namespace Villafjordhoej._ViewModel
 
         private void Opret()
         {
-            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Allergener))
+            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Allergener) || Afrejse < Ankomst)
             {
                 try
                 {
@@ -80,9 +80,13 @@ namespace Villafjordhoej._ViewModel
                     {
                         throw new NameIsNullException("Navn må IKKE være tom");
                     }
-                    else
+                    else if (string.IsNullOrEmpty(Allergener))
                     {
                         throw new AllergenerIsNullException("Allergener må IKKE være tom");
+                    }
+                    else if (Afrejse < Ankomst)
+                    {
+                        throw new DateBeforeDateException("Afrejse dato skal ligge efter Ankomst dato");
                     }
                 }
                 catch (Exception ex)
@@ -91,7 +95,7 @@ namespace Villafjordhoej._ViewModel
                 }
                     
             }
-	        else
+            else
 	        {
                 //Gemmer en ny Gæst i databasen til brug i booking nedeunder
                 BookingSingleton.SaveGaests(new M_Gaest(Name, Adresse, TelefonNr, Email));

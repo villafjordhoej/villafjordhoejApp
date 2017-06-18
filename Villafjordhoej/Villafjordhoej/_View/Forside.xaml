@@ -154,7 +154,7 @@
 
                 </Button>
 
-                <!--  Arbejdsplan Knap  -->
+                <!--  Gavekort Knap  -->
                 <Button
                     x:Name="button_gavekort"
                     Width="225"
@@ -183,32 +183,6 @@
 
                 </Button>
 
-                <!--  Admin Knap  -->
-                <Button
-                    x:Name="button_admin"
-                    Width="225"
-                    Height="150"
-                    Margin="1016,530,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    BorderBrush="{x:Null}"
-                    BorderThickness="0"
-                    Content="Admin"
-                    FontFamily="Arial"
-                    FontSize="30"
-                    Foreground="#FF282828"
-                    Style="{StaticResource ButtonRed}"
-                    Visibility="{Binding BookingKnapULoginVisibility}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
-                    </Button.Background>
-                    <Interactivity:Interaction.Behaviors>
-                        <Core:EventTriggerBehavior EventName="Click">
-                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
-                        </Core:EventTriggerBehavior>
-                    </Interactivity:Interaction.Behaviors>
-
-                </Button>
                 <Button
                     x:Name="button_linkliste"
                     Width="225"
@@ -223,6 +197,7 @@
                     FontFamily="Arial"
                     FontSize="30"
                     Foreground="#FF282828"
+                    IsEnabled="False"
                     Style="{StaticResource ButtonGreen}"
                     Visibility="{Binding BookingKnapULoginVisibility}">
                     <Button.Background>
@@ -249,6 +224,7 @@
                     FontFamily="Arial"
                     FontSize="30"
                     Foreground="#FF282828"
+                    IsEnabled="False"
                     Style="{StaticResource ButtonYellow}"
                     Visibility="{Binding BookingKnapULoginVisibility}">
                     <Button.Background>
@@ -315,6 +291,34 @@
                     </Interactivity:Interaction.Behaviors>
 
                 </Button>
+
+                <!--  Admin Knap  -->
+                <Button
+                    x:Name="button_admin"
+                    Width="225"
+                    Height="150"
+                    Margin="1016,530,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Content="Admin"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    Style="{StaticResource ButtonRed}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+
+                </Button>
+
             </Grid>
 
 

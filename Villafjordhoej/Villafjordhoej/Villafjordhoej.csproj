@@ -99,6 +99,7 @@
     <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Exceptions\AllergenerIsNullException.cs" />
     <Compile Include="Exceptions\DatabaseException.cs" />
+    <Compile Include="Exceptions\DateBeforeDateException.cs" />
     <Compile Include="Exceptions\MulipleIsNullException.cs" />
     <Compile Include="Exceptions\NameIsNullException.cs" />
     <Compile Include="Handler\RelayArgCommand.cs" />
