@@ -10,10 +10,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="Baggrunds_Grid">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+        </Grid.Background>
+        <Grid x:Name="ContentGrid">
             <Grid.Background>
-                <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+                <ImageBrush
+                    ImageSource="ms-appx:///Assets/app_background.png"
+                    Opacity="0.4"
+                    Stretch="None" />
             </Grid.Background>
 
             <Grid.DataContext>
@@ -24,6 +30,7 @@
             <Grid
                 Height="85"
                 VerticalAlignment="Top"
+                Background="#FFB9CA95"
                 BorderBrush="DarkGreen"
                 BorderThickness="0,0,0,3"
                 d:LayoutOverrides="LeftPosition, RightPosition">
@@ -78,6 +85,7 @@
                     Margin="39,112,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     SelectedIndex="{Binding BehandlingSingleton.Index}" />
@@ -89,6 +97,7 @@
                     Margin="948,112,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     ItemsSource="{Binding BehandlingSingleton.Behandlings}"
@@ -101,6 +110,7 @@
                     Margin="440,112,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2" />
 

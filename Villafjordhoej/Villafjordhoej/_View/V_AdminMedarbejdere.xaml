@@ -10,13 +10,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid BorderBrush="#FFCB0F0F">
-            <FlyoutBase.AttachedFlyout>
-                <DatePickerFlyout />
-            </FlyoutBase.AttachedFlyout>
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+        </Grid.Background>
+        <Grid x:Name="ContentGrid">
             <Grid.Background>
-                <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+                <ImageBrush
+                    ImageSource="ms-appx:///Assets/app_background.png"
+                    Opacity="0.4"
+                    Stretch="None" />
             </Grid.Background>
 
             <Grid.DataContext>
@@ -31,7 +34,7 @@
                 BorderThickness="0,0,0,3"
                 d:LayoutOverrides="LeftPosition, RightPosition">
                 <Grid.Background>
-                    <SolidColorBrush Opacity="0.5" Color="#FFF3D410" />
+                    <SolidColorBrush Opacity="1" Color="#FFC5B943" />
                 </Grid.Background>
 
                 <!--  tekst_header - Hvor er vi teksten  -->
@@ -146,7 +149,7 @@
                     Margin="49,121,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Background="#33FFFFFF"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     ItemsSource="{Binding MedarbejderSingleton}"
@@ -159,6 +162,7 @@
                     Margin="436,121,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Navn"
                     Text="{Binding Name, Mode=TwoWay}"
@@ -171,6 +175,7 @@
                     Margin="436,180,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Kodeord"
                     Text="{Binding Password, Mode=TwoWay}"
@@ -221,7 +226,7 @@
                     Margin="436,241,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Background="#33FFFFFF"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Vælg Adgangsniveau" />
 

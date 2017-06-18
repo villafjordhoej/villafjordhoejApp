@@ -10,9 +10,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+        </Grid.Background>
+        <Grid x:Name="ContentGrid">
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="ms-appx:///Assets/app_background.png"
+                    Opacity="0.4"
+                    Stretch="None" />
+            </Grid.Background>
 
-        <Grid x:Name="Baggrunds_Grid" Background="#FFB9CA95">
             <Grid.DataContext>
                 <_ViewModel:VM_Behandling />
             </Grid.DataContext>
@@ -21,6 +30,7 @@
             <Grid
                 Height="85"
                 VerticalAlignment="Top"
+                Background="#FFB9CA95"
                 BorderBrush="DarkGreen"
                 BorderThickness="0,0,0,3"
                 d:LayoutOverrides="LeftPosition, RightPosition">
@@ -76,6 +86,7 @@
                     Margin="40,113,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     ItemsSource="{Binding BehandlingSingleton.Bookings}"
@@ -88,6 +99,7 @@
                     Margin="860,113,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     ItemsSource="{Binding BehandlingSingleton.Behandlings}" />

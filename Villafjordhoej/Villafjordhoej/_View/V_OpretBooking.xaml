@@ -70,8 +70,17 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Margin="0" Background="#FFB9CA95">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+        </Grid.Background>
+        <Grid x:Name="ContentGrid">
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="ms-appx:///Assets/app_background.png"
+                    Opacity="0.4"
+                    Stretch="None" />
+            </Grid.Background>
             <Grid.DataContext>
                 <_ViewModel:VM_ROSBooking />
             </Grid.DataContext>
@@ -80,6 +89,7 @@
             <Grid
                 Height="85"
                 VerticalAlignment="Top"
+                Background="#FFB9CA95"
                 BorderBrush="DarkGreen"
                 BorderThickness="0,0,0,3"
                 d:LayoutOverrides="LeftPosition, RightPosition">
@@ -135,6 +145,7 @@
                     Margin="40,100,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     ItemTemplate="{StaticResource BookingRoomList}"
@@ -338,6 +349,7 @@
                     Margin="920,100,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Navn"
                     Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -351,6 +363,7 @@
                     Margin="920,137,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Email"
                     Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -364,6 +377,7 @@
                     Margin="920,174,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Telefon Nummer"
                     Text="{Binding TelefonNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -375,6 +389,7 @@
                     Margin="920,211,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Adresse"
                     Text="{Binding Adresse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -386,6 +401,7 @@
                     Margin="920,248,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Allergener"
                     Text="{Binding Allergener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -397,6 +413,7 @@
                     Margin="919,285,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Antal Personer"
                     Text="{Binding AntalPersoner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -409,6 +426,7 @@
                     Margin="919,322,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="F.Eks. Extra opredninger, Særlige hensyn etc..."
                     Text="{Binding Information, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -421,6 +439,7 @@
                     Margin="919,423,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Aftalt Pris"
                     Text="{Binding AftaltPris, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

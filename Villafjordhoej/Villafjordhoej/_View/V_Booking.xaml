@@ -119,8 +119,17 @@
 
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="#FFB9CA95">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource BackgroundColor}" />
+        </Grid.Background>
+        <Grid x:Name="ContentGrid">
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="ms-appx:///Assets/app_background.png"
+                    Opacity="0.4"
+                    Stretch="None" />
+            </Grid.Background>
             <Grid.DataContext>
                 <_ViewModel:VM_Booking />
             </Grid.DataContext>
@@ -129,6 +138,7 @@
             <Grid
                 Height="85"
                 VerticalAlignment="Top"
+                Background="#FFB9CA95"
                 BorderBrush="DarkGreen"
                 BorderThickness="0,0,0,3"
                 d:LayoutOverrides="LeftPosition, RightPosition">
@@ -184,6 +194,7 @@
                     Margin="40,116,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="#FF0A6400"
                     BorderThickness="2"
                     ItemTemplate="{StaticResource BookingListe1}"

@@ -162,6 +162,7 @@
     <None Include="Villafjordhoej_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\app_background.png" />
     <Content Include="Assets\forside_green.png" />
     <Content Include="Assets\forside_marked_green.png" />
     <Content Include="Assets\forside_marked_red.png" />
