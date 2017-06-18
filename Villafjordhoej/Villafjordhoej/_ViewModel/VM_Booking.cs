@@ -48,10 +48,11 @@ namespace Villafjordhoej._ViewModel
         public VM_Booking()
 		{
             SyvDagsBookings = new List<M_CollectedBooking>();
+		    SelectedSyvDagsID = -1;
 
 
-			//Opretter et instance af singleton
-			BookingSingleton = Singleton.GetInstance;
+            //Opretter et instance af singleton
+            BookingSingleton = Singleton.GetInstance;
 
             //
             BookingSingleton.LoadBookings();
