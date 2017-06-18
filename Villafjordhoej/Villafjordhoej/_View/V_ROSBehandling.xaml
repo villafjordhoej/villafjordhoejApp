@@ -70,78 +70,80 @@
 
             </Grid>
 
-            <ListView
-                x:Name="BookingBehandlinger"
-                Width="320"
-                Height="467"
-                Margin="39,112,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="DarkGreen"
-                BorderThickness="2"
-                SelectedIndex="{Binding BehandlingSingleton.Index}" />
+            <Grid Width="1280" HorizontalAlignment="Center">
+                <ListView
+                    x:Name="BookingBehandlinger"
+                    Width="320"
+                    Height="467"
+                    Margin="39,112,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="DarkGreen"
+                    BorderThickness="2"
+                    SelectedIndex="{Binding BehandlingSingleton.Index}" />
 
-            <ListView
-                x:Name="Behandlinger"
-                Width="295"
-                Height="467"
-                Margin="948,112,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="DarkGreen"
-                BorderThickness="2"
-                ItemsSource="{Binding BehandlingSingleton.Behandlings}"
-                SelectedIndex="{Binding BehandlingSingleton.Index}" />
+                <ListView
+                    x:Name="Behandlinger"
+                    Width="295"
+                    Height="467"
+                    Margin="948,112,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="DarkGreen"
+                    BorderThickness="2"
+                    ItemsSource="{Binding BehandlingSingleton.Behandlings}"
+                    SelectedIndex="{Binding BehandlingSingleton.Index}" />
 
-            <ListView
-                x:Name="Kunde_info"
-                Width="433"
-                Height="172"
-                Margin="440,112,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="DarkGreen"
-                BorderThickness="2" />
+                <ListView
+                    x:Name="Kunde_info"
+                    Width="433"
+                    Height="172"
+                    Margin="440,112,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="DarkGreen"
+                    BorderThickness="2" />
 
 
-            <Button
-                x:Name="NPBooking"
-                Width="176"
-                Height="50"
-                Margin="40,0,0,40"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Content="Tilbage til Behandlinger">
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </Button>
+                <Button
+                    x:Name="NPBooking"
+                    Width="176"
+                    Height="50"
+                    Margin="40,0,0,40"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Content="Tilbage til Behandlinger">
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
 
-            <TextBlock
-                x:Name="Mulige_Behandlinger"
-                Margin="39,87,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Text="Tilgængelige Behandlinger"
-                TextWrapping="Wrap" />
-            <TextBlock
-                x:Name="KundeInfo"
-                Margin="440,87,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Text="Kunde Info"
-                TextWrapping="Wrap" />
-            <TextBlock
-                x:Name="Bookingens_behandlinger"
-                Margin="948,87,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Text="Tilvalgte Behandlinger"
-                TextWrapping="Wrap" />
+                <TextBlock
+                    x:Name="Mulige_Behandlinger"
+                    Margin="39,87,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="Tilgængelige Behandlinger"
+                    TextWrapping="Wrap" />
 
+                <TextBlock
+                    x:Name="KundeInfo"
+                    Margin="440,87,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="Kunde Info"
+                    TextWrapping="Wrap" />
+
+                <TextBlock
+                    x:Name="Bookingens_behandlinger"
+                    Margin="948,87,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Text="Tilvalgte Behandlinger"
+                    TextWrapping="Wrap" />
+            </Grid>
         </Grid>
-
     </Grid>
 </Page>

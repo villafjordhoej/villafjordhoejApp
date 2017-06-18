@@ -126,9 +126,14 @@
             </Grid.DataContext>
 
             <!--  Top Border  -->
-            <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
+            <Grid
+                Height="85"
+                VerticalAlignment="Top"
+                BorderBrush="DarkGreen"
+                BorderThickness="0,0,0,3"
+                d:LayoutOverrides="LeftPosition, RightPosition">
 
-                <!-- tekst_header - Hvor er vi teksten -->
+                <!--  tekst_header - Hvor er vi teksten  -->
                 <TextBlock
                     x:Name="tekst_header"
                     Margin="40,0,0,0"
@@ -137,9 +142,9 @@
                     FontFamily="Arial Black"
                     FontSize="32"
                     FontWeight="Bold"
-                    Text="Bookinger"/>
+                    Text="Bookinger" />
 
-                <!-- img_logo -->
+                <!--  img_logo  -->
                 <Image
                     x:Name="img_logo"
                     Width="472"
@@ -150,19 +155,19 @@
                     Source="ms-appx:///Assets/VFlogo.png"
                     Stretch="Fill" />
 
-                <!-- button_logind -->
-                <Button 
-                x:Name="button_logind" 
-                Width="104" 
-                Height="69" 
-                Margin="0,0,40,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Content="Log Ind"
-                FontFamily="Arial"
-                FontSize="22"
-                IsEnabled="False"
-                Style="{StaticResource ButtonRed}">
+                <!--  button_logind  -->
+                <Button
+                    x:Name="button_logind"
+                    Width="104"
+                    Height="69"
+                    Margin="0,0,40,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Log Ind"
+                    FontFamily="Arial"
+                    FontSize="22"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonRed}">
                     <Button.Background>
                         <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
                     </Button.Background>
@@ -170,90 +175,94 @@
 
             </Grid>
 
-            <ListView
-                x:Name="listView"
-                Width="460"
-                Height="480"
-                Margin="40,116,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="#FF0A6400"
-                BorderThickness="2"
-                ItemTemplate="{StaticResource BookingListe1}"
-                ItemsSource="{Binding SyvDagsBookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedSyvDagsID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Grid Width="1280" HorizontalAlignment="Center">
+
+                <ListView
+                    x:Name="listView"
+                    Width="460"
+                    Height="480"
+                    Margin="40,116,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FF0A6400"
+                    BorderThickness="2"
+                    ItemTemplate="{StaticResource BookingListe1}"
+                    ItemsSource="{Binding SyvDagsBookings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedIndex="{Binding SelectedSyvDagsID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
 
-            <Button
-                x:Name="NPOpretBooking"
-                Width="160"
-                Height="50"
-                Margin="570,116,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Opret Booking">
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_OpretBooking" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </Button>
+                <Button
+                    x:Name="NPOpretBooking"
+                    Width="160"
+                    Height="50"
+                    Margin="570,116,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Opret Booking">
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_OpretBooking" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
 
 
-            <Button
-                x:Name="NPRedigerBooking"
-                Width="160"
-                Height="50"
-                Margin="570,176,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Rediger Booking">
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </Button>
+                <Button
+                    x:Name="NPRedigerBooking"
+                    Width="160"
+                    Height="50"
+                    Margin="570,176,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Rediger Booking">
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
 
-            <Button
-                x:Name="button_sletbooking"
-                Width="160"
-                Height="50"
-                Margin="570,236,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Slet Valgt Booking">
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:InvokeCommandAction Command="{Binding RC_Slet}"/>
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </Button>
+                <Button
+                    x:Name="button_sletbooking"
+                    Width="160"
+                    Height="50"
+                    Margin="570,236,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Slet Valgt Booking">
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:InvokeCommandAction Command="{Binding RC_Slet}" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
 
 
-            <Button
-                x:Name="NPForsiden"
-                Width="160"
-                Height="50"
-                Margin="40,0,0,40"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Content="Tilbage til Forsiden">
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </Button>
+                <Button
+                    x:Name="NPForsiden"
+                    Width="160"
+                    Height="50"
+                    Margin="40,0,0,40"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Content="Tilbage til Forsiden">
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
 
-            <TextBlock
-                x:Name="textBlock"
-                Margin="40,91,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                TextWrapping="Wrap">
-                <Run Text="Bookinger de næste 7 dage" />
-                <Run Text=":" />
-            </TextBlock>
+                <TextBlock
+                    x:Name="textBlock"
+                    Margin="40,91,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    TextWrapping="Wrap">
+                    <Run Text="Bookinger de næste 7 dage" />
+                    <Run Text=":" />
+                </TextBlock>
+            </Grid>
         </Grid>
 
     </Grid>

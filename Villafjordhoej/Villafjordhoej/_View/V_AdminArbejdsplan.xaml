@@ -2,38 +2,43 @@
     x:Class="Villafjordhoej._View.V_AdminArbejdsplan"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Villafjordhoej._View"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:local="using:Villafjordhoej._View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid>
             <Grid.Background>
-                <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
+                <SolidColorBrush Color="{StaticResource BackgroundColor}" />
             </Grid.Background>
 
             <!--  Top Border  -->
-            <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
+            <Grid
+                Height="85"
+                VerticalAlignment="Top"
+                BorderBrush="DarkGreen"
+                BorderThickness="0,0,0,3"
+                d:LayoutOverrides="LeftPosition, RightPosition">
                 <Grid.Background>
-                    <SolidColorBrush Color="#FFF3D410" Opacity="0.5"/>
+                    <SolidColorBrush Opacity="0.5" Color="#FFF3D410" />
                 </Grid.Background>
 
-                <!-- tekst_header - Hvor er vi teksten -->
+                <!--  tekst_header - Hvor er vi teksten  -->
                 <TextBlock
                     x:Name="tekst_header"
                     Margin="40,0,0,0"
                     HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
                     FontFamily="Arial Black"
                     FontSize="32"
                     FontWeight="Bold"
-                    Text="Arbejdsplan" 
-                    d:LayoutOverrides="Height, TopPosition, BottomPosition" 
-                    VerticalAlignment="Bottom"/>
+                    Text="Arbejdsplan"
+                    d:LayoutOverrides="Height, TopPosition, BottomPosition" />
 
-                <!-- tekst_admin - vi er nu på admin siden -->
+                <!--  tekst_admin - vi er nu på admin siden  -->
                 <TextBlock
                     x:Name="tekst_admin"
                     Margin="40,18,0,0"
@@ -41,11 +46,11 @@
                     VerticalAlignment="Top"
                     FontFamily="Arial Black"
                     FontSize="18.667"
-                    Text="Admin side" 
-                    FontWeight="Bold" 
-                    Foreground="Black"/>
+                    FontWeight="Bold"
+                    Foreground="Black"
+                    Text="Admin side" />
 
-                <!-- img_logo -->
+                <!--  img_logo  -->
                 <Image
                     x:Name="img_logo"
                     Width="472"
@@ -56,19 +61,19 @@
                     Source="ms-appx:///Assets/VFlogo.png"
                     Stretch="Fill" />
 
-                <!-- button_logind -->
-                <Button 
-                x:Name="button_logind" 
-                Width="104" 
-                Height="69" 
-                Margin="0,0,40,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Content="Log Ind"
-                FontFamily="Arial"
-                FontSize="22"
-                IsEnabled="False"
-                Style="{StaticResource ButtonRed}">
+                <!--  button_logind  -->
+                <Button
+                    x:Name="button_logind"
+                    Width="104"
+                    Height="69"
+                    Margin="0,0,40,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Log Ind"
+                    FontFamily="Arial"
+                    FontSize="22"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonRed}">
                     <Button.Background>
                         <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
                     </Button.Background>
@@ -76,20 +81,22 @@
 
             </Grid>
 
-            <Button
-                x:Name="NPAdminForside"
-                Width="210"
-                Height="50"
-                Margin="40,0,0,40"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Content="Tilbage til Admin Forsiden">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
-                    </core:EventTriggerBehavior>
-                </interactivity:Interaction.Behaviors>
-            </Button>
+            <Grid Width="1280" HorizontalAlignment="Center">
+                <Button
+                    x:Name="NPAdminForside"
+                    Width="210"
+                    Height="50"
+                    Margin="40,0,0,40"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Content="Tilbage til Admin Forsiden">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

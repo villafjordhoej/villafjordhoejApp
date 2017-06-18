@@ -18,9 +18,14 @@
             </Grid.DataContext>
 
             <!--  Top Border  -->
-            <Grid BorderThickness="0,0,0,3" BorderBrush="DarkGreen" Height="85" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Top">
+            <Grid
+                Height="85"
+                VerticalAlignment="Top"
+                BorderBrush="DarkGreen"
+                BorderThickness="0,0,0,3"
+                d:LayoutOverrides="LeftPosition, RightPosition">
 
-                <!-- tekst_header - Hvor er vi teksten -->
+                <!--  tekst_header - Hvor er vi teksten  -->
                 <TextBlock
                     x:Name="tekst_header"
                     Margin="40,0,0,0"
@@ -29,9 +34,9 @@
                     FontFamily="Arial Black"
                     FontSize="32"
                     FontWeight="Bold"
-                    Text="Velkommen"/>
+                    Text="Velkommen" />
 
-                <!-- img_logo -->
+                <!--  img_logo  -->
                 <Image
                     x:Name="img_logo"
                     Width="472"
@@ -42,19 +47,19 @@
                     Source="ms-appx:///Assets/VFlogo.png"
                     Stretch="Fill" />
 
-                <!-- button_logind -->
-                <Button 
-                x:Name="button_logind" 
-                Width="104" 
-                Height="69" 
-                Margin="0,0,40,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Content="Log Ind"
-                FontFamily="Arial"
-                FontSize="22"
-                IsEnabled="False"
-                Style="{StaticResource ButtonRed}">
+                <!--  button_logind  -->
+                <Button
+                    x:Name="button_logind"
+                    Width="104"
+                    Height="69"
+                    Margin="0,0,40,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Log Ind"
+                    FontFamily="Arial"
+                    FontSize="22"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonRed}">
                     <Button.Background>
                         <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
                     </Button.Background>
@@ -62,149 +67,255 @@
 
             </Grid>
 
+            <Grid Width="1280" HorizontalAlignment="Center">
+                <!--  Booking Knap  -->
+                <Button
+                    x:Name="button_booking"
+                    Width="225"
+                    Height="150"
+                    Margin="40,125,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBooking_Click"
+                    Content="Booking"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    Style="{StaticResource ButtonGreen}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_green.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
 
-            <!--  Booking Knap  -->
-            <Button
-                x:Name="NPBooking"
-                Width="225"
-                Height="150"
-                Margin="76,100,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="{x:Null}"
-                BorderThickness="0"
-                Click="NPBooking_Click"
-                Content="Booking"
-                FontFamily="Arial"
-                FontSize="36"
-                Foreground="#FF282828"
-                Style="{StaticResource ButtonGreen}"
-                Visibility="{Binding BookingKnapULoginVisibility}">
-                <Button.Background>
-                    <ImageBrush ImageSource="ms-appx:///Assets/forside_green.png" Stretch="Fill" />
-                </Button.Background>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-
-            </Button>
+                </Button>
 
 
-            <!--  Behandling Knap  -->
-            <Button
-                x:Name="NPBehandling"
-                Width="225"
-                Height="150"
-                Margin="377,100,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="{x:Null}"
-                BorderThickness="0"
-                Click="NPBehandling_Click"
-                Content="Behandling"
-                FontFamily="Arial"
-                FontSize="36"
-                Foreground="#FF282828"
-                Style="{StaticResource ButtonYellow}"
-                Visibility="{Binding BookingKnapULoginVisibility}">
-                <Button.Background>
-                    <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
-                </Button.Background>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
+                <!--  Behandling Knap  -->
+                <Button
+                    x:Name="button_behandling"
+                    Width="225"
+                    Height="150"
+                    Margin="365,125,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBehandling_Click"
+                    Content="Behandling"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    Style="{StaticResource ButtonYellow}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
 
-            </Button>
+                </Button>
 
-            <!--  Arbejdsplan Knap  -->
-            <Button
-                x:Name="NPArbejdsPlan"
-                Width="225"
-                Height="150"
-                Margin="678,100,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="{x:Null}"
-                BorderThickness="0"
-                Click="NPBehandling_Click"
-                Content="Arbejdsplan"
-                FontFamily="Arial"
-                FontSize="36"
-                Foreground="#FF282828"
-                IsEnabled="False"
-                Style="{StaticResource ButtonYellow}"
-                Visibility="{Binding BookingKnapULoginVisibility}">
-                <Button.Background>
-                    <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
-                </Button.Background>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Arbejdsplan" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
+                <!--  Arbejdsplan Knap  -->
+                <Button
+                    x:Name="button_arbejdsplan"
+                    Width="225"
+                    Height="150"
+                    Margin="690,125,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBehandling_Click"
+                    Content="Arbejdsplan"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonYellow}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Arbejdsplan" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
 
-            </Button>
+                </Button>
 
-            <!--  Arbejdsplan Knap  -->
-            <Button
-                x:Name="NPGaveKort"
-                Width="225"
-                Height="150"
-                Margin="979,100,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="{x:Null}"
-                BorderThickness="0"
-                Click="NPBehandling_Click"
-                Content="Gavekort"
-                FontFamily="Arial"
-                FontSize="36"
-                Foreground="#FF282828"
-                IsEnabled="False"
-                Style="{StaticResource ButtonYellow}"
-                Visibility="{Binding BookingKnapULoginVisibility}">
-                <Button.Background>
-                    <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
-                </Button.Background>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Gavekort" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
+                <!--  Arbejdsplan Knap  -->
+                <Button
+                    x:Name="button_gavekort"
+                    Width="225"
+                    Height="150"
+                    Margin="1016,125,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBehandling_Click"
+                    Content="Gavekort"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonYellow}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Gavekort" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
 
-            </Button>
+                </Button>
 
-            <!--  Admin Knap  -->
-            <Button
-                x:Name="NPAdmin"
-                Width="225"
-                Height="150"
-                Margin="979,485,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                BorderBrush="{x:Null}"
-                BorderThickness="0"
-                Content="Admin"
-                FontFamily="Arial"
-                FontSize="36"
-                Foreground="#FF282828"
-                Style="{StaticResource ButtonRed}"
-                Visibility="{Binding BookingKnapULoginVisibility}">
-                <Button.Background>
-                    <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
-                </Button.Background>
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click">
-                        <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
+                <!--  Admin Knap  -->
+                <Button
+                    x:Name="button_admin"
+                    Width="225"
+                    Height="150"
+                    Margin="1016,530,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Content="Admin"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    Style="{StaticResource ButtonRed}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_red.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
 
-            </Button>
+                </Button>
+                <Button
+                    x:Name="button_linkliste"
+                    Width="225"
+                    Height="150"
+                    Margin="40,328,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBooking_Click"
+                    Content="Link Liste"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    Style="{StaticResource ButtonGreen}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_green.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
 
+                </Button>
+                <Button
+                    x:Name="button_1"
+                    Width="225"
+                    Height="150"
+                    Margin="365,328,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBehandling_Click"
+                    Content="Placeholder"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    Style="{StaticResource ButtonYellow}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+
+                </Button>
+                <Button
+                    x:Name="button_2"
+                    Width="225"
+                    Height="150"
+                    Margin="690,328,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBehandling_Click"
+                    Content="Placeholder"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonYellow}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Arbejdsplan" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+
+                </Button>
+                <Button
+                    x:Name="button_3"
+                    Width="225"
+                    Height="150"
+                    Margin="1016,328,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="0"
+                    Click="NPBehandling_Click"
+                    Content="Placeholder"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    Foreground="#FF282828"
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonYellow}"
+                    Visibility="{Binding BookingKnapULoginVisibility}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/forside_yellow.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Gavekort" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+
+                </Button>
+            </Grid>
 
 
 
