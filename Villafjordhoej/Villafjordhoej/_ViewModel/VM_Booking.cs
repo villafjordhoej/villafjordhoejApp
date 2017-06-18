@@ -34,7 +34,7 @@ namespace Villafjordhoej._ViewModel
 
         //indeholder et instance af singleton
         public Singleton BookingSingleton { get; set; }
-	    public List<M_CollectedBooking> SyvDagsBookings { get; set; }
+	    public ObservableCollection<M_CollectedBooking> SyvDagsBookings { get; set; }
 	    public int SelectedSyvDagsID { get; set; }
 
 
@@ -47,7 +47,7 @@ namespace Villafjordhoej._ViewModel
 
         public VM_Booking()
 		{
-            SyvDagsBookings = new List<M_CollectedBooking>();
+            SyvDagsBookings = new ObservableCollection<M_CollectedBooking>();
 		    SelectedSyvDagsID = -1;
 
 
@@ -105,7 +105,7 @@ namespace Villafjordhoej._ViewModel
 	                BookingSingleton.DeleteMeVearelser(mellemVaerelser.MeVaerelser);
 	            }
 
-                SyvDagsBookings.RemoveAt(SelectedSyvDagsID);
+                SyvDagsBookings.RemoveAt(SelectedSyvDagsID); OnPropertyChanged();
 
                 new MessageDialog("Bookingen blev slettet").ShowAsync();
 
