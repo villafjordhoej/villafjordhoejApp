@@ -89,13 +89,20 @@
 
             <Grid Width="1280" HorizontalAlignment="Center">
                 <Button
-                    x:Name="NPAdminForside"
-                    Width="210"
+                    x:Name="button_adminforside"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
+                    Padding="33,2,8,4"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Admin Forsiden">
+                    Content="Tilbage til Admin Forsiden"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />

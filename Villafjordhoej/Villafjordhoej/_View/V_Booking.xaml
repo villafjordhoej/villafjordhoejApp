@@ -204,12 +204,18 @@
 
                 <Button
                     x:Name="NPOpretBooking"
-                    Width="160"
+                    Width="200"
                     Height="50"
                     Margin="570,116,0,0"
-                    HorizontalAlignment="Left"
+                    Padding="8,2,25,4"
                     VerticalAlignment="Top"
-                    Content="Opret Booking">
+                    Content="Opret Booking"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRightShort}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right_short.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_OpretBooking" />
@@ -220,12 +226,18 @@
 
                 <Button
                     x:Name="NPRedigerBooking"
-                    Width="160"
+                    Width="200"
                     Height="50"
                     Margin="570,176,0,0"
-                    HorizontalAlignment="Left"
+                    Padding="8,2,25,4"
                     VerticalAlignment="Top"
-                    Content="Rediger Booking">
+                    Content="Rediger Booking"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRightShort}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right_short.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_RedigerBooking" />
@@ -235,12 +247,18 @@
 
                 <Button
                     x:Name="button_sletbooking"
-                    Width="160"
+                    Width="200"
                     Height="50"
                     Margin="570,236,0,0"
-                    HorizontalAlignment="Left"
+                    Padding="8,2,25,4"
                     VerticalAlignment="Top"
-                    Content="Slet Valgt Booking">
+                    Content="Slet Valgt Booking"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRightShort}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right_short.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:InvokeCommandAction Command="{Binding RC_Slet}" />
@@ -250,13 +268,17 @@
 
 
                 <Button
-                    x:Name="NPForsiden"
-                    Width="160"
+                    x:Name="button_forsiden"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Forsiden">
+                    Content="Tilbage til Forsiden"
+                    FontFamily="Arial"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside" />
@@ -278,4 +300,6 @@
 
     </Grid>
 </Page>
+
+
 

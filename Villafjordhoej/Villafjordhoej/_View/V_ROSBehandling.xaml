@@ -114,21 +114,72 @@
                     BorderBrush="DarkGreen"
                     BorderThickness="2" />
 
-
                 <Button
-                    x:Name="NPBooking"
-                    Width="176"
+                    x:Name="button_tilfoejbehandlinger"
+                    Width="250"
                     Height="50"
-                    Margin="40,0,0,40"
-                    HorizontalAlignment="Left"
+                    Margin="515,0,515,350"
+                    Padding="8,2,8,4"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Behandlinger">
+                    Content="Tilføj behandling"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
                         </Core:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
+
+                <Button
+                    x:Name="Button_fjernbehandling"
+                    Width="250"
+                    Height="50"
+                    Margin="515,0,515,290"
+                    Padding="8,2,8,4"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Content="Fjern Behandling"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
+
+
+                <Button
+                    x:Name="button_behandlinger"
+                    Margin="40,630,990,40"
+                    Padding="8,2,8,4"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Content="Tilbage til Behandlinger"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="Click">
+                            <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Behandling" />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
+
+
 
                 <TextBlock
                     x:Name="Mulige_Behandlinger"
@@ -157,3 +208,4 @@
         </Grid>
     </Grid>
 </Page>
+

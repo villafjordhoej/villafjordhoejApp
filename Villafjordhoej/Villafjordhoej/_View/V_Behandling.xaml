@@ -64,7 +64,6 @@
                     Height="69"
                     Margin="0,0,40,0"
                     HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
                     Content="Log Ind"
                     FontFamily="Arial"
                     FontSize="22"
@@ -106,12 +105,19 @@
 
                 <Button
                     x:Name="NPForsiden"
-                    Width="160"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
+                    Padding="8,2,8,4"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Forsiden">
+                    Content="Tilbage til Forsiden"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside" />
@@ -121,12 +127,19 @@
 
                 <Button
                     x:Name="NPOpretBehandling"
-                    Width="170"
-                    Height="70"
-                    Margin="559,113,0,0"
-                    HorizontalAlignment="Left"
+                    Width="250"
+                    Height="50"
+                    Margin="515,475,515,0"
+                    Padding="8,2,8,4"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Top"
-                    Content="Tilføj Behandling">
+                    Content="Tilføj Behandling"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Click">
                             <Core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_ROSBehandling" />
@@ -138,6 +151,9 @@
                     Margin="40,90,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    FontWeight="Bold"
                     Text="Bookinger"
                     TextWrapping="Wrap" />
                 <TextBlock
@@ -145,6 +161,9 @@
                     Margin="860,90,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    FontWeight="Bold"
                     Text="Behandlinger"
                     TextWrapping="Wrap" />
 

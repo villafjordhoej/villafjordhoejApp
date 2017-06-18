@@ -96,12 +96,17 @@
 
                 <Button
                     x:Name="Opret_Bruger"
-                    Width="263"
-                    Height="51"
-                    Margin="436,317,0,0"
-                    HorizontalAlignment="Left"
+                    Width="250"
+                    Height="50"
+                    Margin="436,318,0,0"
                     VerticalAlignment="Top"
-                    Content="Opret&#xD;&#xA;Bruger">
+                    Content="Opret Medarbejder"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding OpretMedarbejderRelayCommand}" />
@@ -111,12 +116,17 @@
 
                 <Button
                     x:Name="Slet_Bruger"
-                    Width="263"
-                    Height="60"
+                    Width="250"
+                    Height="50"
                     Margin="436,378,0,0"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Content="Slet&#xD;&#xA;Bruger">
+                    Content="Slet Medarbejder"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding SletMedarbejderRelayCommand}" />
@@ -125,13 +135,19 @@
                 </Button>
 
                 <Button
-                    x:Name="NPAdminForside"
-                    Width="210"
+                    x:Name="button_adminforside"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
-                    HorizontalAlignment="Left"
+                    Padding="33,2,8,4"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Admin Forsiden">
+                    Content="Tilbage til Admin Forsiden"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
@@ -183,12 +199,18 @@
 
                 <Button
                     x:Name="button_redigermedarbejdere"
-                    Width="263"
-                    Height="59"
-                    Margin="436,448,0,0"
+                    Width="250"
+                    Height="50"
+                    Margin="436,438,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Content="Rediger&#xA;Bruger">
+                    Content="Rediger Medarbejder"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding RedigerMedarbejderRelayCommand}" />
@@ -201,6 +223,8 @@
                     Margin="49,101,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Medarbejdere"
                     TextWrapping="Wrap" />
 
@@ -209,6 +233,8 @@
                     Margin="436,101,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Navn"
                     TextWrapping="Wrap" />
 
@@ -217,6 +243,8 @@
                     Margin="436,160,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Kodeord"
                     TextWrapping="Wrap" />
 

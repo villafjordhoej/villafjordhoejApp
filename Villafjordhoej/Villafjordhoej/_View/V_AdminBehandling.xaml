@@ -94,13 +94,21 @@
 
             <Grid Width="1280" HorizontalAlignment="Center">
                 <Button
-                    x:Name="NPAdminForside"
-                    Width="210"
+                    x:Name="button_adminforside"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
+                    Padding="33,2,8,4"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Admin Forsiden">
+                    Click="button_adminforside_Click"
+                    Content="Tilbage til Admin Forsiden"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_AdminForside" />
@@ -115,20 +123,25 @@
                     Margin="40,112,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Background="#33FFFFFF"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     BorderThickness="2"
                     ItemsSource="{Binding ABehandlingSingleton.Behandlings}" />
 
                 <Button
                     x:Name="Opret"
-                    Width="135"
-                    Height="90"
-                    Margin="504,140,0,0"
-                    HorizontalAlignment="Left"
+                    Width="250"
+                    Height="50"
+                    Margin="504,228,0,0"
                     VerticalAlignment="Top"
                     BorderBrush="{x:Null}"
-                    Content="Opret">
+                    Content="Opret Behandling"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding OpretBehandlingRelayCommand}" />
@@ -138,13 +151,18 @@
 
                 <Button
                     x:Name="Rediger"
-                    Width="135"
-                    Height="90"
-                    Margin="504,278,0,352"
-                    HorizontalAlignment="Left"
+                    Width="250"
+                    Height="50"
+                    Margin="504,289,0,0"
                     VerticalAlignment="top"
                     BorderBrush="{x:Null}"
-                    Content="Rediger">
+                    Content="Rediger Behandling"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding RedigerBehandlingRelayCommand}" />
@@ -154,13 +172,19 @@
 
                 <Button
                     x:Name="Slet"
-                    Width="135"
-                    Height="90"
-                    Margin="504,418,0,0"
-                    HorizontalAlignment="Left"
+                    Width="250"
+                    Height="50"
+                    Margin="504,350,0,0"
                     VerticalAlignment="Top"
                     BorderBrush="{x:Null}"
-                    Content="Slet">
+                    Click="Slet_Click"
+                    Content="Slet Behandling"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding SletBehandlingRelayCommand}" />
@@ -172,9 +196,10 @@
                     x:Name="Navn"
                     Width="397"
                     Height="52"
-                    Margin="698,140,0,0"
+                    Margin="797,140,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Navn"
                     Text="{Binding Navn, Mode=TwoWay}"
@@ -184,9 +209,10 @@
                     x:Name="Beskrivelse"
                     Width="397"
                     Height="52"
-                    Margin="698,221,0,0"
+                    Margin="797,221,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Beskrivelse"
                     Text="{Binding Beskrivelse, Mode=TwoWay}"
@@ -195,9 +221,10 @@
                     x:Name="Pris"
                     Width="121"
                     Height="26"
-                    Margin="698,302,0,0"
+                    Margin="797,302,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Background="#33000000"
                     BorderBrush="DarkGreen"
                     PlaceholderText="Pris"
                     Text="{Binding Pris, Mode=TwoWay}"
@@ -207,27 +234,35 @@
                     Margin="40,92,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Behandlinger"
                     TextWrapping="Wrap" />
                 <TextBlock
                     x:Name="Navn1"
-                    Margin="698,120,0,0"
+                    Margin="797,120,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Navn"
                     TextWrapping="Wrap" />
                 <TextBlock
                     x:Name="Beskrivelse1"
-                    Margin="698,201,0,0"
+                    Margin="797,201,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Beskrivelse"
                     TextWrapping="Wrap" />
                 <TextBlock
                     x:Name="Pris1"
-                    Margin="698,282,0,0"
+                    Margin="797,282,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    FontFamily="Arial"
+                    FontSize="16"
                     Text="Pris"
                     TextWrapping="Wrap" />
             </Grid>

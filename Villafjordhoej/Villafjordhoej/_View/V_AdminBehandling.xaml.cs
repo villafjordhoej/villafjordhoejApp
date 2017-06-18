@@ -26,5 +26,15 @@ namespace Villafjordhoej._View
 		{
 			this.InitializeComponent();
 		}
-	}
+
+        private void Slet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button_adminforside_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

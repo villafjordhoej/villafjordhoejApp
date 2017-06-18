@@ -469,12 +469,17 @@
                 <!--  Knapper  -->
                 <Button
                     x:Name="Button_Opret"
-                    Width="320"
+                    Width="250"
                     Height="50"
-                    Margin="919,0,0,40"
-                    HorizontalAlignment="Left"
+                    Margin="986,0,0,40"
                     VerticalAlignment="Bottom"
-                    Content="Opret">
+                    Content="Opret Booking"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonRight}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_right.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:InvokeCommandAction Command="{Binding RC_Opret}" />
@@ -483,13 +488,18 @@
                 </Button>
 
                 <Button
-                    x:Name="NPBooking"
-                    Width="160"
+                    x:Name="button_booking"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Booking">
+                    Content="Tilbage til Booking"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:NavigateToPageAction TargetPage="Villafjordhoej._View.V_Booking" />

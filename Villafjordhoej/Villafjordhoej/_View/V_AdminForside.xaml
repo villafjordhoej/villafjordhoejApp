@@ -173,13 +173,18 @@
 
 
                 <Button
-                    x:Name="NPForsiden"
-                    Width="160"
+                    x:Name="button_forsiden"
+                    Width="250"
                     Height="50"
                     Margin="40,0,0,40"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Content="Tilbage til Forsiden">
+                    Content="Tilbage til Forsiden"
+                    FontFamily="Arial"
+                    FontSize="16"
+                    Style="{StaticResource ButtonLeft}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/button_left.png" Stretch="Fill" />
+                    </Button.Background>
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Click">
                             <core:NavigateToPageAction TargetPage="Villafjordhoej._View.Forside" />
@@ -192,7 +197,6 @@
                     Width="225"
                     Height="150"
                     Margin="1016,125,0,0"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="{x:Null}"
                     BorderThickness="0"
@@ -218,7 +222,6 @@
                     Width="225"
                     Height="150"
                     Margin="40,328,0,0"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="{x:Null}"
                     BorderThickness="0"
@@ -244,7 +247,6 @@
                     Width="225"
                     Height="150"
                     Margin="365,328,0,0"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="{x:Null}"
                     BorderThickness="0"
@@ -270,7 +272,6 @@
                     Width="225"
                     Height="150"
                     Margin="690,328,0,0"
-                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="{x:Null}"
                     BorderThickness="0"
