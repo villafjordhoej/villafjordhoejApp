@@ -146,6 +146,7 @@
                         </Core:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
+
                 <TextBlock
                     x:Name="Bookinger"
                     Margin="40,90,0,0"
