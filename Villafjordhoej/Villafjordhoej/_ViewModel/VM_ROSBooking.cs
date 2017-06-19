@@ -115,8 +115,9 @@ namespace Villafjordhoej._ViewModel
                     if (V.CheckBoxIsChecked)
                     {
                         BookingSingleton.SaveMeVaerelsers(new Me_Vaerelser(BookingSingleton.BookingsCurrentID, V.vaerelse_id));
-                        V.CheckBoxIsChecked = false;
+                        
                     }
+                    V.CheckBoxIsChecked = false;
                 }
                 new MessageDialog("Booking blev oprettet").ShowAsync();
             }
