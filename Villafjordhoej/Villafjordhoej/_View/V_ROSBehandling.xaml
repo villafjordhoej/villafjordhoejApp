@@ -161,10 +161,10 @@
 
                 <Button
                     x:Name="button_behandlinger"
+                    Width="250"
+                    Height="50"
                     Margin="40,630,990,40"
                     Padding="8,2,8,4"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"
                     Content="Tilbage til Behandlinger"
                     FontFamily="Arial"
                     FontSize="16"
